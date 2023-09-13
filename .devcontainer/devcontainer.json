@@ -1,8 +1,6 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "mcr.microsoft.com/mssql/server:2022-latest": {},
-    "ghcr.io/devcontainers/features/node:18.17.1": {},
-    "mcr.microsoft.com/dotnet/sdk:6.0": {}
-  }
+  "image": "mcr.microsoft.com/mssql/server:2022-latest",
+  "image": "ghcr.io/devcontainers/features/node:18.17.1",
+  "image": "mcr.microsoft.com/dotnet/sdk:6.0"
 }
