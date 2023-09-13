@@ -1,12 +1,10 @@
 {
-  	"image": "mcr.microsoft.com/devcontainers/universal:2",
+  	"image": "mcr.microsoft.com/dotnet/sdk:6.0",
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
 			"nodeGypDependencies": true,
 			"version": "lts",
 			"nvmVersion": "latest"
-		},
-		"mcr.microsoft.com/mssql/server:2022-latest": {},
-	 	"mcr.microsoft.com/dotnet/sdk:6.0": {}
+		}
 	}
 }
