@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "C9+Ep72n3sYNnGZam/wNDPNTk1ZSRbuZGxkDdRCDxRU67irgR1rY2hcJN+6O/Vx7uK3Ppr+GIBsnMOVqgOSbXQ==",
+  "success": true,
+  "projectFilePath": "/home/seth/Documents/KSU-Conference-Planner/Backend/conference-planner.csproj",
+  "expectedPackageFiles": [
+    "/home/seth/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/seth/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/seth/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/home/seth/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/home/seth/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/home/seth/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
