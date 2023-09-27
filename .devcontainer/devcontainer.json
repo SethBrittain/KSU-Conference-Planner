@@ -6,7 +6,9 @@
 			"version": "lts",
 			"nvmVersion": "latest"
 		},
-		"ghcr.io/itsmechlark/features/postgresql:1": {}
+		"ghcr.io/itsmechlark/features/postgresql:1": {
+			"version": "16"
+		}
 	},
 	"postCreateCommand": "npm install --prefix conference-planner && npm start --prefix conference-planner"
 }
