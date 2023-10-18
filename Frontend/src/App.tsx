@@ -8,6 +8,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
 import HelloWorld from './Components/Pages/HelloWorld/HelloWorld';
+import ApiTest from './Components/Pages/ApiTest/ApiTest';
 
 // Main App Component
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" index element={<HelloWorld />} />
           <Route path="/component-test" element={<ComponentTest />} />
+          <Route path="/api-test" element={<ApiTest />} />
         </Routes>
       </BrowserRouter>
     </div>
