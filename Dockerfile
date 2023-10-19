@@ -30,9 +30,9 @@ FROM ubuntu/dotnet-aspnet:6.0-22.04_beta as build-stage3
 COPY --from=1 /server/out .
 
 # Https traffic
-ENV ASPNETCORE_URLS="http://+:80"
+ENV ASPNETCORE_URLS="http://+:5000"
 
-EXPOSE 80
+EXPOSE 5000
 
 # Run ASP.NET app
 ENTRYPOINT ["dotnet", "conference-planner.dll"]

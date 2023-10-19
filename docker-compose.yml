@@ -2,6 +2,8 @@ version: "3"
 services:
   postgres:
     image: postgres:16rc1
+    container_name: conferenceplanner_database
+    hostname: conferenceplanner_database
     restart: always
     environment:
       - POSTGRES_DB=conferenceplanner
@@ -16,9 +18,11 @@ services:
     depends_on:
       - postgres
     image: sethbrittain/conferenceplanner:1.0.0
+    container_name: conferenceplanner_app
+    hostname: conferenceplanner_app
     restart: always
     ports:
-      - 80:80
+      - 5000:5000
 volumes:
   postgres:
     driver: local
