@@ -79,3 +79,20 @@ CREATE TABLE IF NOT EXISTS public.sessions
     room_number character varying(16) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT sessions_pkey PRIMARY KEY (session_id, event_id, presentation_id)
 );
+
+/*attendee_type data*/
+insert into attendee_type (attendee_type_id, attendee_type_name) values (1, 'nullam');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (2, 'dolor');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (3, 'ipsum');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (4, 'curae');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (5, 'nisi');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (6, 'ultrices');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (7, 'id');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (8, 'imperdiet');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (9, 'in');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (10, 'quis');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (11, 'in');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (12, 'rutrum');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (13, 'pharetra');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (14, 'consequat');
+insert into attendee_type (attendee_type_id, attendee_type_name) values (15, 'blandit');
