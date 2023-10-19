@@ -5,6 +5,10 @@
 			"nodeGypDependencies": true,
 			"version": "lts",
 			"nvmVersion": "latest"
+		},
+		"docker-in-docker": {
+			  "version": "latest",
+			  "moby": true
 		}
 	},
 	"postCreateCommand": "npm install --prefix conference-planner && npm start --prefix conference-planner"
