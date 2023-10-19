@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" index element={<HelloWorld />} />
           <Route path="/component-test" element={<ComponentTest />} />
-          <Route path="/api-test" element={<ApiTest />} />
+          <Route path="/rest-test" element={<ApiTest />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -3,11 +3,9 @@ FROM node:18 as build-stage1
 
 WORKDIR /client
 
-COPY Frontend/package*.json ./
+COPY Frontend/ ./
 
 RUN npm install
-
-COPY Frontend/ ./
 
 RUN npm run build
 
@@ -20,7 +18,7 @@ COPY Backend/ ./
 
 RUN dotnet restore
 
-COPY --from=0 /client/build/ /wwwroot/
+COPY --from=0 /client/build/ /server/wwwroot
 
 RUN dotnet publish . -c Release -o out
 

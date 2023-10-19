@@ -8,12 +8,13 @@ const ApiTest = (): React.JSX.Element => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        axios.get('api/test')
+        axios.get('/api/test')
         .then((response) => {
             setData(response.data);
             setLoading(false);
         })
         .catch((error) => {
+	    console.log("Api call failed");
             setLoading(false);
             setError(true);
         });
