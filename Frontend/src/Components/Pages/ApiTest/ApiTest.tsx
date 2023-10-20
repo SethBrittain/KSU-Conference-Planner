@@ -1,31 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import ApiDataOutput from './ApiDataOutput';
+import ApiDataOutput from "./ApiDataOutput";
 
 const ApiTest = (): React.JSX.Element => {
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
-    const [data, setData] = useState();
-
-    useEffect(() => {
-        axios.get('/api/test')
-        .then((response) => {
-            setData(response.data);
-            setLoading(false);
-        })
-        .catch((error) => {
-	    console.log("Api call failed");
-            setLoading(false);
-            setError(true);
-        });
-    }, []);
-
-    
-    var result = loading ? "Loading..." : error ? "Error" : data ? <ApiDataOutput name="test" data={data} /> : "No data";
-
     return (
         <div>
-            {result}
+            <ApiDataOutput name={"attendee_types"} which={0} />
+            <ApiDataOutput name={"event_registrations"} which={1} />
+            <ApiDataOutput name={"events"} which={2} />
+            <ApiDataOutput name={"people"} which={3} />
+            <ApiDataOutput name={"presentation_assignments"} which={4} />
+            <ApiDataOutput name={"presentations"} which={5} />
+            <ApiDataOutput name={"sessions"} which={6} />
         </div>
     );
 };
