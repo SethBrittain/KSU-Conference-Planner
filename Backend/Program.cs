@@ -4,6 +4,8 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,10 +24,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
 
 app.UseAuthorization();
-
 app.MapControllers();
 
+app.MapFallbackToFile("index.html");
+
+app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
+    string.Join("\n", endpointSources.SelectMany(source => source.Endpoints)));
 app.Run();

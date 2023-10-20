@@ -73,3 +73,8 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+
+##############################
+# Static from frontend build #
+##############################
+wwwroot/*
