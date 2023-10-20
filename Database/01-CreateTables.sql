@@ -10,8 +10,9 @@ CREATE TABLE IF NOT EXISTS public.attendee_types
 CREATE TABLE IF NOT EXISTS public.event_registrations
 (
     registration_id bigserial NOT NULL,
-    people_id bigint NOT NULL,
+    person_id bigint NOT NULL,
     event_id bigint NOT NULL,
+	attendee_type_id bigint NOT NULL,
     expires_on timestamp with time zone NOT NULL DEFAULT (CURRENT_TIMESTAMP + '6 mons'::interval),
     created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -21,13 +22,13 @@ CREATE TABLE IF NOT EXISTS public.event_registrations
 -- Create events table
 CREATE TABLE IF NOT EXISTS public.events
 (
-    "EventID" bigserial NOT NULL,
-    "Name" character varying COLLATE pg_catalog."default" NOT NULL,
-    "StartDate" timestamp with time zone NOT NULL,
-    "EndDate" timestamp with time zone NOT NULL,
-    "CreatedOn" timestamp with time zone NOT NULL,
-    "UpdatedOn" timestamp with time zone NOT NULL,
-    CONSTRAINT "Events_pkey" PRIMARY KEY ("EventID")
+    event_id bigserial NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    start_date timestamp with time zone NOT NULL,
+	end_date timestamp with time zone NOT NULL,
+    created_on timestamp with time zone NOT NULL,
+    updated_on timestamp with time zone NOT NULL,
+    CONSTRAINT events_pkey PRIMARY KEY (event_id)
 );
 
 -- Create people table
@@ -39,8 +40,8 @@ CREATE TABLE IF NOT EXISTS public.people
     last_name character varying(64) COLLATE pg_catalog."default" NOT NULL,
     password character varying COLLATE pg_catalog."default",
     salt bigint,
-    diet_restrictions character varying(4096) COLLATE pg_catalog."default",
-    special_accommodations character varying(4096) COLLATE pg_catalog."default",
+    dietary_restrictions character varying(4096) COLLATE pg_catalog."default",
+    accommodations character varying(4096) COLLATE pg_catalog."default",
     CONSTRAINT people_pkey PRIMARY KEY (person_id, email)
 );
 
@@ -50,7 +51,7 @@ CREATE TABLE IF NOT EXISTS public.presentation_assignments
     assignment_id bigserial NOT NULL,
     registration_id bigint NOT NULL,
     presentation_id bigint NOT NULL,
-    for_review boolean NOT NULL DEFAULT false,
+    review boolean NOT NULL DEFAULT false,
     CONSTRAINT presentation_assignment_pkey PRIMARY KEY (assignment_id, registration_id, presentation_id)
 );
 
