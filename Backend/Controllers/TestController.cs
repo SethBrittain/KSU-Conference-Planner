@@ -35,7 +35,7 @@ public class TestController : ControllerBase
         while (await reader.ReadAsync())
         {
             List<string> row = new();
-            for (var i = 0; i < reader.FieldCount; i++)
+            for (var i = 1; i < reader.FieldCount; i++)
             {
                 row.Add(reader.GetValue(i).ToString() ?? "");
             }
