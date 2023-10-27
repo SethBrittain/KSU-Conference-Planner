@@ -18,18 +18,17 @@ CREATE TABLE IF NOT EXISTS public.event_registrations
 CREATE TABLE IF NOT EXISTS public.events
 (
     event_id bigserial NOT NULL,
-    name character varying COLLATE pg_catalog."default" NOT NULL,
-    first_date date NOT NULL,
-	last_date date NOT NULL,
-    created_on timestamp with time zone NOT NULL,
-    updated_on timestamp with time zone NOT NULL,
     conference_id bigint NOT NULL,
-    CONSTRAINT events_pkey PRIMARY KEY (event_id),
+    first_date date NOT NULL,
+    last_date date NOT NULL,
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT events_pkey PRIMARY KEY (event_id)
     UNIQUE(first_date, last_date, conference_id)
 );
 
 -- Create people table
-CREATE TABLE IF NOT EXISTS public.user
+CREATE TABLE IF NOT EXISTS public.users
 (
     user_id bigserial NOT NULL PRIMARY KEY,
     email character varying(128) COLLATE pg_catalog."default" NOT NULL,
@@ -51,8 +50,9 @@ CREATE TABLE IF NOT EXISTS public.presentation_assignments
     user_id bigint NOT NULL,
     presentation_id bigint NOT NULL,
     review boolean NOT NULL DEFAULT false,
-    created_on timestamp with time zone NOT NULL,
-    updated_on timestamp with time zone NOT NULL
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT presentation_assignment_pkey PRIMARY KEY (presentation_assignment_id)
 );
 
 -- Create presentation table
@@ -63,11 +63,12 @@ CREATE TABLE IF NOT EXISTS public.presentation
     presentation_name character varying(255) COLLATE pg_catalog."default" NOT NULL DEFAULT 'Untitled Presentation'::character varying,
     authors character varying COLLATE pg_catalog."default" NOT NULL,
     abstract character varying COLLATE pg_catalog."default",
+    documentation character varying COLLATE pg_catalog."default",
     technical_requirements character varying COLLATE pg_catalog."default",
     presentation_type character varying COLLATE pg_catalog."default" NOT NULL,
     accepted boolean NOT NULL DEFAULT false,
-    created_on timestamp with time zone NOT NULL,
-    updated_on timestamp with time zone NOT NULL
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Create sessions table
@@ -76,11 +77,39 @@ CREATE TABLE IF NOT EXISTS public.sessions
     session_id bigserial NOT NULL PRIMARY KEY,
     presentation_id bigint NOT NULL,
     event_id bigint NOT NULL,
-    session_start_time timestamp with time zone NOT NULL,
-    session_end_time timestamp with time zone NOT NULL,
     room_id bigint NOT NULL,
-    room_number character varying(16) COLLATE pg_catalog."default" NOT NULL, --Move this to room table
-    created_on timestamp with time zone NOT NULL,
-    updated_on timestamp with time zone NOT NULL,
-    UNIQUE(event_id, session_start_time, session_end_time, room_id)
+    session_start_time timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    session_end_time timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT sessions_pkey PRIMARY KEY (session_id)
 );
+
+-- Create rooms table
+CREATE TABLE IF NOT EXISTS public.rooms
+(
+    room_id bigserial NOT NULL PRIMARY KEY,
+    room_number bigint NOT NULL,
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
+
+-- Create user_sessions table
+CREATE TABLE IF NOT EXISTS public.user_sessions
+(
+    user_session_id bigserial NOT NULL PRIMARY KEY,
+    event_id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    session_id bigint NOT NULL,
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP   
+)
+
+-- Create conferences table
+CREATE TABLE IF NOT EXISTS public.conferences
+(
+    conference_id bigserial NOT NULL PRIMARY KEY,
+    name character varying(64) COLLATE pg_catalog."default" NOT NULL,
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP 
+)

@@ -2,15 +2,15 @@ version: "3"
 services:
   postgres:
     image: postgres:16rc1
-    container_name: conferenceplanner_database
-    hostname: conferenceplanner_database
+    container_name: ${database_container_name}
+    hostname: ${database_container_name}
     restart: always
     environment:
-      - POSTGRES_DB=conferenceplanner
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=${database_name}
+      - POSTGRES_USER=${database_user}
+      - POSTGRES_PASSWORD=${database_password}
     ports:
-      - 5432:5432
+      - ${database_port}:${database_port}
     volumes: 
       - postgres:/var/lib/postgresql/data
       - ./Database:/docker-entrypoint-initdb.d
@@ -18,11 +18,13 @@ services:
     depends_on:
       - postgres
     image: sethbrittain/conferenceplanner:1.0.0
-    container_name: conferenceplanner_app
-    hostname: conferenceplanner_app
+    container_name: ${app_container_name}
+    hostname: ${app_container_name}
     restart: always
+    environment:
+      - ASPNETCORE_CONNECTION_STRING=Host=${database_container_name};Username=${database_user};Password=${database_password};Database=${database_name};Port=${database_port};
     ports:
-      - 5000:5000
+      - ${app_port}:${app_port}
 volumes:
   postgres:
     driver: local

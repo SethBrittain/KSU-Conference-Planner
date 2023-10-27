@@ -14,7 +14,7 @@ public class TestController : ControllerBase
     [HttpGet]
     public async Task<IEnumerable<IEnumerable<string>>> Get(int which)
     {
-        string connString = "Host=conferenceplanner_database;Username=postgres;Password=postgres;Database=conferenceplanner;Port=5432;";
+        string connString = Environment.GetEnvironmentVariable("ASPNETCORE_CONNECTION_STRING") ?? throw new Exception("Invalid Connection String");
         await using var dataSource = NpgsqlDataSource.Create(connString);
         
         //dataSource.CreateCommand("SELECT * FROM attendee_types");
@@ -35,7 +35,7 @@ public class TestController : ControllerBase
         while (await reader.ReadAsync())
         {
             List<string> row = new();
-            for (var i = 0; i < reader.FieldCount; i++)
+            for (var i = 1; i < reader.FieldCount; i++)
             {
                 row.Add(reader.GetValue(i).ToString() ?? "");
             }
