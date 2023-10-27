@@ -1,16 +1,15 @@
-CREATE TYPE attendee_type AS ENUM ('attendee', 'reviewer', 'scheduler')
+CREATE TYPE attendee_type AS ENUM ('attendee', 'reviewer', 'scheduler');
 
 -- Create event_registrations table
 CREATE TABLE IF NOT EXISTS public.event_registrations
 (
-    event_registration_id bigserial NOT NULL,
+    event_registration_id bigserial NOT NULL PRIMARY KEY,
     user_id bigint NOT NULL,
     event_id bigint NOT NULL,
 	attendee_type_id attendee_type NOT NULL,
     expires_on timestamp with time zone NOT NULL DEFAULT (CURRENT_TIMESTAMP + '6 mons'::interval),
     created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT event_registration_pkey PRIMARY KEY (registration_id),
     UNIQUE( user_id, event_id)
 );
 
@@ -38,8 +37,8 @@ CREATE TABLE IF NOT EXISTS public.users
     salt bigint,
     dietary_restrictions character varying(4096) COLLATE pg_catalog."default",
     accommodations character varying(4096) COLLATE pg_catalog."default",
-    created_on timestamp with time zone NOT NULL,
-    updated_on timestamp with time zone NOT NULL
+    created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(email)
 );
 
@@ -55,7 +54,7 @@ CREATE TABLE IF NOT EXISTS public.presentation_assignments
 );
 
 -- Create presentation table
-CREATE TABLE IF NOT EXISTS public.presentation
+CREATE TABLE IF NOT EXISTS public.presentations
 (
     presentation_id bigserial NOT NULL PRIMARY KEY,
     presentation_name character varying(255) COLLATE pg_catalog."default" NOT NULL DEFAULT 'Untitled Presentation'::character varying,
