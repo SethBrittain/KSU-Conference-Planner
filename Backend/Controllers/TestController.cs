@@ -14,7 +14,7 @@ public class TestController : ControllerBase
     [HttpGet]
     public async Task<IEnumerable<IEnumerable<string>>> Get(int which)
     {
-        string connString = "Host=conferenceplanner_database;Username=postgres;Password=postgres;Database=conferenceplanner;Port=5432;";
+        string connString = Environment.GetEnvironmentVariable("ASPNETCORE_CONNECTION_STRING") ?? throw new Exception("Invalid Connection String");
         await using var dataSource = NpgsqlDataSource.Create(connString);
         
         //dataSource.CreateCommand("SELECT * FROM attendee_types");
