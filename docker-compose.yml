@@ -24,7 +24,7 @@ services:
     environment:
       - ASPNETCORE_CONNECTION_STRING=Host=${database_container_name};Username=${database_user};Password=${database_password};Database=${database_name};Port=${database_port};
     ports:
-      - ${app_port}:${app_port}
+      - ${app_port}:5000
 volumes:
   postgres:
     driver: local
