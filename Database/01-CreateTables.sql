@@ -98,7 +98,9 @@ CREATE TABLE IF NOT EXISTS public.user_sessions
     user_id bigint NOT NULL,
     session_id bigint NOT NULL,
     created_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP   
+    updated_on timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(event_id, user_id),
+    UNIQUE(event_id, session_id)
 );
 
 -- Create conferences table
