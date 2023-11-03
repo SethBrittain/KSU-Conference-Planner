@@ -1,0 +1,30 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --blue-200: rgba(195, 221, 253, 1);
+  --blue-600: rgba(28, 100, 242, 1);
+  --body-medium-medium-font-family: "Inter-Medium", Helvetica;
+  --body-medium-medium-font-size: 16px;
+  --body-medium-medium-font-style: normal;
+  --body-medium-medium-font-weight: 500;
+  --body-medium-medium-letter-spacing: 0px;
+  --body-medium-medium-line-height: 24px;
+  --darkdark: rgba(17, 25, 40, 1);
+  --primary-color: rgba(55, 88, 249, 1);
+  --primary-text-color: rgba(99, 115, 129, 1);
+  --text-base-font-semibold-font-family: "Inter-SemiBold", Helvetica;
+  --text-base-font-semibold-font-size: 16px;
+  --text-base-font-semibold-font-style: normal;
+  --text-base-font-semibold-font-weight: 600;
+  --text-base-font-semibold-letter-spacing: 0px;
+  --text-base-font-semibold-line-height: 150%;
+  --white: rgba(255, 255, 255, 1);
+  --whitewhite: rgba(255, 255, 255, 1);
+}

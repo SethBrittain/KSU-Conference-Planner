@@ -1,10 +1,10 @@
-import Button from '../../Button/Button';
-import Navbar from '../../Navbar/Navbar';
+import { Button } from '../../Button/Button';
+import { NavbarsGeneric } from '../../Navbar/Navbar';
 
 const ComponentTest = (): React.JSX.Element => { 
     return (
         <div>
-            <Navbar />
+            <NavbarsGeneric Navstyle='about' className={undefined}></NavbarsGeneric>
             <Button text="test"></Button>
         </div>
     ); 

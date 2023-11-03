@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import MainInfo from "./MainInfo"
+import { MainInfo } from "./MainInfo"
 
 test('MainInfo renders correctly', () => {
     render(<MainInfo></MainInfo>)

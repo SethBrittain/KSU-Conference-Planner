@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react"
-import Navbar from "./Navbar"
-import Button from "../Button/Button"
+import { NavbarsGeneric } from "./Navbar";
+import { Button } from "../Button/Button";
 
 test('Navbar renders correctly', () => {
-    render(<Navbar></Navbar>)
+    render(<NavbarsGeneric Navstyle='about' className={undefined}></NavbarsGeneric>)
     const navItem1 = screen.getByText('Home')
     const navItem2 = screen.getByText('Sessions')
     const navItem3 = screen.getByText('About')
@@ -17,7 +17,7 @@ test('Navbar renders correctly', () => {
 });
 
 test('Navbar items are buttons', () => {
-    render(<Navbar></Navbar>)
+    render(<NavbarsGeneric Navstyle='about' className={undefined}></NavbarsGeneric>)
     const navItem1 = screen.getByRole('Button', { name: /Home/i})
     const navItem2 = screen.getByRole('Button', { name: /Sessions/i})
     const navItem3 = screen.getByRole('Button', { name: /About/i})
