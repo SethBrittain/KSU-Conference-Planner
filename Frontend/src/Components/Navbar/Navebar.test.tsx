@@ -3,7 +3,7 @@ import { NavbarsGeneric } from "./Navbar";
 import { Button } from "../Button/Button";
 
 test('Navbar renders correctly', () => {
-    render(<NavbarsGeneric Navstyle='about' className={undefined}></NavbarsGeneric>)
+    render(<NavbarsGeneric navStyle='about' className={undefined}></NavbarsGeneric>)
     const navItem1 = screen.getByText('Home')
     const navItem2 = screen.getByText('Sessions')
     const navItem3 = screen.getByText('About')
@@ -17,7 +17,7 @@ test('Navbar renders correctly', () => {
 });
 
 test('Navbar items are buttons', () => {
-    render(<NavbarsGeneric Navstyle='about' className={undefined}></NavbarsGeneric>)
+    render(<NavbarsGeneric navStyle='about' className={undefined}></NavbarsGeneric>)
     const navItem1 = screen.getByRole('Button', { name: /Home/i})
     const navItem2 = screen.getByRole('Button', { name: /Sessions/i})
     const navItem3 = screen.getByRole('Button', { name: /About/i})
