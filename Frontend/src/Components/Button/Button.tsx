@@ -12,7 +12,7 @@ interface Props {
   textClassName: any;
 }
 
-export const Button = ({ type, size, icon, state, color, className, textClassName }: Props): JSX.Element => {
+export const Button = ({ type, size, icon, state, color, className, textClassName, text }: Props): JSX.Element => {
   return (
     <div
       className={`items-center overflow-hidden rounded-[12px] justify-center relative ${
@@ -174,9 +174,9 @@ export const Button = ({ type, size, icon, state, color, className, textClassNam
             size === "sm" ||
             size === "xl" ||
             size === "xll" ||
-            size === "xs") && <>Button textnpm </>}
+            size === "xs") && <>Sign Up</>}
 
-          {(color === "transparent" || (color === "white" && size === "base")) && <>Sign In</>}
+          {(color === "transparent" || (color === "white" && size === "base")) && <>{text}</>}
         </div>
       )}
 
