@@ -174,7 +174,7 @@ export const Button = ({ type, size, icon, state, color, className, textClassNam
             size === "sm" ||
             size === "xl" ||
             size === "xll" ||
-            size === "xs") && <>Button text</>}
+            size === "xs") && <>Button textnpm </>}
 
           {(color === "transparent" || (color === "white" && size === "base")) && <>Sign In</>}
         </div>

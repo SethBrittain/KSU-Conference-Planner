@@ -24,6 +24,7 @@ export const NavbarsGeneric = ({ navStyle, className }: Props): JSX.Element => {
               size="base"
               state="focus"
               text="Sign In"
+              textClassName={navStyle === "about" ? "!text-[#111928]" : "!text-[#637381]"}
               type="primary"
             />
             <Button
@@ -33,6 +34,7 @@ export const NavbarsGeneric = ({ navStyle, className }: Props): JSX.Element => {
               size="base"
               state="default"
               text="Sign Up"
+              textClassName={navStyle === "about" ? "!text-[#111928]" : "!text-[#637381]"}
               type="primary"
             />
           </div>

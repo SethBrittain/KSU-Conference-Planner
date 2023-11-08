@@ -5,7 +5,7 @@ const ComponentTest = (): React.JSX.Element => {
     return (
         <div>
             <NavbarsGeneric navStyle='about' className={undefined}></NavbarsGeneric>
-            <Button text="test"></Button>
+            
         </div>
     ); 
 };

@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "./Button";
-import { MainInfo } from "./MainInfo";
-import { NavbarsGeneric } from "./NavbarsGeneric";
-import { PhotosAndInfo } from "./PhotosAndInfo";
+import { Button } from "../../Button/Button";
+import { MainInfo } from "../../MainInfo/MainInfo";
+import { NavbarsGeneric } from "../../Navbar/Navbar";
+import { PhotosAndInfo } from "../../PhotosAndInfo/PhotosAndInfo";
 import "./style.css";
 
 export const LandingPage = () => {
@@ -20,6 +20,8 @@ export const LandingPage = () => {
                 text="Current Sessions"
                 textClassName="design-component-instance-node"
                 type="primary"
+                color="default"
+                className="test"
               />
               <Button
                 icon="none"
@@ -28,6 +30,8 @@ export const LandingPage = () => {
                 text="Join The Event"
                 textClassName="button-2"
                 type="primary"
+                color="default"
+                className="test"
               />
             </div>
             <div className="frame-5">
@@ -39,20 +43,14 @@ export const LandingPage = () => {
               <PhotosAndInfo
                 className="photos-and-info-instance"
                 inverted={false}
-                rectangleClassName="photos-and-info-2"
-                sampleTextSampleClassName="photos-and-info-3"
-                text="Sample text Sample text Sample text Sample text Sample text Sample text&nbsp;&nbsp;text Sample text Sample text Sample text&nbsp;&nbsp;Sample text Sample text Sample text Sample text Sample text Sample text&nbsp;&nbsp;text Sample text Sample text Sample text&nbsp;&nbsp;Sample text Sample text Sample text Sample text Sample text Sample text&nbsp;&nbsp;text Sample text Sample text Sample text"
-              />
+                />
               <PhotosAndInfo
                 className="photos-and-info-instance"
                 inverted
-                rectangleClassName="photos-and-info-3"
-                sampleTextSampleClassName="photos-and-info-2"
-                text="Sample text Sample text Sample text Sample text Sample text Sample text&nbsp;&nbsp;text Sample text Sample text Sample text&nbsp;&nbsp;Sample text Sample text Sample text Sample text Sample text Sample text&nbsp;&nbsp;text Sample text Sample text Sample text&nbsp;&nbsp;Sample text Sample text Sample text Sample text Sample text Sample text&nbsp;&nbsp;text Sample text Sample text Sample text"
-              />
+               />
             </div>
           </div>
-          <NavbarsGeneric className="navbars-generic-instance" headerClassName="navbars-generic-2" style="home" />
+          <NavbarsGeneric className="navbars-generic-instance"  navStyle="home" />
         </div>
       </div>
     </div>

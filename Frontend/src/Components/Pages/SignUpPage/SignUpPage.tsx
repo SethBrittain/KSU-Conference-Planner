@@ -45,6 +45,7 @@ export const SignUpPage = () => {
                     state="default"
                     text="Sign Up"
                     type="primary"
+                    textClassName="testing"
                   />
                 </div>
               </div>
@@ -56,10 +57,11 @@ export const SignUpPage = () => {
                 state="default"
                 text="Sign In"
                 type="primary"
+                textClassName="testing"
               />
             </div>
           </div>
-          <NavbarsGeneric className="!absolute !left-0 !top-0" /*headerClassName="!w-[1440px]" */ navStyle="sign-up" />
+          <NavbarsGeneric navStyle="logout" className="!absolute !left-0 !top-0" /*headerClassName="!w-[1440px]" */ />
         </div>
       </div>
     </div>
