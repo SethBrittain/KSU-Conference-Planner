@@ -37,7 +37,7 @@ test('Navbar about bolded', () => {
     const navItem3 = screen.getByRole('Button', { name: /About/i})
     const navItem4 = screen.getByRole('Button', { name: /FAQ/i})
     const navItem5 = screen.getByRole('Button', { name: /Logout/i})
-    expect(navItem1).
+    expect(navItem1).toBeInTheDocument()
     expect(navItem2).toBeInTheDocument()
     expect(navItem3).toBeInTheDocument()
     expect(navItem4).toBeInTheDocument()
