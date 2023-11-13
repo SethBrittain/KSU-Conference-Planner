@@ -4,7 +4,7 @@ import { Checkbox } from "./Checkbox";
 import { NavbarsGeneric } from "../../Navbar/Navbar";
 import { RadioButtonItem } from "../../RadioButtonItem/RadioButtonItem";
 
-export const SignUpPage = (): JSX.Element => {
+export const SignUpPage2 = (): JSX.Element => {
   return (
     <div className="bg-[#ffffff] flex flex-row justify-center w-full">
       <div className="bg-[#ffffff] overflow-hidden w-[1440px] h-[1026px]">
