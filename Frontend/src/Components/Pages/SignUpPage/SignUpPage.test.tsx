@@ -7,7 +7,7 @@ import { PhotosAndInfo } from "../../PhotosAndInfo/PhotosAndInfo"
 
 test('SignUpPage Navbar renders correctly', () => {
     render(<SignUpPage></SignUpPage>)
-    //Narbar render test
+    //Navbar render test
     const navBar = screen.getByRole(NavbarsGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: Logout')

@@ -61,7 +61,7 @@ export const SignUpPage = () => {
               />
             </div>
           </div>
-          <NavbarsGeneric navStyle="logout" className="!absolute !left-0 !top-0" /*headerClassName="!w-[1440px]" */ />
+          <NavbarsGeneric navStyle="logout" className="!absolute !left-0 !top-0" /*headerClassName="!w-[1440px]"*/ />
         </div>
       </div>
     </div>
