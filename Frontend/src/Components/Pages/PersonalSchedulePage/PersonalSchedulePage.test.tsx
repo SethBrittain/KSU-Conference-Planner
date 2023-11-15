@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { NavbarsGeneric } from "../../Navbar/Navbar"
+import { NavbarsGeneralAttendee } from "../../Navbar/Navbar"
 import { MainInfo } from "../../MainInfo/MainInfo"
 import { Button } from "../../Button/Button"
 import { Checkbox } from "../../CheckBox/Checkbox"
@@ -10,7 +10,7 @@ import {SessionInfo} from "../Time/Time"
 test('PersonalSchedulePage renders correctly', () => {
     render(<PersonalSchedulePage></PersonalSchedulePage>)
     //Navbar render test
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarsGeneralAttendee) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: Your Schedule')
     //Text
