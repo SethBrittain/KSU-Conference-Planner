@@ -2,14 +2,22 @@ import { render, screen } from "@testing-library/react"
 import { Time } from "./Time"
 import { Button } from "../Button/Button"
 
-test('PhotosAndInfo renders correctly', () => {
+test('Time renders correctly', () => {
     render(<Time></Time>)
 
-    const signUpforSession = screen.getByRole(Button, { name: /SignUp/i})
-    const nameOfSession = screen.getByRole('text', { name: /SessionName/i})
-    const description = screen.getByRole('text', { name: /SessionDescription/i})
+    const firstTime = screen.getByRole("text", { name: /FirstTime/i})
+    const secondTime = screen.getByRole("text", { name: /SecondTime/i})
+    const thirdTime = screen.getByRole("text", { name: /ThirdTime/i})
+    const fourthTime = screen.getByRole("text", { name: /FourthTime/i})
+    const fifthTime = screen.getByRole("text", { name: /FifthTime/i})
+    const sixthTime = screen.getByRole("text", { name: /SixthTime/i})
+    const seventhTime = screen.getByRole("text", { name: /SeventhTime/i})
 
-    expect(signUpforSession).toBeInTheDocument()
-    expect(nameOfSession).toBeInTheDocument()
-    expect(description).toBeInTheDocument()
+    expect(firstTime).toBeInTheDocument()
+    expect(secondTime).toBeInTheDocument()
+    expect(thirdTime).toBeInTheDocument()
+    expect(fourthTime).toBeInTheDocument()
+    expect(fifthTime).toBeInTheDocument()
+    expect(sixthTime).toBeInTheDocument()
+    expect(seventhTime).toBeInTheDocument()
 })

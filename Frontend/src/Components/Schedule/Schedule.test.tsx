@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import { Schedule } from "./Schedule"
 
-test('PhotosAndInfo renders correctly', () => {
+test('Schedule renders correctly', () => {
     render(<Schedule></Schedule>)
 
     const roomNumber = screen.getByRole('text', { name: /RoomNumber/i})
