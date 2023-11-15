@@ -22,14 +22,46 @@ test('SignUpPage2 Navbar renders correctly', () => {
     expect(welcomeText).toBeInTheDocument()
     const createAccountText = screen.getByText("Create an account for the K-State Computer Science Conference")
     expect(createAccountText).toBeInTheDocument()
-    const SignUpText = screen.getByText("SignUpText")
-    expect(SignUpText).toBeInTheDocument()
-    
-    //Forms Test
-    const emailForm = screen.getByRole('form', {name: /Email Address/i})
-    expect(emailForm).toBeInTheDocument()
-    const passwordForm = screen.getByRole('form', {name: /Your Password/i})
-    expect(passwordForm).toBeInTheDocument()
-    const confirmPasswordForm = screen.getByRole('form', {name: /Confirm Password/i})
-    expect(confirmPasswordForm).toBeInTheDocument()
+
+    const firstName = screen.getByText("First Name")
+    expect(firstName).toBeInTheDocument()
+    const lastName = screen.getByText("Last Name")
+    expect(lastName).toBeInTheDocument()
+    const attendeeType = screen.getByText("Attendee Type")
+    expect(attendeeType).toBeInTheDocument()
+    const requestStatus = screen.getByText("Request Status")
+    expect(requestStatus).toBeInTheDocument()
+    const interestInPresenting = screen.getByText("Interest In Presenting")
+    expect(interestInPresenting).toBeInTheDocument()
+    //Buttons Test
+    const underGrad = screen.getByRole(Button, {name: /K-State Undergrad Student/i})
+    const grad = screen.getByRole(Button, {name: /K-State Graduate Student/i})
+    const alumni = screen.getByRole(Button, {name: /K-State Alumni/i})
+    const faculty = screen.getByRole(Button, {name: /K-State Faculty/i})
+    const hsTeacher = screen.getByRole(Button, {name: /High School Teacher/i})
+    expect(underGrad).toBeInTheDocument()
+    expect(grad).toBeInTheDocument()
+    expect(alumni).toBeInTheDocument()
+    expect(faculty).toBeInTheDocument()
+    expect(hsTeacher).toBeInTheDocument()
+
+    const presenting = screen.getByRole(Button, {name: /Interested/i})
+    const notPresenting = screen.getByRole(Button, {name: /Not Interested/i})
+    expect(presenting).toBeInTheDocument()
+    expect(notPresenting).toBeInTheDocument()
+
+    const next = screen.getByRole(Button, {name: /Next/i})
+    expect(next).toBeInTheDocument()
+    //Checkbox
+    const reviewer = screen.getByRole(Checkbox, {name: /Reviewer/i})
+    const scheduler = screen.getByRole(Checkbox, {name: /scheduler/i})
+    expect(reviewer).toBeInTheDocument()
+    expect(scheduler).toBeInTheDocument()
+
+    //Forms
+    const first = screen.getByRole('form', {name: /First Name/i})
+    expect(first).toBeInTheDocument()
+    const last = screen.getByRole('form', {name: /Last Name/i})
+    expect(last).toBeInTheDocument()
+
 });
