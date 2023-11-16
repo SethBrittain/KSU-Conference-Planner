@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../../Button/Button";
-import { NavbarsGeneric } from "../../Navbar/Navbar";
+import { NavbarsGeneric } from "../../NavbarGeneric/Navbar";
 
 export const SignUpPage = () => {
   return (

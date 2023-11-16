@@ -1,5 +1,5 @@
 import { Button } from '../../Button/Button';
-import { NavbarsGeneric } from '../../Navbar/Navbar';
+import { NavbarsGeneric } from '../../NavbarGeneric/Navbar';
 
 const ComponentTest = (): React.JSX.Element => { 
     return (

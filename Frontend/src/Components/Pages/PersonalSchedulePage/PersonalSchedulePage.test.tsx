@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { NavbarsGeneralAttendee } from "../../Navbar/Navbar"
+import { NavbarsGeneralAttendee } from "../../NavbarGeneric/Navbar"
 import { MainInfo } from "../../MainInfo/MainInfo"
 import { Button } from "../../Button/Button"
 import { Checkbox } from "../../CheckBox/Checkbox"

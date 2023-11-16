@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import { SignUpPage } from "./SignUpPage"
-import { NavbarsGeneric } from "../../Navbar/Navbar"
+import { NavbarsGeneric } from "../../NavbarGeneric/Navbar"
 import { MainInfo } from "../../MainInfo/MainInfo"
 import { Button } from "../../Button/Button"
 import { PhotosAndInfo } from "../../PhotosAndInfo/PhotosAndInfo"
