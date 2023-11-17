@@ -1,0 +1,20 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --body-medium-medium-font-family: "Inter-Medium", Helvetica;
+  --body-medium-medium-font-size: 16px;
+  --body-medium-medium-font-style: normal;
+  --body-medium-medium-font-weight: 500;
+  --body-medium-medium-letter-spacing: 0px;
+  --body-medium-medium-line-height: 24px;
+  --primary-text-color: rgba(99, 115, 129, 1);
+  --white: rgba(255, 255, 255, 1);
+  --whitewhite: rgba(255, 255, 255, 1);
+}
