@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../../Button/Button";
 import { MainInfo } from "../../MainInfo/MainInfo";
-import { NavbarsGeneric } from "../../NavbarGeneric/Navbar";
+import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric";
 import { PhotosAndInfo } from "../../PhotosAndInfo/PhotosAndInfo";
 import "./style.css";
 

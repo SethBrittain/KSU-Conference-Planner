@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import { SignUpPage2 } from "./SignUpPage2"
-import { NavbarsGeneric } from "../../NavbarGeneric/Navbar"
+import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
 import { MainInfo } from "../../MainInfo/MainInfo"
 import { Button } from "../../Button/Button"
 import { Checkbox } from "../../CheckBox/Checkbox"

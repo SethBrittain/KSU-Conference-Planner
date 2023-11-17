@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import { SignInPage } from "./SignInPage"
-import { NavbarsGeneric } from "../../NavbarGeneric/Navbar"
+import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
 
 test('SignUpPage Navbar renders correctly', () => {
     render(<SignInPage></SignInPage>)

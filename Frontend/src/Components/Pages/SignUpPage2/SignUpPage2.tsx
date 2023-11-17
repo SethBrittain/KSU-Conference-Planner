@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../../Button/Button";
-import { Checkbox } from "./Checkbox";
-import { NavbarsGeneric } from "../../NavbarGeneric/Navbar";
+import { Checkbox } from "../../CheckBox/Checkbox";
+import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric";
 import { RadioButtonItem } from "../../RadioButtonItem/RadioButtonItem";
 
 export const SignUpPage2 = (): JSX.Element => {

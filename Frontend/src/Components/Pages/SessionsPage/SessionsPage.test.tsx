@@ -3,7 +3,7 @@ import { SessionPage } from "./SessionPage"
 import { Time } from "../Time/Time"
 import { SessionInfo } from "../SessionInfo/SessionInfo"
 import { Schedule } from "../Schedule/Schedule"
-import { NavbarsGeneric } from "../../NavbarGeneric/Navbar"
+import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
 
 test('SessionsPage renders correctly', () => {
     render(<SessionPage></SessionPage>)

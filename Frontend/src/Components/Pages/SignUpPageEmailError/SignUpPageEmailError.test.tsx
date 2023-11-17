@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react"
 import { SignUpPage } from "./SignUpPage"
-import { NavbarsGeneric } from "../../NavbarGeneric/Navbar"
+import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
 import { Button } from "../../Button/Button"
-import { Error } from "../../Error/Error"
+import Error from "../../Error/Error"
 
 test('SignUpPage Navbar renders correctly', () => {
     render(<SignUpPage></SignUpPage>)
