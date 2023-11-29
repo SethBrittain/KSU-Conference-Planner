@@ -1,1 +1,2 @@
-Each component will have functional abilites it can accomplish. Each component was made to pass the test made for it.
+# React Components
+Each component was made to have functional abilities it could accomplish and had tests created before they were made so that their functionality was thought out by the group. 
