@@ -4,6 +4,7 @@ using System.Data;
 using System.Net.Mime;
 using Npgsql;
 using Microsoft.VisualBasic;
+using System.Security.Claims;
 
 namespace conference_planner.Controllers;
 
@@ -11,6 +12,13 @@ namespace conference_planner.Controllers;
 [Route("/api/[controller]")] 
 public class TestController : ControllerBase
 {
+    [HttpPost]
+    public IActionResult Post()
+    {
+        IEnumerable<Claim> a = HttpContext.User.Claims;
+        string result = a.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value ?? "N/A";
+        return Ok(a);
+    }
     [HttpGet]
     public async Task<IEnumerable<IEnumerable<string>>> Get(int which)
     {

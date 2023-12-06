@@ -4,7 +4,7 @@ FROM node:18 as build-stage1
 WORKDIR /client
 
 COPY Frontend/ ./
-
+COPY .env ./
 RUN npm install
 
 RUN npm run build
