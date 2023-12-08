@@ -11,6 +11,10 @@ using System.Security;
 using conference_planner.Identity;
 using conference_planner.Exceptions;
 
+/// <summary>
+/// Handles the HTTP POST request to create a new user.
+/// </summary>
+/// <returns>An IActionResult representing the HTTP response.</returns>
 namespace conference_planner.Controllers;
 
 [ApiController]
@@ -20,12 +24,24 @@ public class UserController : ControllerBase
     private IUserService _userService;
     private IPermissionService _permissionService;
     
+	/// <summary>
+	/// Initializes a new instance of the <see cref="UserController"/> class.
+	/// </summary>
+	/// <param name="userService"> The user service is injected into the controller. </param>
+	/// <param name="permissionService"> 
+	/// The permission servvice is injected into the controller. Not currently used. 
+	/// </param>
     public UserController(IUserService userService, IPermissionService permissionService)
     {
         _userService = userService;
         _permissionService = permissionService;
     }
 
+	/// <summary>
+	/// Handles the HTTP POST request. Requires authentication.
+	/// </summary>
+	/// <returns> The current user object. </returns>
+	/// <exception cref="UserNotFoundException"> Throws exception if user is not found. </exception>
     [HttpPost, Produces(MediaTypeNames.Application.Json)]
     [Authorize(AuthenticationSchemes = "Cookies")]
     public async Task<IActionResult> Post()
@@ -38,16 +54,4 @@ public class UserController : ControllerBase
         User currentUser = await _userService.GetUserById(uid);
         return Ok(currentUser);
     }
-
-    // [HttpPut, Produces(MediaTypeNames.Application.Json)]
-    // [Authorize(AuthenticationSchemes = "Bearer")]
-    // public async Task<IActionResult> Put()
-    // {
-    //     // Required to be authed
-    //     if (HttpContext.User.Identity is not ClaimsIdentity identity) return StatusCode(401);
-        
-    //     _userService.AddUser(u)
-
-    //     return Ok(currentUser);
-    // }
 }

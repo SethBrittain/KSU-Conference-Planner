@@ -10,16 +10,26 @@ using conference_planner.Exceptions;
 
 namespace conference_planner.services;
 
-
+/// <summary>
+/// Represents a service for managing user-related operations.
+/// </summary>
 public sealed class UserService : IUserService
 {
-    private readonly NpgsqlDataSource _dataSource;
+	private readonly NpgsqlDataSource _dataSource;
 
-    public UserService(NpgsqlDataSource conn)
-    {
-        this._dataSource = conn;
-    }
+	/// <summary>
+	/// Initializes a new instance of the <see cref="UserService"/> class.
+	/// </summary>
+	/// <param name="conn">The NpgsqlDataSource object used for database connection.</param>
+	public UserService(NpgsqlDataSource conn)
+	{
+		this._dataSource = conn;
+	}
 
+	/// <summary>
+	/// Deletes a user from the database.
+	/// </summary>
+	/// <param name="user">The user to delete.</param>
 	public async void DeleteUser(User user)
 	{
 		string sql = @"
@@ -35,6 +45,11 @@ public sealed class UserService : IUserService
 		}
 	}
 
+	/// <summary>
+	/// Retrieves a user from the database based on their email.
+	/// </summary>
+	/// <param name="email">The email of the user to retrieve.</param>
+	/// <returns>The user with the specified email.</returns>
 	public async Task<User> GetUserByEmail(string email)
 	{
 		string sql = @"
@@ -70,9 +85,14 @@ public sealed class UserService : IUserService
 					updatedOn: reader.GetDateTime(7)
 				);
 			}
-		}	
+		}    
 	}
 
+	/// <summary>
+	/// Retrieves a user from the database based on their ID.
+	/// </summary>
+	/// <param name="id">The ID of the user to retrieve.</param>
+	/// <returns>The user with the specified ID.</returns>
 	public async Task<User> GetUserById(long id)
 	{
 		string sql = @"
@@ -108,10 +128,18 @@ public sealed class UserService : IUserService
 					updatedOn: reader.GetDateTime(7)
 				);
 			}
-		}	
-	
+		}    
 	}
 
+	/// <summary>
+	/// Registers a new user in the database.
+	/// </summary>
+	/// <param name="email">The email of the user.</param>
+	/// <param name="firstName">The first name of the user.</param>
+	/// <param name="lastName">The last name of the user.</param>
+	/// <param name="dietary_restrictions">The dietary restrictions of the user.</param>
+	/// <param name="accommodations">The accommodations of the user.</param>
+	/// <returns>The newly registered user.</returns>
 	public async Task<User> RegisterUser(string email, string firstName, string lastName, string dietary_restrictions, string accommodations)
 	{
 		string sql = @"
@@ -147,6 +175,11 @@ public sealed class UserService : IUserService
 		}
 	}
 
+	/// <summary>
+	/// Updates a user in the database.
+	/// </summary>
+	/// <param name="user">The user to update.</param>
+	/// <returns>The updated user.</returns>
 	public async Task<User> UpdateUser(User user)
 	{
 		string sql = @"
