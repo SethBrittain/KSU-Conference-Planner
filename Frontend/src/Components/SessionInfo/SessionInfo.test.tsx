@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { SessionInfo } from "./SessionInfo"
+import { SessionInfo } from "./SessionInfo.tsx"
 import { Button } from "../Button/Button"
 
 test('SessionInfo renders correctly', () => {

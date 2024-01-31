@@ -1,8 +1,8 @@
 import React from "react";
 
-type PersonalScheduleProps = {
+type PersonalSchedulePageProps = {
     text: string;
 }
-const PersonalSchedule = ({ text }: PersonalScheduleProps): React.JSX.Element => <button>{ text }</button>;
+const PersonalSchedulePage = ({ text }: PersonalSchedulePageProps): React.JSX.Element => <button>{ text }</button>;
 
-export default PersonalSchedule;
+export default PersonalSchedulePage;
