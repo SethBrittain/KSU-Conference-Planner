@@ -9,20 +9,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
 import HelloWorld from './Components/Pages/HelloWorld/HelloWorld';
 import ApiTest from './Components/Pages/ApiTest/ApiTest';
+import {MuiButton} from './Components/Button/Button';
 
 // Main App Component
-function App() {
+function App()  {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" index element={<HelloWorld />} />
-          <Route path="/component-test" element={<ComponentTest />} />
-          <Route path="/rest-test" element={<ApiTest />} />
-        </Routes>
-      </BrowserRouter>
+    <div className='App'>
+      {}
+      <MuiButton/>
     </div>
-  );
+  )
 }
 
 export default App;

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import { NavbarsGeneric } from "./NavbarGeneric";
-import { Button } from "../Button/Button";
+import { MuiButton } from "../Button/Button";
 
 test('Navbar renders correctly', () => {
     render(<NavbarsGeneric navStyle='about' className={undefined}></NavbarsGeneric>)
@@ -42,13 +42,13 @@ test('Navbar about bolded', () => {
     expect(navBar).toHaveStyle('navstyle: about')
 
     //Bolded
-    const aboutButton = screen.getByRole(Button, { name: /'About'/i })
+    const aboutButton = screen.getByRole(MuiButton, { name: /'About'/i })
     expect(aboutButton).toHaveProperty('textClassName: !text-[#111928]')
 
     //Not Bolded
-    const FAQButton = screen.getByRole('Button', { name: /FAQ/i})
-    const sessionsButton = screen.getByRole('Button', { name: /Sessions/i})
-    const homeButton = screen.getByRole('Button', { name: /Home/i})
+    const FAQButton = screen.getByRole('MuiButton', { name: /FAQ/i})
+    const sessionsButton = screen.getByRole('MuiButton', { name: /Sessions/i})
+    const homeButton = screen.getByRole('MuiButton', { name: /Home/i})
 
     expect(FAQButton).toHaveProperty('textClassName: !text-[#637381]')
     expect(sessionsButton).toHaveProperty('textClassName: !text-[#637381]')
@@ -63,13 +63,13 @@ test('Navbar sessions bolded', () => {
     expect(navBar).toHaveStyle('navstyle: sessions')
 
     //Bolded
-    const sessionsButton = screen.getByRole(Button, { name: /'Sessions'/i })
+    const sessionsButton = screen.getByRole(MuiButton, { name: /'Sessions'/i })
     expect(sessionsButton).toHaveProperty('textClassName: !text-[#111928]')
 
     //Not Bolded
-    const FAQButton = screen.getByRole('Button', { name: /FAQ/i})
-    const aboutButton = screen.getByRole('Button', { name: /About/i})
-    const homeButton = screen.getByRole('Button', { name: /Home/i})
+    const FAQButton = screen.getByRole('MuiButton', { name: /FAQ/i})
+    const aboutButton = screen.getByRole('MuiButton', { name: /About/i})
+    const homeButton = screen.getByRole('MuiButton', { name: /Home/i})
 
     expect(FAQButton).toHaveProperty('textClassName: !text-[#637381]')
     expect(aboutButton).toHaveProperty('textClassName: !text-[#637381]')
@@ -84,13 +84,13 @@ test('Navbar FAQ bolded', () => {
     expect(navBar).toHaveStyle('navstyle: FAQ')
 
     //Bolded
-    const FAQButton = screen.getByRole(Button, { name: /'FAQ'/i })
+    const FAQButton = screen.getByRole(MuiButton, { name: /'FAQ'/i })
     expect(FAQButton).toHaveProperty('textClassName: !text-[#111928]')
 
     //Not Bolded
-    const sessionsButton = screen.getByRole('Button', { name: /Sessions/i})
-    const aboutButton = screen.getByRole('Button', { name: /About/i})
-    const homeButton = screen.getByRole('Button', { name: /Home/i})
+    const sessionsButton = screen.getByRole('MuiButton', { name: /Sessions/i})
+    const aboutButton = screen.getByRole('MuiButton', { name: /About/i})
+    const homeButton = screen.getByRole('MuiButton', { name: /Home/i})
 
     expect(sessionsButton).toHaveProperty('textClassName: !text-[#637381]')
     expect(aboutButton).toHaveProperty('textClassName: !text-[#637381]')
@@ -105,7 +105,7 @@ test('Navbar home bolded', () => {
     expect(navBar).toHaveStyle('navstyle: home')
 
     //Bolded
-    const homeButton = screen.getByRole(Button, { name: /'home'/i })
+    const homeButton = screen.getByRole(MuiButton, { name: /'home'/i })
     expect(homeButton).toHaveProperty('textClassName: !text-[#111928]')
 
     //Not Bolded
@@ -125,16 +125,16 @@ test('Navbar will not have signUp or signIn buttons', () => {
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: logout')
 
-    const SignUpButton = screen.getByRole(Button, { name: /'SignUp'/i })
-    const SignInButton = screen.getByRole(Button, { name: /'SignIn'/i })
+    const SignUpButton = screen.getByRole(MuiButton, { name: /'SignUp'/i })
+    const SignInButton = screen.getByRole(MuiButton, { name: /'SignIn'/i })
     expect(SignUpButton).not.toBeInTheDocument()
     expect(SignInButton).not.toBeInTheDocument()
 
     //Not Bolded
-    const homeButton = screen.getByRole('Button', { name: /Home/i})
-    const sessionsButton = screen.getByRole('Button', { name: /Sessions/i})
-    const aboutButton = screen.getByRole('Button', { name: /About/i})
-    const FAQButton = screen.getByRole('Button', { name: /FAQ/i})
+    const homeButton = screen.getByRole('MuiButton', { name: /Home/i})
+    const sessionsButton = screen.getByRole('MuiButton', { name: /Sessions/i})
+    const aboutButton = screen.getByRole('MuiButton', { name: /About/i})
+    const FAQButton = screen.getByRole('MuiButton', { name: /FAQ/i})
 
     expect(homeButton).toHaveProperty('textClassName: !text-[#637381]')
     expect(sessionsButton).toHaveProperty('textClassName: !text-[#637381]')

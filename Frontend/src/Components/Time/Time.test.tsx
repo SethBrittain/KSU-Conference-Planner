@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import { Time } from "./Time"
-import { Button } from "../Button/Button"
+import { MuiButton } from "../Button/Button"
 
 test('Time renders correctly', () => {
     render(<Time></Time>)
@@ -20,4 +20,5 @@ test('Time renders correctly', () => {
     expect(fifthTime).toBeInTheDocument()
     expect(sixthTime).toBeInTheDocument()
     expect(seventhTime).toBeInTheDocument()
-})
+}
+)

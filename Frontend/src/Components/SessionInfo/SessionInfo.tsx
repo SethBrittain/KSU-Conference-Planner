@@ -1,8 +1,8 @@
 import React from "react";
+import { MuiButton } from "../Button/Button";
 
 type SessionInfoProps = {
     text: string;
 }
-const SessionInfo = ({ text }: SessionInfoProps): React.JSX.Element => <button>{ text }</button>;
 
-export default SessionInfo;
+export const SessionInfo = ({ text }: SessionInfoProps): React.JSX.Element => <MuiButton></MuiButton>;
