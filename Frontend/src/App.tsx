@@ -7,19 +7,12 @@ THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
-import HelloWorld from './Components/Pages/HelloWorld/HelloWorld';
-import ApiTest from './Components/Pages/ApiTest/ApiTest';
-import { MuiButton } from './Components/Button/Button';
-import NavbarGeneric from './Components/NavbarGeneric/NavbarGeneric';
-import NavbarGeneralAttendee from './Components/NavbarGeneralAttendee/NavbarGeneralAttendee';
+
 // Main App Component
 function App()  {
   return (
     <div className="App">
-      
-      <NavbarGeneric></NavbarGeneric>
-
-      <NavbarGeneralAttendee></NavbarGeneralAttendee>
+      <ComponentTest/>
     </div>
   )
 }

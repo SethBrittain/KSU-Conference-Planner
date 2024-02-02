@@ -1,9 +1,6 @@
 import React from "react";
 import { AppBar, IconButton, Toolbar, Typography, Stack, Button, Box} from "@mui/material";
 
-type NavbarGeneralAttendeeProps = {
-    navStyle: string;
-}
 const NavbarGeneralAttendee = () =>
 {
     return(

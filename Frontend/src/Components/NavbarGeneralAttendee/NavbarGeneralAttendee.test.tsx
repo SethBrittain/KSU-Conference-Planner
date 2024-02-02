@@ -3,7 +3,7 @@ import NavbarGeneralAttendee from "./NavbarGeneralAttendee";
 import { MuiButton } from "../Button/Button";
 
 test('Navbar renders correctly', () => {
-    render(<NavbarGeneralAttendee navStyle='Home' ></NavbarGeneralAttendee>)
+    render(<NavbarGeneralAttendee ></NavbarGeneralAttendee>)
     const navItem1 = screen.getByText('Home')
     const navItem2 = screen.getByText('Sessions')
     const navItem3 = screen.getByText('About')
@@ -19,7 +19,7 @@ test('Navbar renders correctly', () => {
 });
 
 test('Navbar items are buttons', () => {
-    render(<NavbarGeneralAttendee navStyle='Home' ></NavbarGeneralAttendee>)
+    render(<NavbarGeneralAttendee ></NavbarGeneralAttendee>)
     const navItem1 = screen.getByRole('Button', { name: /Home/i})
     const navItem2 = screen.getByRole('Button', { name: /Sessions/i})
     const navItem3 = screen.getByRole('Button', { name: /About/i})
@@ -33,7 +33,7 @@ test('Navbar items are buttons', () => {
 });
 
 test('Navbar home bolded', () => {
-    render(<NavbarGeneralAttendee navStyle='Home' ></NavbarGeneralAttendee>)
+    render(<NavbarGeneralAttendee  ></NavbarGeneralAttendee>)
     
     const navBar = screen.getByRole(NavbarGeneralAttendee) 
     expect(navBar).toBeInTheDocument()
@@ -54,7 +54,7 @@ test('Navbar home bolded', () => {
 });
 
 test('Navbar sessions bolded', () => {
-    render(<NavbarGeneralAttendee navStyle='sessions' ></NavbarGeneralAttendee>)
+    render(<NavbarGeneralAttendee ></NavbarGeneralAttendee>)
     
     const navBar = screen.getByRole(NavbarGeneralAttendee) 
     expect(navBar).toBeInTheDocument()
@@ -75,7 +75,7 @@ test('Navbar sessions bolded', () => {
 });
 
 test('Navbar FAQ bolded', () => {
-    render(<NavbarGeneralAttendee navStyle='FAQ' ></NavbarGeneralAttendee>)
+    render(<NavbarGeneralAttendee ></NavbarGeneralAttendee>)
     
     const navBar = screen.getByRole(NavbarGeneralAttendee) 
     expect(navBar).toBeInTheDocument()
@@ -96,7 +96,7 @@ test('Navbar FAQ bolded', () => {
 });
 
 test('Navbar about bolded', () => {
-    render(<NavbarGeneralAttendee navStyle='about' ></NavbarGeneralAttendee>)
+    render(<NavbarGeneralAttendee ></NavbarGeneralAttendee>)
     
     const navBar = screen.getByRole(NavbarGeneralAttendee) 
     expect(navBar).toBeInTheDocument()
