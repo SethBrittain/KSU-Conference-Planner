@@ -2,6 +2,9 @@ import { MuiButton } from '../../Button/Button';
 import { MainInfo } from '../../MainInfo/MainInfo';
 import NavbarGeneric from '../../NavbarGeneric/NavbarGeneric';
 import NavbarGeneralAttendee from '../../NavbarGeneralAttendee/NavbarGeneralAttendee';
+import NavbarPresenter from '../../NavbarPresenter/NavbarPresenter';
+import NavbarReviewer from '../../NavbarReviewer/NavbarReviewer';
+import NavbarScheduler from '../../NavbarScheduler/NavbarScheduler';
 
 const ComponentTest = (): React.JSX.Element => { 
     return (
@@ -15,6 +18,10 @@ const ComponentTest = (): React.JSX.Element => {
             <NavbarGeneric></NavbarGeneric>
 
             <NavbarGeneralAttendee></NavbarGeneralAttendee>
+
+            <NavbarPresenter></NavbarPresenter>
+            <NavbarReviewer></NavbarReviewer>
+            <NavbarScheduler></NavbarScheduler>
         </div>
     ); 
 };
