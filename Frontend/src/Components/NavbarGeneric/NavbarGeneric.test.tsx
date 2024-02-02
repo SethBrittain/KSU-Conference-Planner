@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react"
-import { NavbarsGeneric } from "./NavbarGeneric";
+import NavbarGeneric from "./NavbarGeneric";
 import { MuiButton } from "../Button/Button";
 
 test('Navbar renders correctly', () => {
-    render(<NavbarsGeneric navStyle='about' className={undefined}></NavbarsGeneric>)
+    render(<NavbarGeneric navStyle='about' ></NavbarGeneric>)
     const navItem1 = screen.getByText('Home')
     const navItem2 = screen.getByText('Sessions')
     const navItem3 = screen.getByText('About')
@@ -19,7 +19,7 @@ test('Navbar renders correctly', () => {
 });
 
 test('Navbar items are buttons', () => {
-    render(<NavbarsGeneric navStyle='about' className={undefined}></NavbarsGeneric>)
+    render(<NavbarGeneric navStyle='about' ></NavbarGeneric>)
     const navItem1 = screen.getByRole('Button', { name: /Home/i})
     const navItem2 = screen.getByRole('Button', { name: /Sessions/i})
     const navItem3 = screen.getByRole('Button', { name: /About/i})
@@ -35,9 +35,9 @@ test('Navbar items are buttons', () => {
 });
 
 test('Navbar about bolded', () => {
-    render(<NavbarsGeneric navStyle='about' className={undefined}></NavbarsGeneric>)
+    render(<NavbarGeneric navStyle='about' ></NavbarGeneric>)
     
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: about')
 
@@ -56,9 +56,9 @@ test('Navbar about bolded', () => {
 });
 
 test('Navbar sessions bolded', () => {
-    render(<NavbarsGeneric navStyle='sessions' className={undefined}></NavbarsGeneric>)
+    render(<NavbarGeneric navStyle='sessions' ></NavbarGeneric>)
     
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: sessions')
 
@@ -77,9 +77,9 @@ test('Navbar sessions bolded', () => {
 });
 
 test('Navbar FAQ bolded', () => {
-    render(<NavbarsGeneric navStyle='FAQ' className={undefined}></NavbarsGeneric>)
+    render(<NavbarGeneric navStyle='FAQ' ></NavbarGeneric>)
     
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: FAQ')
 
@@ -98,9 +98,9 @@ test('Navbar FAQ bolded', () => {
 });
 
 test('Navbar home bolded', () => {
-    render(<NavbarsGeneric navStyle='home' className={undefined}></NavbarsGeneric>)
+    render(<NavbarGeneric navStyle='home' ></NavbarGeneric>)
     
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: home')
 
@@ -119,9 +119,9 @@ test('Navbar home bolded', () => {
 });
 
 test('Navbar will not have signUp or signIn buttons', () => {
-    render(<NavbarsGeneric navStyle='logout' className={undefined}></NavbarsGeneric>)
+    render(<NavbarGeneric navStyle='logout' ></NavbarGeneric>)
     
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: logout')
 

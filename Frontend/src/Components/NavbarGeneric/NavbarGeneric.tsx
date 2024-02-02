@@ -1,8 +1,8 @@
 import React from "react";
 
 type NavbarGenericProps = {
-    text: string;
+    navStyle: string;
 }
-const NavbarGeneric = ({ text }: NavbarGenericProps): React.JSX.Element => <button>{ text }</button>;
+const NavbarGeneric = ({ navStyle }: NavbarGenericProps): React.JSX.Element => <button>{ navStyle }</button>;
 
 export default NavbarGeneric;

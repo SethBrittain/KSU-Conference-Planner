@@ -1,16 +1,14 @@
 import { render, screen } from "@testing-library/react"
-import { NavbarsGeneralAttendee } from "../../NavbarsGeneralAttendee/NavbarsGeneralAttendee"
-import { MainInfo } from "../../MainInfo/MainInfo"
-import { Button } from "../../Button/Button"
-import { Checkbox } from "../../CheckBox/Checkbox"
-import { PhotosAndInfo } from "../../PhotosAndInfo/PhotosAndInfo"
-import {Schedule} from "../Schedule/Schedule"
-import {SessionInfo} from "../Time/Time"
+import NavbarGeneralAttendee from "../../NavbarGeneralAttendee/NavbarGeneralAttendee"
+import { MuiButton } from "../../Button/Button"
+import Schedule from "../../Schedule/Schedule"
+import { SessionInfo } from "../../SessionInfo/SessionInfo"
+import PersonalSchedulePage from "./PersonalSchedulePage"
 
 test('PersonalSchedulePage renders correctly', () => {
-    render(<PersonalSchedulePage></PersonalSchedulePage>)
+    render(<PersonalSchedulePage text='TODO'></PersonalSchedulePage>)
     //Navbar render test
-    const navBar = screen.getByRole(NavbarsGeneralAttendee) 
+    const navBar = screen.getByRole(NavbarGeneralAttendee) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: Your Schedule')
     //Text
@@ -24,6 +22,6 @@ test('PersonalSchedulePage renders correctly', () => {
     const schedule = screen.getByRole(Schedule)
     expect(schedule).toBeInTheDocument()
     //Button render test
-    const drop = screen.getByRole(Button)
+    const drop = screen.getByRole(MuiButton)
     expect(drop).toBeInTheDocument()
 });

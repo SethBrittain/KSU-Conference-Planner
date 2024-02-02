@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react"
-import { Schedule } from "./Schedule"
+import Schedule from "./Schedule"
 
 test('Schedule renders correctly', () => {
-    render(<Schedule></Schedule>)
+    render(<Schedule text='TODO'></Schedule>)
 
     const roomNumber = screen.getByRole('text', { name: /RoomNumber/i})
     const title = screen.getByRole('text', { name: /Title/i})

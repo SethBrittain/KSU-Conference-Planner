@@ -1,8 +1,17 @@
-import React from "react";
+import { Box, Card, CardContent, Typography } from "@mui/material"
 
-type MainInfoProps = {
-    text: string;
+export const MainInfo = () => {
+    return <Box width='300px'>
+        <Card>
+            <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
+                    React
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                    These are wordsssssssssssssssssssssssssssssss
+                    aadjskljalsd kjjjjjjjjkdjsakldj aslkjdaslkd jaslk
+                </Typography>
+            </CardContent>
+        </Card>
+    </Box>
 }
-const Error = ({ text }: MainInfoProps): React.JSX.Element => <button>{ text }</button>;
-
-export default Error;

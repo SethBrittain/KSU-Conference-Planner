@@ -1,9 +1,8 @@
 import { render, screen } from "@testing-library/react"
 import { Time } from "./Time"
-import { MuiButton } from "../Button/Button"
 
 test('Time renders correctly', () => {
-    render(<Time></Time>)
+    render(<Time text='TODO'></Time>)
 
     const firstTime = screen.getByRole("text", { name: /FirstTime/i})
     const secondTime = screen.getByRole("text", { name: /SecondTime/i})

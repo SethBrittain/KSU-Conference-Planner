@@ -1,17 +1,17 @@
 import { render, screen } from "@testing-library/react"
-import { SignUpPage3 } from "./SignUpPage3"
-import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
-import { Button } from "../../Button/Button"
+import SignUpPage3 from "./SignUpPage3";
+import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
+import { MuiButton } from "../../Button/Button";
 
 test('SignUpPage Navbar renders correctly', () => {
-    render(<SignUpPage3></SignUpPage3>)
+    render(<SignUpPage3 text='TODO'></SignUpPage3>)
     //Navbar render test
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: Logout')
 
     //Button test
-    const signInButton = screen.getByRole(Button, {name: /Finish Sign Up/i})
+    const signInButton = screen.getByRole(MuiButton, {name: /Finish Sign Up/i})
     expect(signInButton).toBeInTheDocument()
 
     //Text test

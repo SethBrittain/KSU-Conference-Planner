@@ -1,10 +1,11 @@
 import { MuiButton } from '../../Button/Button';
-import { NavbarsGeneric } from '../../NavbarGeneric/NavbarGeneric';
+import { MainInfo } from '../../MainInfo/MainInfo';
 
 const ComponentTest = (): React.JSX.Element => { 
     return (
         <div>
-            <MuiButton/>
+            {/* <MuiButton/> */}
+            { <MainInfo></MainInfo> }
         </div>
     ); 
 };

@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react"
-import { SessionPage } from "./SessionPage"
-import { Time } from "../Time/Time"
-import { SessionInfo } from "../SessionInfo/SessionInfo"
-import { Schedule } from "../Schedule/Schedule"
-import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
+import { Time } from "../../Time/Time"
+import { SessionInfo } from "../../SessionInfo/SessionInfo"
+import Schedule from "../../Schedule/Schedule"
+import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
+import SessionsPage from "../SessionsPage/SessionsPage"
 
 test('SessionsPage renders correctly', () => {
-    render(<SessionPage></SessionPage>)
+    render(<SessionsPage text='TODO'></SessionsPage>)
 
     const text = screen.getByText("Sessions")
 
@@ -17,7 +17,7 @@ test('SessionsPage renders correctly', () => {
     const sessionThree = screen.getByRole(Schedule, { name: /SessionThree/i})
     
     //Navbar test
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: sessions')
 

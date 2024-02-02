@@ -1,8 +1,8 @@
 import React from "react";
 
 type NavbarGeneralAttendeeProps = {
-    text: string;
+    navStyle: string;
 }
-const NavbarGeneralAttendee = ({ text }: NavbarGeneralAttendeeProps): React.JSX.Element => <button>{ text }</button>;
+const NavbarGeneralAttendee = ({ navStyle }: NavbarGeneralAttendeeProps): React.JSX.Element => <button>{ navStyle }</button>;
 
 export default NavbarGeneralAttendee;

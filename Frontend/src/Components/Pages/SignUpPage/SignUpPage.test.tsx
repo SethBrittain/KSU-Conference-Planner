@@ -1,14 +1,11 @@
 import { render, screen } from "@testing-library/react"
-import { SignUpPage } from "./SignUpPage"
-import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
-import { MainInfo } from "../../MainInfo/MainInfo"
-import { Button } from "../../Button/Button"
-import { PhotosAndInfo } from "../../PhotosAndInfo/PhotosAndInfo"
+import SignUpPage from "./SignUpPage";
+import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
 
 test('SignUpPage Navbar renders correctly', () => {
-    render(<SignUpPage></SignUpPage>)
+    render(<SignUpPage text='TODO'></SignUpPage>)
     //Navbar render test
-    const navBar = screen.getByRole(NavbarsGeneric) 
+    const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: Logout')
 

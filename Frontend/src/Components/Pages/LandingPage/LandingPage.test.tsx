@@ -1,16 +1,16 @@
 import { render, screen } from "@testing-library/react"
-import { LandingPage } from "./LandingPage"
-import { NavbarsGeneric } from "../../NavbarGeneric/NavbarGeneric"
+import LandingPage from "./LandingPage"
+import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
 import { MainInfo } from "../../MainInfo/MainInfo"
-import { Button } from "../../Button/Button"
-import { PhotosAndInfo } from "../../PhotosAndInfo/PhotosAndInfo"
+import { MuiButton } from "../../Button/Button"
+import PhotosAndInfo from "../../PhotosAndInfo/PhotosAndInfo"
 
 test('Landing Page renders correctly', () => {
-    render(<LandingPage></LandingPage>)
-    const navBar = screen.getByRole(NavbarsGeneric)
+    render(<LandingPage text="TODO"></LandingPage>)
+    const navBar = screen.getByRole(NavbarGeneric)
     const picture = screen.getByRole('img')
-    const currentSessions = screen.getByRole(Button, {name: /CurrentSessionsButton/i} )
-    const joinEvent = screen.getByRole(Button, {name: /JoinEventButton/i})
+    const currentSessions = screen.getByRole(MuiButton, {name: /CurrentSessionsButton/i} )
+    const joinEvent = screen.getByRole(MuiButton, {name: /JoinEventButton/i})
     const MainInfo1 = screen.getByRole(MainInfo, {name: /MainInfo1/i})
     const MainInfo2 = screen.getByRole(MainInfo, {name: /MainInfo2/i})
     const MainInfo3 = screen.getByRole(MainInfo, {name: /MainInfo3/i})
