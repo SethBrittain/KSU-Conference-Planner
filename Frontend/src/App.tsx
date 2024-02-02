@@ -15,8 +15,7 @@ import {MuiButton} from './Components/Button/Button';
 function App()  {
   return (
     <div className='App'>
-      {}
-      <MuiButton/>
+      <ComponentTest/>
     </div>
   )
 }
