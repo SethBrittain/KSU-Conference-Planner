@@ -5,7 +5,7 @@ import NavbarGeneralAttendee from '../../NavbarGeneralAttendee/NavbarGeneralAtte
 import NavbarPresenter from '../../NavbarPresenter/NavbarPresenter';
 import NavbarReviewer from '../../NavbarReviewer/NavbarReviewer';
 import NavbarScheduler from '../../NavbarScheduler/NavbarScheduler';
-
+import { PhotoCarousel } from '../../PhotoCarousel/PhotoCarousel';
 const ComponentTest = (): React.JSX.Element => { 
     return (
         <div>
@@ -16,7 +16,7 @@ const ComponentTest = (): React.JSX.Element => {
             description='This is a test description. I am not great at writing these. Hope this works'/>
             }
             <NavbarGeneric></NavbarGeneric>
-
+            <PhotoCarousel></PhotoCarousel>
             <NavbarGeneralAttendee></NavbarGeneralAttendee>
 
             <NavbarPresenter></NavbarPresenter>
