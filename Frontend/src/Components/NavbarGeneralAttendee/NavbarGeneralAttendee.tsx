@@ -19,7 +19,7 @@ const NavbarGeneralAttendee = () =>
                 </Stack>
                 <Stack direction ='row' spacing = {2} sx={{ flexGrow: 0  }}>
                     <Button style={{ color: '#000000'}} >Sign In</Button>
-                    <Button style={{ color: '#000000', backgroundColor: '#512888'}}>Sign Up</Button>
+                    <Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Sign Up</Button>
                 </Stack>
             </Toolbar>
         </AppBar>
