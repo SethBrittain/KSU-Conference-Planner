@@ -6,7 +6,7 @@ import { MuiButton } from "../../Button/Button"
 import PhotosAndInfo from "../../PhotosAndInfo/PhotosAndInfo"
 
 test('Landing Page renders correctly', () => {
-    render(<LandingPage text="TODO"></LandingPage>)
+    render(<LandingPage></LandingPage>)
     const navBar = screen.getByRole(NavbarGeneric)
     const picture = screen.getByRole('img')
     const currentSessions = screen.getByRole(MuiButton, {name: /CurrentSessionsButton/i} )

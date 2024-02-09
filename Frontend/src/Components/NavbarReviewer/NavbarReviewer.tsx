@@ -19,7 +19,7 @@ const NavbarReviewer = () =>
                     <Button style={{ color: '#000000'}}>Application Review</Button>
                 </Stack>
                 <Stack direction ='row' spacing = {2} sx={{ flexGrow: 0  }}>
-                    <Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Log Out</Button>
+                    <Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Sign Out</Button>
                 </Stack>
             </Toolbar>
         </AppBar>

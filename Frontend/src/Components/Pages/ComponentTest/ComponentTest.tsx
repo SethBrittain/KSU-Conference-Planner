@@ -1,3 +1,4 @@
+//import React from 'react'
 import { MuiButton } from '../../Button/Button';
 import { MainInfo } from '../../MainInfo/MainInfo';
 import NavbarGeneric from '../../NavbarGeneric/NavbarGeneric';
@@ -7,24 +8,31 @@ import NavbarReviewer from '../../NavbarReviewer/NavbarReviewer';
 import NavbarScheduler from '../../NavbarScheduler/NavbarScheduler';
 import { PhotoCarousel } from '../../PhotoCarousel/PhotoCarousel';
 
+import React, { useLayoutEffect, useState } from 'react';
+import {Stack} from '@mui/material';
+import { Dimensions } from 'react-native';
+import LandingPage from '../LandingPage/LandingPage';
+
+function useWindowSize() {
+    const [size, setSize] = useState([0,0]);
+    useLayoutEffect(()=> { 
+        function updateSize()
+        {
+            setSize([window.innerWidth, window.innerHeight]);
+        }
+       window.addEventListener('resize', updateSize);
+       updateSize();
+       return() => window.removeEventListener('resize', updateSize);
+    }, []);
+    return size;
+}
+
 
 const ComponentTest = (): React.JSX.Element => { 
-    return (
-        <div>
-            { <MuiButton/> }
-            { <MainInfo 
-            image='https://source.unsplash.com/random'
-            title='Test Title'
-            description='This is a test description. I am not great at writing these. Hope this works'/>
-            }
-            <NavbarGeneric></NavbarGeneric>
-            <PhotoCarousel></PhotoCarousel>
-            <NavbarGeneralAttendee></NavbarGeneralAttendee>
+    const size = useWindowSize();
 
-            <NavbarPresenter></NavbarPresenter>
-            <NavbarReviewer></NavbarReviewer>
-            <NavbarScheduler></NavbarScheduler>
-        </div>
+    return (
+       <LandingPage></LandingPage>
     ); 
 };
 
