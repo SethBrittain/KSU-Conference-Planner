@@ -6,6 +6,7 @@ import NavbarPresenter from '../../NavbarPresenter/NavbarPresenter';
 import NavbarReviewer from '../../NavbarReviewer/NavbarReviewer';
 import NavbarScheduler from '../../NavbarScheduler/NavbarScheduler';
 import { PhotoCarousel } from '../../PhotoCarousel/PhotoCarousel';
+import { MuiLayout } from '../../Stack/Stack';
 
 
 const ComponentTest = (): React.JSX.Element => { 
@@ -24,6 +25,8 @@ const ComponentTest = (): React.JSX.Element => {
             <NavbarPresenter></NavbarPresenter>
             <NavbarReviewer></NavbarReviewer>
             <NavbarScheduler></NavbarScheduler>
+            <MuiLayout backgroundColor='black' color='limegreen' border='5px' 
+            text='This is test text. I am great at writing these. I know this will work.'></MuiLayout>
         </div>
     ); 
 };
