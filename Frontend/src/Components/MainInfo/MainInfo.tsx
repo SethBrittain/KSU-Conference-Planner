@@ -14,11 +14,11 @@ type MainInfoProps = {
 
 export const MainInfo = ({ image, title, description }: MainInfoProps) => {
     return ( 
-    <Box width='300px'>
+    <Box width='15vw'>
         <Card>
             <CardMedia
                 component = 'img'
-                height = '140'
+                height = '10vh'
                 image={ image }
                 alt='unslashImage'
             />

@@ -13,11 +13,11 @@ function useWindowSize() {
     useLayoutEffect(()=> { 
         function updateSize()
         {
-            setSize([window.innerWidth, window.innerHeight-1]);
+            setSize([window.innerWidth-1, window.innerHeight-1]);
         }
-       window.addEventListener('resize', updateSize);
+       window.addEventListener('scroll resize', updateSize);
        updateSize();
-       return() => window.removeEventListener('resize', updateSize);
+       return() => window.removeEventListener('scroll resize', updateSize);
     }, []);
     return size;
 }
@@ -27,33 +27,37 @@ const LandingPage = (): React.JSX.Element => {
 
     return (
         <div style={{
-            backgroundColor: 'white',
             width: size[0],
-            height: size[1]
+            height: size[1],
+            minHeight: '50vh',
+            minWidth: '50wh',
+            backgroundColor: 'white'
           }}>
-        
+            
            <NavbarGeneric/>
-            <Stack direction ='row' paddingLeft={(size[0])/50} paddingRight={(size[0])/50} spacing={(size[0])/150} sx={{ flexGrow: 1}}>
-             <MainInfo 
-            image='https://source.unsplash.com/random'
-            title='Test Title'
-            description='This is a test description. I am not great at writing these. Hope this works'/>
+           <Stack direction = 'column' alignItems={'center'}>
+                <Stack direction ='row' spacing={(size[0])/150} sx={{ flexGrow: 1, flex:1}}>
+                <MainInfo 
+                image='https://source.unsplash.com/random'
+                title='Test Title'
+                description='This is a test description. I am not great at writing these. Hope this works'/>
             
-            <MainInfo 
-            image='https://source.unsplash.com/random'
-            title='Test Title'
-            description='This is a test description. I am not great at writing these. Hope this works'/>
+                <MainInfo 
+                image='https://source.unsplash.com/random'
+                title='Test Title'
+                description='This is a test description. I am not great at writing these. Hope this works'/>
             
-            <MainInfo 
-            image='https://source.unsplash.com/random'
-            title='Test Title'
-            description='This is a test description. I am not great at writing these. Hope this works'/>
+                <MainInfo 
+                image='https://source.unsplash.com/random'
+                title='Test Title'
+                description='This is a test description. I am not great at writing these. Hope this works'/>
 
+                </Stack>
+            
+                {/*<PhotosAndInfo image = 'https://source.unsplash.com/random'/>*/}
+                
             </Stack>
             
-            <PhotosAndInfo image = 'https://source.unsplash.com/random'></PhotosAndInfo>
-
-
         </div>
     ); 
 };
