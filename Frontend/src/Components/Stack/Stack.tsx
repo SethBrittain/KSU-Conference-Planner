@@ -1,13 +1,20 @@
 import * as React from 'react';
 import { Box, Stack } from '@mui/material'
 
-export const MuiLayout = () => {
+type StackProps = {
+    border: string;
+    backgroundColor: string;
+    color: string;
+    text: string;
+}
+
+export const MuiLayout = ({border, backgroundColor, color, text}: StackProps) => {
     return (
-        <Stack sx={{ border: '1px solid' }}>
+        <Stack sx={{ border: border }}>
             <Box 
                 sx={{
-                    backgroundColor: 'primary.main',
-                    color: 'white',
+                    backgroundColor: backgroundColor,
+                    color: color,
                     height: '100px',
                     padding: '16px',
                     '&:hover': {
@@ -15,7 +22,7 @@ export const MuiLayout = () => {
                     },
                 }}
             >
-                Codevolution
+                {text}
             </Box>
             <Box
             ></Box>
