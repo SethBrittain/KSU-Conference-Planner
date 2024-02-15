@@ -10,7 +10,6 @@ import { PhotoCarousel } from '../../PhotoCarousel/PhotoCarousel';
 
 import React, { useLayoutEffect, useState } from 'react';
 import {Stack} from '@mui/material';
-import { Dimensions } from 'react-native';
 import LandingPage from '../LandingPage/LandingPage';
 
 function useWindowSize() {

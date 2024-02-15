@@ -38,23 +38,25 @@ const LandingPage = (): React.JSX.Element => {
            <Stack direction = 'column' alignItems={'center'}>
                 <Stack direction ='row' spacing={(size[0])/150} sx={{ flexGrow: 1, flex:1}}>
                 <MainInfo 
-                image='https://source.unsplash.com/random'
+                image='https://picsum.photos/200/300'
                 title='Test Title'
                 description='This is a test description. I am not great at writing these. Hope this works'/>
             
                 <MainInfo 
-                image='https://source.unsplash.com/random'
+                image='https://picsum.photos/100'
                 title='Test Title'
                 description='This is a test description. I am not great at writing these. Hope this works'/>
             
                 <MainInfo 
-                image='https://source.unsplash.com/random'
+                image='https://picsum.photos/400/500'
                 title='Test Title'
                 description='This is a test description. I am not great at writing these. Hope this works'/>
 
                 </Stack>
             
                 {/*<PhotosAndInfo image = 'https://source.unsplash.com/random'/>*/}
+                {/*<img src="https://picsum.photos/200/300?random=1">
+                   <img src="https://picsum.photos/200/300?random=2"> */}
                 
             </Stack>
             
