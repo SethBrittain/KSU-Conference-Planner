@@ -14,23 +14,23 @@ type MainInfoProps = {
 
 export const MainInfo = ({ image, title, description }: MainInfoProps) => {
     return ( 
-    <Box width='15vw'>
+    <Box width='20vw' height='30vh' columnGap={10}>
         <Card>
             <CardMedia
                 component = 'img'
-                height = '10vh'
                 image={ image }
                 alt='unslashImage'
+                height='20vh'
             />
-            <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
+            <CardContent style={{flex: 'wrap'}}>
+                <Typography gutterBottom variant='h6' component='div'>
                     { title }
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
-                    { description}
+                    {description}
                 </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions style={{height: '10vh'}}>
                 <Button size='small'>Share</Button>
                 <Button size='small'>Learn More</Button>
             </CardActions>
