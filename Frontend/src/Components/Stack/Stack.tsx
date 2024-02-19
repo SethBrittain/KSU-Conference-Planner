@@ -24,7 +24,16 @@ export const MuiLayout = ({border, backgroundColor, color, text}: StackProps) =>
             >
                 {text}
             </Box>
-            <Box
+            <Box 
+                sx={{
+                    backgroundColor: backgroundColor,
+                    color: color,
+                    height: '100px',
+                    padding: '16px',
+                    '&:hover': {
+                       backgroundColor: 'primary.light'
+                    },
+                }}
             ></Box>
 
         </Stack>

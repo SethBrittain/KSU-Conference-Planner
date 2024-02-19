@@ -1,4 +1,5 @@
 import React from "react";
+//import PhotosAndInfo.css from ./PhotosAndInfo.css;
 import {Grid, 
     Stack, 
     Box,  
@@ -11,31 +12,54 @@ import {Grid,
 import { wrap } from "module";
 type PhotosAndInfoProps = {
     image: string;
+    text: string;
+    spacing: number;
+    size: number;
+    side: boolean;
 }
-const PhotosAndInfo = ({ image}: PhotosAndInfoProps) => {
+const css = `
+            image-fit:cover;
+        `
+
+
+const PhotosAndInfo = ({ image, text, spacing, size, side }: PhotosAndInfoProps) => {
+    
+    if(side){
     return(
-        <Grid container direction ='column' style={{height: '10vh', width: '10vw'}}>
-            <Grid container direction ='row' justifyContent={"space-evenly"}>
-                <Grid item>
-                    <text>
-                        Sample Text Sample TextSample TextSample TextSample
-                        TextSample TextSample TextSample TextSample TextvSample
-                    </text>
-                    
-                </Grid>
-                <Grid item>
-                    
-                        <img
-                        src='https://source.unsplash.com/random'
-                        alt='test'
-                        />
-               
-                </Grid>
-                
-            </Grid>
-           
-        </Grid>
+        <Stack direction='row' margin={1} spacing={spacing} sx={{ flexGrow: 1, flex:1}}>
+            <Box>
+                <style>{css}</style>
+                <img
+                width={100 * size}
+                height={100 * size}
+                src='https://source.unsplash.com/random'
+                alt='test'
+                />
+            </Box>
+            <Box width={150 * size}>
+                {text}
+            </Box>
+        </Stack>
     )
+    }
+    else{
+        return(
+        <Stack direction='row' margin={1} spacing={spacing} sx={{ flexGrow: 1, flex:1}}>
+            <Box width={150 * size}>
+                {text}
+            </Box>
+            <Box>
+                <style>{css}</style>
+                <img
+                width={100 * size}
+                height={100 * size}
+                src='https://source.unsplash.com/random'
+                alt='test'
+                />
+            </Box>
+        </Stack>
+    )
+    }
 };
 
 export default PhotosAndInfo;
