@@ -22,17 +22,17 @@ export const MainInfo = ({ image, title, description }: MainInfoProps) => {
                 alt='unslashImage'
                 height='20vh'
             />
-            <CardContent style={{flex: 'wrap'}}>
-                <Typography gutterBottom variant='h6' component='div'>
+            <CardContent style={{flex: 'wrap', paddingTop:'0', maxHeight: '10vh'}}>
+                <Typography gutterBottom variant='h6' component='div' fontSize={'1.5rem'}>
                     { title }
                 </Typography>
-                <Typography variant='body2' color='text.secondary'>
+                <Typography variant='body2' color='text.secondary' fontSize={'.9rem'}>
                     {description}
                 </Typography>
             </CardContent>
-            <CardActions style={{height: '10vh'}}>
-                <Button size='small'>Share</Button>
-                <Button size='small'>Learn More</Button>
+            <CardActions style={{height: '15vh', flexWrap: 'wrap', paddingTop:'0',  maxHeight: '10vh', flexGrow: '1'}}>
+                <Button size='small'style={{fontSize:'.75rem'}}>Learn More</Button>
+                <Button size='small'style={{fontSize:'.75rem'}}>Share</Button>        
             </CardActions>
         </Card>
     </Box>
