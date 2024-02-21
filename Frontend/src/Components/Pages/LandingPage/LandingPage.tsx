@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useState } from 'react';
 import {Stack} from '@mui/material';
 import GenericFooter from '../../GenericFooter/GenericFooter';
 import PhotosAndInfo from '../../PhotosAndInfo/PhotosAndInfo';
+import { Margin } from '@mui/icons-material';
 type LandingPageProps = {
     text: string;
 }
@@ -36,6 +37,10 @@ const LandingPage = (): React.JSX.Element => {
                 title='Test Title'
                 description='This is a test description. I am not great at writing these. Hope this works'/>
                 </Stack>
+            
+                {<PhotosAndInfo text='Phot info, the info about the photo, the info text 
+                specifically relating to the provided photo, that info.' image = 'https://source.unsplash.com/random'
+                spacing={(size[0])/300} size={2} side={true}/>}
                 
             </Stack>
         </div>
