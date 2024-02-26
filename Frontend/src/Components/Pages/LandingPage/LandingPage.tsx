@@ -41,7 +41,7 @@ const LandingPage = (): React.JSX.Element => {
             
                 {<PhotosAndInfo text='Phot info, the info about the photo, the info text 
                 specifically relating to the provided photo, that info.' image = 'https://source.unsplash.com/random'
-                spacing={(size[0])/300} size={2} side={true}/>}
+                spacing={(200)/300} size={2} side={true}/>}
                 
             </Stack>
             

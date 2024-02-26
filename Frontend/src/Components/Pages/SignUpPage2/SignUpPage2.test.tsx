@@ -5,7 +5,7 @@ import { MuiButton } from "../../Button/Button"
 import { Checkbox } from "../../CheckBox/Checkbox"
 
 test('SignUpPage2 Navbar renders correctly', () => {
-    render(<SignUpPage2 text='TODO'></SignUpPage2>)
+    render(<SignUpPage2></SignUpPage2>)
     //Navbar render test
     const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
