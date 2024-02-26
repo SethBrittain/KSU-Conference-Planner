@@ -32,7 +32,7 @@ const PhotosAndInfo = ({ image, text, spacing, size, side }: PhotosAndInfoProps)
                 <img
                 width={100 * size}
                 height={100 * size}
-                src='https://source.unsplash.com/random'
+                src={image}
                 alt='test'
                 />
             </Box>
@@ -53,7 +53,7 @@ const PhotosAndInfo = ({ image, text, spacing, size, side }: PhotosAndInfoProps)
                 <img
                 width={100 * size}
                 height={100 * size}
-                src='https://source.unsplash.com/random'
+                src= {image}
                 alt='test'
                 />
             </Box>

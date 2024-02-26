@@ -30,7 +30,7 @@ export const MainInfo = ({ image, title, description }: MainInfoProps) => {
                     {description}
                 </Typography>
             </CardContent>
-            <CardActions style={{height: '15vh', flexWrap: 'wrap', paddingTop:'0',  maxHeight: '10vh', flexGrow: '1'}}>
+            <CardActions style={{height: '15vh', flexWrap: 'wrap', maxHeight: '10vh', flexGrow: '1'}}>
                 <Button size='small'style={{fontSize:'.75rem'}}>Learn More</Button>
                 <Button size='small'style={{fontSize:'.75rem'}}>Share</Button>        
             </CardActions>

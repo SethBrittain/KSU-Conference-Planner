@@ -7,7 +7,7 @@ const NavbarGeneric = () =>
         <Box display="flex" flexDirection="row" style={{width: '100vw'}}>
         <AppBar position='static'style={{ background: '#FFFFFF'}}>
             <Toolbar>
-                <Typography variant='h5' component='div' style={{ color: '#000000', fontSize: '1rem'}} sx={{ flexGrow: 0, m: 2, flexWrap:'wrap'}}>
+                <Typography variant='h5' component='div' style={{ color: '#000000', fontSize: '1.5rem'}} sx={{ flexGrow: 0, m: 2, flexWrap:'wrap'}}>
                 KSU Conference Planner
                 </Typography>
                 <Stack direction ='row' spacing = {2} sx={{ flexGrow: 1, flexWrap:'wrap' }}>
