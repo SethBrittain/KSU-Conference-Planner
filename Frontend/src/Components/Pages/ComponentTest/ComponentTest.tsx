@@ -7,6 +7,7 @@ import NavbarPresenter from '../../NavbarPresenter/NavbarPresenter';
 import NavbarReviewer from '../../NavbarReviewer/NavbarReviewer';
 import NavbarScheduler from '../../NavbarScheduler/NavbarScheduler';
 import { PhotoCarousel } from '../../PhotoCarousel/PhotoCarousel';
+import SignUpPage2 from '../SignUpPage2/SignUpPage2';
 
 import React, { useLayoutEffect, useState } from 'react';
 import {Stack} from '@mui/material';
@@ -31,7 +32,8 @@ const ComponentTest = (): React.JSX.Element => {
     const size = useWindowSize();
 
     return (
-       <LandingPage></LandingPage>
+       //<LandingPage></LandingPage>
+        <SignUpPage2></SignUpPage2>
     ); 
 };
 
