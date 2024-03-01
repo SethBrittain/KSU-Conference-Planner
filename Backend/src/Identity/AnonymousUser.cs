@@ -1,4 +1,4 @@
-namespace conference_planner;
+namespace ConferencePlanner;
 
 public class AnonymousUser {
 	

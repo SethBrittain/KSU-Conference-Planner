@@ -12,6 +12,14 @@ import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
 function App()  {
   return (
     <div className="App">
+		<BrowserRouter>
+			<Routes>
+				<Route path="/">
+					<Route index element={<ComponentTest/>}/>
+					<Route path="*" element={<ComponentTest/>}/>
+				</Route>
+			</Routes>
+		</BrowserRouter>
       <ComponentTest/>
     </div>
   )

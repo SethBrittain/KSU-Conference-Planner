@@ -6,16 +6,18 @@ using Npgsql;
 using Microsoft.VisualBasic;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
-using conference_planner.services;
+using ConferencePlanner.services;
 using System.Security;
-using conference_planner.Identity;
-using conference_planner.Exceptions;
+using ConferencePlanner.Identity;
+using ConferencePlanner.Exceptions;
+using System.Text;
+using System.Runtime.InteropServices;
 
 /// <summary>
 /// Handles the HTTP POST request to create a new user.
 /// </summary>
 /// <returns>An IActionResult representing the HTTP response.</returns>
-namespace conference_planner.Controllers;
+namespace ConferencePlanner.Controllers;
 
 [ApiController]
 [Route("/api/[controller]")] 
@@ -54,4 +56,18 @@ public class UserController : ControllerBase
         User currentUser = await _userService.GetUserById(uid);
         return Ok(currentUser);
     }
+
+	[HttpGet, Produces(MediaTypeNames.Application.Json)]
+	public async Task<IActionResult> Get(string id)
+	{
+		long uid;
+		try { uid = long.Parse(id); } catch { return BadRequest();}
+
+		var user = await this._userService.GetUserById(uid);
+		
+		OkObjectResult result = new OkObjectResult(user);
+		result.ContentTypes.Add(MediaTypeNames.Application.Json);
+
+		return result;
+	}
 }

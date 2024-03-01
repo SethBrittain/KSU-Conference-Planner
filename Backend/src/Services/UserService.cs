@@ -3,12 +3,12 @@
 using System.Data;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore.Storage;
-using conference_planner.Identity;
-using conference_planner.services;
+using ConferencePlanner.Identity;
+using ConferencePlanner.services;
 using Npgsql;
-using conference_planner.Exceptions;
+using ConferencePlanner.Exceptions;
 
-namespace conference_planner.services;
+namespace ConferencePlanner.services;
 
 /// <summary>
 /// Represents a service for managing user-related operations.

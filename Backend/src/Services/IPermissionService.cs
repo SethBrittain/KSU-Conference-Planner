@@ -1,5 +1,5 @@
-using conference_planner.Identity;
-namespace conference_planner.services;
+using ConferencePlanner.Identity;
+namespace ConferencePlanner.services;
 public interface IPermissionService {
     bool UserCanUpdateUser(User actor, User subject);
 }

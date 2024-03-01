@@ -1,4 +1,4 @@
-namespace conference_planner.Exceptions;
+namespace ConferencePlanner.Exceptions;
 
 public sealed class UserNotUpdatedException : Exception
 {
