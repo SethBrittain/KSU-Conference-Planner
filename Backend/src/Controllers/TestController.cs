@@ -6,12 +6,19 @@ using Npgsql;
 using Microsoft.VisualBasic;
 using System.Security.Claims;
 
-namespace conference_planner.Controllers;
+namespace ConferencePlanner.Controllers;
 
 [ApiController]
 [Route("/api/[controller]")] 
 public class TestController : ControllerBase
 {
+	private readonly NpgsqlDataSource _dataSource;
+
+	public TestController(NpgsqlDataSource dataSource)
+	{
+		_dataSource = dataSource;
+	}
+
 	/// <summary>
 	/// Handles the HTTP POST request.
 	/// </summary>
@@ -29,11 +36,10 @@ public class TestController : ControllerBase
 	/// </summary>
 	/// <param name="which">The value indicating which data to retrieve.</param>
 	/// <returns>A Task representing the asynchronous operation that returns the retrieved data.</returns>
-	[HttpGet]
+	[HttpGet, Produces(MediaTypeNames.Application.Json)]
 	public async Task<IEnumerable<IEnumerable<string>>> Get(int which)
 	{
-		string connString = Environment.GetEnvironmentVariable("ASPNETCORE_CONNECTION_STRING") ?? throw new Exception("Invalid Connection String");
-		await using var dataSource = NpgsqlDataSource.Create(connString);
+		var dataSource = _dataSource;
 		
 		await using var command = which switch 
 		{
@@ -69,6 +75,7 @@ public class TestController : ControllerBase
 	/// <returns>The NpgsqlCommand representing the SQL query to retrieve the attendee types.</returns>
 	private NpgsqlCommand GetAttendeeTypes(NpgsqlDataSource dataSource)
 	{
+		Console.WriteLine("\nlksajdfhlaso83uouia3f\nlksajdfhlaso83uouia3f\nlksajdfhlaso83uouia3f\nlksajdfhlaso83uouia3f\nlksajdfhlaso83uouia3f\nlksajdfhlaso83uouia3f\nlksajdfhlaso83uouia3f");
 		return dataSource.CreateCommand("SELECT * FROM attendee_types LIMIT 10");
 	}
 

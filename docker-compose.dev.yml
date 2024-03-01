@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:16rc1
+    container_name: conferenceplanner_database
+    hostname: conferenceplanner_database
+    restart: always
+    environment:
+      - POSTGRES_DB=conference_planner
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes: 
+      - postgres:/var/lib/postgresql/data
+      - ./Database:/docker-entrypoint-initdb.d
+volumes:
+  postgres:
+    driver: local

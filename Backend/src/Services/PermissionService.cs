@@ -1,6 +1,6 @@
-using conference_planner.Identity;
+using ConferencePlanner.Identity;
 
-namespace conference_planner.services;
+namespace ConferencePlanner.services;
 
 public class PermissionService : IPermissionService
 {

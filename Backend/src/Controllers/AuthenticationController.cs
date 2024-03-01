@@ -4,11 +4,11 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using conference_planner.services;
-using conference_planner.Identity;
-using conference_planner.Exceptions;
+using ConferencePlanner.services;
+using ConferencePlanner.Identity;
+using ConferencePlanner.Exceptions;
 
-namespace conference_planner.Controllers;
+namespace ConferencePlanner.Controllers;
 
 /// <summary>
 /// This controller handles authentication.

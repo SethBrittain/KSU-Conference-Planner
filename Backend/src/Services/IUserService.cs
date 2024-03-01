@@ -1,7 +1,7 @@
-using conference_planner.Identity;
+using ConferencePlanner.Identity;
 using System.Security.Claims;
 
-namespace conference_planner.services;
+namespace ConferencePlanner.services;
 
 public interface IUserService
 {

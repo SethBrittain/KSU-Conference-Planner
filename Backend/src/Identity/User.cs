@@ -1,7 +1,8 @@
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Identity;
 
-namespace conference_planner.Identity;
+namespace ConferencePlanner.Identity;
 
 /// <summary>
 /// Represents a user in the conference planner system.
@@ -75,5 +76,10 @@ public class User {
 		this.accommodations = accommodations;
 		this.createdOn = createdOn;
 		this.updatedOn = updatedOn;
+	}
+
+	public override string ToString()
+	{
+		return JsonSerializer.Serialize(this);
 	}
 }
