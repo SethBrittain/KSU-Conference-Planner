@@ -1,5 +1,6 @@
 import React from "react";
 import { AppBar, IconButton, Toolbar, Typography, Stack, Button, Box} from "@mui/material";
+import {ReactComponent as Icon} from '../Icon.svg';
 
 const NavbarReviewer = () =>
 {
@@ -7,6 +8,7 @@ const NavbarReviewer = () =>
         <Box display="flex" flexDirection="row">
         <AppBar position='static'style={{ background: '#FFFFFF'}}>
             <Toolbar >
+                <Icon/>
                 <Typography variant='h5' component='div' style={{ color: '#000000'}} sx={{ flexGrow: 0, m: 2}}>
                 KSU Conference Planner
                 </Typography>

@@ -5,14 +5,31 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE S
 THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, BrowserRouter} from "react-router-dom";
+
 import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
+import LandingPage from './Components/Pages/LandingPage/LandingPage';
+import SignUpPage2 from './Components/Pages/SignUpPage2/SignUpPage2';
+import NavbarGeneric from './Components/NavbarGeneric/NavbarGeneric';
+import SignUpPage1 from './Components/Pages/SignUpPage1/SignUpPage1';
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+      <Route>
+          <Route index element={<LandingPage/>}/>          
+          <Route path='SignUp' element={<SignUpPage2/>}/>
+          <Route path='SignUp1' element={<SignUpPage1/>}/>
+      </Route>
+  )
+)
 
 // Main App Component
 function App()  {
   return (
     <div className="App">
-      <ComponentTest/>
+		
+      <RouterProvider router={router}/>
     </div>
   )
 }

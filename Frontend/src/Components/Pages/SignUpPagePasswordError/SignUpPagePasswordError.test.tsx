@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import SignUpPage from "../SignUpPage/SignUpPage";
+import SignUpPage from "../SignUpPage1/SignUpPage1";
 import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
 import Error  from "../../Error/Error"
 

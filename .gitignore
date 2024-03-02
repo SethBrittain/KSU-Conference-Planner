@@ -1,2 +1,6 @@
 .vscode
+**/.vscode/**
 .env
+**/.env
+**/bin/*
+**/obj/*
