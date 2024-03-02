@@ -47,11 +47,7 @@ const LandingPage = (): React.JSX.Element => {
                     specifically relating to the provided photo, that info.' image = 'https://picsum.photos/300/500'
                     spacing={1} size={2} side={false}/>
                 </Stack>
-            
-                {<PhotosAndInfo text='Phot info, the info about the photo, the info text 
-                specifically relating to the provided photo, that info.' image = 'https://source.unsplash.com/random'
-                spacing={(200)/300} size={2} side={true}/>}
-                
+                            
             </Stack>
             
             <div style={{ display: 'flex', marginTop: 'auto'}}>
