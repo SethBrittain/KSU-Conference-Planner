@@ -12,6 +12,7 @@ import SignUpPage2 from '../SignUpPage2/SignUpPage2';
 import React, { useLayoutEffect, useState } from 'react';
 import {Stack} from '@mui/material';
 import LandingPage from '../LandingPage/LandingPage';
+import SignUpPage1 from '../SignUpPage/SignUpPage';
 
 function useWindowSize() {
     const [size, setSize] = useState([0,0]);
@@ -33,7 +34,8 @@ const ComponentTest = (): React.JSX.Element => {
 
     return (
        //<LandingPage></LandingPage>
-        <SignUpPage2></SignUpPage2>
+       //<SignUpPage2></SignUpPage2>
+       <SignUpPage1/>
     ); 
 };
 

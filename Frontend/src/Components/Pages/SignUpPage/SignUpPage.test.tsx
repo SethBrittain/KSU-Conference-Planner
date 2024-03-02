@@ -3,7 +3,7 @@ import SignUpPage from "./SignUpPage";
 import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
 
 test('SignUpPage Navbar renders correctly', () => {
-    render(<SignUpPage text='TODO'></SignUpPage>)
+    render(<SignUpPage></SignUpPage>)
     //Navbar render test
     const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()
