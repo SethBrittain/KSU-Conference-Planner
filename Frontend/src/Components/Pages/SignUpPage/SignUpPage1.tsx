@@ -1,8 +1,7 @@
-import NavbarGeneric from '../../NavbarGeneric/NavbarGeneric';
+import NavbarSignUp from '../../NavbarSignUp/NavbarSignUp';
 import {Stack, Grid} from '@mui/material';
 import Box from '@mui/material/Box';
 import { MuiSignUpButton } from '../../Button/Button';
-import { Link } from 'react-router-dom'
 
 const SignUpPage1 = (): React.JSX.Element => {
 
@@ -15,7 +14,7 @@ const SignUpPage1 = (): React.JSX.Element => {
         flexDirection="column"
         sx={{ bgcolor: '#FFFFFF' }}
         >
-            <NavbarGeneric/>
+            <NavbarSignUp/>
             <Stack direction = 'row' sx={{ flexGrow: 1}}>
                 <Box 
                 height = '100%'
