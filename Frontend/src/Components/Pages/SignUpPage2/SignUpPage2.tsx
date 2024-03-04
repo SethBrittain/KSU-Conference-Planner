@@ -1,12 +1,8 @@
-import NavbarGeneric from '../../NavbarGeneric/NavbarGeneric';
+import NavbarSignUp from '../../NavbarSignUp/NavbarSignUp';
 import {Stack, TextField} from '@mui/material';
-import React, { useLayoutEffect, useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import { FormControl, FormLabel, Radio, RadioGroup, FormControlLabel, Grid } from '@mui/material';
-
-type SignUpPage2Props = {
-    text: string;
-}
 
 const SignUpPage2 = (): React.JSX.Element => {
 
@@ -19,7 +15,7 @@ const SignUpPage2 = (): React.JSX.Element => {
         flexDirection="column"
         sx={{ bgcolor: '#FFFFFF' }}
         >
-            <NavbarGeneric/>
+            <NavbarSignUp/>
             <Stack direction = 'row' sx={{ flexGrow: 1}}>
                 <Box 
                 height = '100%'
@@ -77,7 +73,7 @@ const SignUpPage2 = (): React.JSX.Element => {
                             <Grid container spacing={2} >
                             <FormControlLabel 
                             value="undergrad" 
-                            control={<Radio name="ID" style={{ paddingTop: '20px' }}/>} 
+                            control={<Radio name="ID"/>} 
                             label="K-State Undergrad Student" 
                             />
                             <FormControlLabel 
