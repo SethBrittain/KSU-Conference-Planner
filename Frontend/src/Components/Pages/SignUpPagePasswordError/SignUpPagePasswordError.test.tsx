@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react"
-import SignUpPage from "../SignUpPage1/SignUpPage1";
+import SignUpPage from "../SignUpPage/SignUpPage1";
 import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
 import Error  from "../../Error/Error"
 
 test('SignUpPage Navbar renders correctly', () => {
-    render(<SignUpPage text='TODO'></SignUpPage>)
+    render(<SignUpPage></SignUpPage>)
     //Navbar render test
     const navBar = screen.getByRole(NavbarGeneric) 
     expect(navBar).toBeInTheDocument()

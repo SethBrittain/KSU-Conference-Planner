@@ -11,7 +11,7 @@ import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
 import LandingPage from './Components/Pages/LandingPage/LandingPage';
 import SignUpPage2 from './Components/Pages/SignUpPage2/SignUpPage2';
 import NavbarGeneric from './Components/NavbarGeneric/NavbarGeneric';
-import SignUpPage1 from './Components/Pages/SignUpPage1/SignUpPage1';
+import SignUpPage1 from './Components/Pages/SignUpPage/SignUpPage1';
 
 
 const router = createBrowserRouter(
