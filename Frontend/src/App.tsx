@@ -10,7 +10,6 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, B
 import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
 import LandingPage from './Components/Pages/LandingPage/LandingPage';
 import SignUpPage2 from './Components/Pages/SignUpPage2/SignUpPage2';
-import NavbarGeneric from './Components/NavbarGeneric/NavbarGeneric';
 import SignUpPage1 from './Components/Pages/SignUpPage/SignUpPage1';
 
 

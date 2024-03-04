@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import { Time } from "../../Time/Time"
 import { SessionInfo } from "../../SessionInfo/SessionInfo"
 import Schedule from "../../Schedule/Schedule"
-import NavbarGeneric from "../../NavbarGeneric/NavbarGeneric"
+import Navbar from "../../Navbars/Navbar";
 import SessionsPageLoggedIn from "./SessionsPageLoggedIn"
 
 test('SessionsPage renders correctly', () => {
@@ -17,7 +17,7 @@ test('SessionsPage renders correctly', () => {
     const sessionThree = screen.getByRole(Schedule, { name: /SessionThree/i})
     
     //Navbar test
-    const navBar = screen.getByRole(NavbarGeneric) 
+    const navBar = screen.getByRole(Navbar) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: sessions')
 

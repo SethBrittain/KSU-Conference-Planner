@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import NavbarGeneralAttendee from "../../NavbarGeneralAttendee/NavbarGeneralAttendee"
+import Navbar from "../../Navbars/Navbar"
 import { MuiButton } from "../../Button/Button"
 import Schedule from "../../Schedule/Schedule"
 import { SessionInfo } from "../../SessionInfo/SessionInfo"
@@ -8,7 +8,7 @@ import PersonalSchedulePage from "./PersonalSchedulePage"
 test('PersonalSchedulePage renders correctly', () => {
     render(<PersonalSchedulePage text='TODO'></PersonalSchedulePage>)
     //Navbar render test
-    const navBar = screen.getByRole(NavbarGeneralAttendee) 
+    const navBar = screen.getByRole(Navbar) 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: Your Schedule')
     //Text

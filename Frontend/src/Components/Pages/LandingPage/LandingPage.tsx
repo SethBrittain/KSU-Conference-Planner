@@ -1,5 +1,5 @@
 import { MainInfo } from '../../MainInfo/MainInfo';
-import NavbarGeneric from '../../NavbarGeneric/NavbarGeneric';
+import Navbar from '../../Navbars/Navbar';
 import React, { useLayoutEffect, useState } from 'react';
 import {Stack} from '@mui/material';
 import GenericFooter from '../../GenericFooter/GenericFooter';
@@ -17,7 +17,7 @@ const LandingPage = (): React.JSX.Element => {
             backgroundColor: 'white',
             
           }}>
-           <NavbarGeneric/>
+           <Navbar NavbarType='Generic' CurrentPage='Landing'/>
            <Stack direction = 'column' alignItems={'center'} sx={{ flexGrow: 1}} style={{rowGap: 400}}>
                 
                 <Stack direction ='row' sx={{ flexGrow: 1, flexWrap: 'wrap', flex:1, gap: '1vw'}}>

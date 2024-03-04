@@ -1,11 +1,6 @@
 //import React from 'react'
 import { MuiButton } from '../../Button/Button';
 import { MainInfo } from '../../MainInfo/MainInfo';
-import NavbarGeneric from '../../NavbarGeneric/NavbarGeneric';
-import NavbarGeneralAttendee from '../../NavbarGeneralAttendee/NavbarGeneralAttendee';
-import NavbarPresenter from '../../NavbarPresenter/NavbarPresenter';
-import NavbarReviewer from '../../NavbarReviewer/NavbarReviewer';
-import NavbarScheduler from '../../NavbarScheduler/NavbarScheduler';
 import { PhotoCarousel } from '../../PhotoCarousel/PhotoCarousel';
 import SignUpPage2 from '../SignUpPage2/SignUpPage2';
 
