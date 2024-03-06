@@ -1,12 +1,31 @@
 import Navbar from '../../Navbars/Navbar';
-import {Stack, TextField} from '@mui/material';
 import React from 'react';
 import Box from '@mui/material/Box';
-import { FormControl, FormLabel, Radio, RadioGroup, FormControlLabel, Grid } from '@mui/material';
+import { Stack, TextField, FormControl, FormLabel, Radio, RadioGroup, FormControlLabel, Grid, Checkbox, Button } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
+
+const theme = createTheme({
+    palette: {
+
+        primary:{
+            main : '#512888'
+        },
+        warning: {
+          main : '#C62828'
+        }
+    } 
+})
 
 const SignUpPage2 = (): React.JSX.Element => {
-
+    const ATTENDEETYPE = [
+        { value: "undergrad", control: "ID", label:"K-State Undergrad Student"},
+        { value: "grad", control: "ID", label:"K-State Grad Student"},
+        { value: "alumni", control: "ID", label:"K-State Alumni"},
+        { value: "faculty", control: "ID", label:"K-State Faculty"},
+        { value: "teacher", control: "ID", label:"High School Teacher"}
+      ];
     return ( 
+        <ThemeProvider theme={theme}>
         <Box 
         height={window.innerHeight}
         width={window.innerWidth}
@@ -58,41 +77,59 @@ const SignUpPage2 = (): React.JSX.Element => {
                     >
                     Sign Up
                     </Box>
-                    <FormControl defaultValue="" required>
-                        <FormLabel>First Name</FormLabel>
+                    
+                    <FormControl defaultValue="">
+                        <FormLabel required>First Name</FormLabel>
                         <TextField></TextField>
-                        <FormLabel>Last Name</FormLabel>
+                        <FormLabel required>Last Name</FormLabel>
                         <TextField></TextField>
                             
-                        <FormLabel id="attendeeType">Attendee Type</FormLabel>
+                        <FormLabel id="attendeeType" required >Attendee Type</FormLabel>
                         <RadioGroup
                             aria-labelledby="attendeeType"
                             defaultValue="undergrad"
                             name="attendeeTypeGroup"
                         >
-                            <Grid container spacing={2} >
-                            <FormControlLabel 
-                            value="undergrad" 
-                            control={<Radio name="ID"/>} 
-                            label="K-State Undergrad Student" 
-                            />
-                            <FormControlLabel 
-                            value="grad" 
-                            control={<Radio name="ID" />} 
-                            label="K-State Grad Student"
-                             />
-                            <FormControlLabel value="alumni" control={<Radio />} label="K-State Alumni" />
-                            <FormControlLabel value="faculty" control={<Radio />} label="K-State Faculty" />
-                            <FormControlLabel value="teacher" control={<Radio />} label="High School Teacher" />
-                            </Grid>
-                            
+                            <Grid container columns={16} alignItems="flex-start">
+                            {ATTENDEETYPE.map((item) => (
+                                    <Grid item xs={8} sm={8} style={{ paddingBottom: 12 }} alignContent="flex-start">
+                                        <FormControlLabel value={item.value} control={<Radio name={item.control}/>} label={item.label}/>
+                                    </Grid>
+                                ))}
+                            </Grid>                            
                         </RadioGroup>
+
+                        <FormLabel id="interestType" required>Interest In Presenting</FormLabel>
+                        <RadioGroup
+                            aria-labelledby="interestType"
+                            defaultValue="not"
+                            name="interestGroup"
+                        >
+                            <Grid container columns={16} alignItems="flex-start">
+                                <Grid item xs={8} sm={8} style={{ paddingBottom: 12 }} alignContent="flex-start">
+                                    <FormControlLabel value="Interested" control={<Radio name="ID"/>} label="Interested"/>
+                                </Grid>
+                                <Grid item xs={8} sm={8} style={{ paddingBottom: 12 }} alignContent="flex-start">
+                                    <FormControlLabel value="not" control={<Radio name="ID"/>} label="Not Interested"/>
+                                </Grid>
+                            </Grid>                            
+                        </RadioGroup>
+                        <FormLabel id="status">Request Status</FormLabel>
+                        <Grid container columns={16} alignItems="flex-start">
+                            <Grid item xs={8} sm={8} style={{ paddingBottom: 12 }} alignContent="flex-start">
+                                <FormControlLabel control={<Checkbox />} label="Reviewer" />
+                            </Grid>
+                            <Grid item xs={8} sm={8} style={{ paddingBottom: 12 }} alignContent="flex-start">
+                                <FormControlLabel control={<Checkbox />} label="Scheduler" />
+                            </Grid>
+                        </Grid> 
                     </FormControl>
+                    <Button variant="contained" color="primary" fullWidth>Next</Button>
                 </Box>
                 
             </Stack>
         </Box>
-
+        </ThemeProvider>
     );
 };
 
