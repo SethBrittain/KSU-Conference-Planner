@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import { AppBar, Toolbar, Typography, Stack, Button, Box} from "@mui/material";
 import {ReactComponent as Icon} from '../Icon.svg';
+import { Link } from "react-router-dom";
 
 type itemType = {
     name: string; 
@@ -94,7 +95,7 @@ function SignItem( type: signItem ): ReactElement | null {
 
 function SignUpItem(type: signUpItem): ReactElement | null {
     if(type.name === "Generic"){
-        return <Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button>;
+        return <Link to ='/Signup' ><Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button></Link>;
     }
     return null;
 }
