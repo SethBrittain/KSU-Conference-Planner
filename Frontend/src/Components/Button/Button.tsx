@@ -36,7 +36,7 @@ export const MuiSignUpButton = () => {
     <ThemeProvider theme={theme}>
       <div>
       
-      <Button variant="contained" color="primary" endIcon={<OpenInNewIcon/>}>Log In with K-State</Button>
+      <Button variant="contained" color="primary" endIcon={<OpenInNewIcon/>}>Log In</Button>
     
     </div>
     </ThemeProvider>
