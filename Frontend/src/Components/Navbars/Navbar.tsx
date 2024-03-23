@@ -148,18 +148,38 @@ const Navbar = ({NavbarType, CurrentPage}: NavbarProps) =>
                 KSU Conference Planner
                 </Typography>
                 <Stack direction ='row' spacing = {2} sx={{ flexGrow: 1  }}>
+                    <a href="\">
                     <Item name={homeBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, homeBtn.Name )}></Item>
+                    </a>
+                    <a href="Sessions">
                     <Item name={sessionsBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, sessionsBtn.Name )}></Item>
+                    </a>
+                    <a href="About">
                     <Item name={aboutBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, aboutBtn.Name )}></Item>
+                    </a>
+                    <a href="FAQ">
                     <Item name={faqBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, faqBtn.Name )}></Item>
+                    </a>
+                    <a href="YourSchedule">
                     <Item name={yourScheduleBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, yourScheduleBtn.Name )}></Item>
+                    </a>
+                    <a href="YourApplication">
                     <Item name={yourApplicationBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, yourApplicationBtn.Name )}></Item>
+                    </a>
+                    <a href="ApplicationReview">
                     <Item name={applicationReviewBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, applicationReviewBtn.Name )}></Item>
+                    </a>
                 </Stack>
                 <Stack direction ='row' spacing = {2} sx={{ flexGrow: 0  }}>
+                    <a href="\SignIn">
                     <SignItem name={NavbarType}></SignItem>
+                    </a>
+                    <a href="\SignUp1">
                     <SignUpItem name={NavbarType}></SignUpItem>
+                    </a>
+                    <a href="\">
                     <LogOutItem name={NavbarType}></LogOutItem>
+                    </a>
                 </Stack>
             </Toolbar>
         </AppBar>
