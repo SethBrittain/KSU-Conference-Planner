@@ -11,6 +11,8 @@ import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
 import LandingPage from './Components/Pages/LandingPage/LandingPage';
 import SignUpPage2 from './Components/Pages/SignUpPage2/SignUpPage2';
 import SignUpPage1 from './Components/Pages/SignUpPage/SignUpPage1';
+import AboutPage from './Components/Pages/AboutPage/AboutPage';
+
 
 
 const router = createBrowserRouter(
@@ -19,6 +21,7 @@ const router = createBrowserRouter(
           <Route index element={<LandingPage/>}/>          
           <Route path='SignUp' element={<SignUpPage2/>}/>
           <Route path='SignUp1' element={<SignUpPage1/>}/>
+          <Route path='About' element={<AboutPage/>}/>
       </Route>
   )
 )
