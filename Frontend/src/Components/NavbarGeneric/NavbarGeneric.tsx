@@ -3,10 +3,9 @@ import { AppBar, IconButton, Toolbar, Typography, Stack, Button, Box} from "@mui
 import { Outlet, Route, BrowserRouter, RouterProvider  } from "react-router-dom";
 import LandingPage from "../Pages/LandingPage/LandingPage";
 import {ReactComponent as Icon} from '../Icon.svg';
-import { Routes } from "../Routes/Routes";
+
 type NavbarGenericProps = {
 }
-
 
 const NavbarGeneric = () =>
 {
