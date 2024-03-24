@@ -1,7 +1,10 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import { AppBar, Toolbar, Typography, Stack, Button, Box} from "@mui/material";
 import {ReactComponent as Icon} from '../Icon.svg';
 import { Link } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu';
+import './Navbar.css';
+import RouteConfig from '../../RouteConfig';
 
 type itemType = {
     name: string; 
@@ -139,53 +142,89 @@ function ShouldShow( type: string, name: string ): boolean{
 
 const Navbar = ({NavbarType, CurrentPage}: NavbarProps) =>
 {
-    return(
-        <Box display="flex" flexDirection="row">
-        <AppBar position='static'style={{ background: '#FFFFFF'}}>
-            <Toolbar >
-                <Icon/>
-                <Typography variant='h5' component='div' style={{ color: '#000000'}} sx={{ flexGrow: 0, m: 2}}>
-                KSU Conference Planner
-                </Typography>
-                <Stack direction ='row' spacing = {2} sx={{ flexGrow: 1  }}>
-                    <a href="\">
-                    <Item name={homeBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, homeBtn.Name )}></Item>
-                    </a>
-                    <a href="Sessions">
-                    <Item name={sessionsBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, sessionsBtn.Name )}></Item>
-                    </a>
-                    <a href="About">
-                    <Item name={aboutBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, aboutBtn.Name )}></Item>
-                    </a>
-                    <a href="FAQ">
-                    <Item name={faqBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, faqBtn.Name )}></Item>
-                    </a>
-                    <a href="YourSchedule">
-                    <Item name={yourScheduleBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, yourScheduleBtn.Name )}></Item>
-                    </a>
-                    <a href="YourApplication">
-                    <Item name={yourApplicationBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, yourApplicationBtn.Name )}></Item>
-                    </a>
-                    <a href="ApplicationReview">
-                    <Item name={applicationReviewBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, applicationReviewBtn.Name )}></Item>
-                    </a>
-                </Stack>
-                <Stack direction ='row' spacing = {2} sx={{ flexGrow: 0  }}>
-                    <a href="\SignIn">
-                    <SignItem name={NavbarType}></SignItem>
-                    </a>
-                    <a href="\SignUp1">
-                    <SignUpItem name={NavbarType}></SignUpItem>
-                    </a>
-                    <a href="\">
-                    <LogOutItem name={NavbarType}></LogOutItem>
-                    </a>
-                </Stack>
-            </Toolbar>
-        </AppBar>
-        </Box>
-        
-    )
+
+	const [show, setShow] = useState(false);
+
+
+	const oldVersion : React.JSX.Element =
+		<Box display="flex" flexDirection="row">
+		<AppBar position='static'style={{ background: '#FFFFFF'}}>
+			<Toolbar >
+				<Icon/>
+				<Typography variant='h5' component='div' style={{ color: '#000000'}} sx={{ flexGrow: 0, m: 2}}>
+				KSU Conference Planner
+				</Typography>
+				<Stack direction ='row' spacing = {2} sx={{ flexGrow: 1  }}>
+					<a href="\">
+					<Item name={homeBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, homeBtn.Name )}></Item>
+					</a>
+					<a href="Sessions">
+					<Item name={sessionsBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, sessionsBtn.Name )}></Item>
+					</a>
+					<a href="About">
+					<Item name={aboutBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, aboutBtn.Name )}></Item>
+					</a>
+					<a href="FAQ">
+					<Item name={faqBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, faqBtn.Name )}></Item>
+					</a>
+					<a href="YourSchedule">
+					<Item name={yourScheduleBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, yourScheduleBtn.Name )}></Item>
+					</a>
+					<a href="YourApplication">
+					<Item name={yourApplicationBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, yourApplicationBtn.Name )}></Item>
+					</a>
+					<a href="ApplicationReview">
+					<Item name={applicationReviewBtn.Name} current={CurrentPage} shown={ShouldShow( NavbarType, applicationReviewBtn.Name )}></Item>
+					</a>
+				</Stack>
+				<Stack direction ='row' spacing = {2} sx={{ flexGrow: 0  }}>
+					<a href="\SignIn">
+					<SignItem name={NavbarType}></SignItem>
+					</a>
+					<a href="\SignUp1">
+					<SignUpItem name={NavbarType}></SignUpItem>
+					</a>
+					<a href="\">
+					<LogOutItem name={NavbarType}></LogOutItem>
+					</a>
+				</Stack>
+			</Toolbar>
+		</AppBar>
+		</Box>;
+
+	const newVersion : React.JSX.Element =
+		<div id="navbar" className="flex flex-col md:flex-row bg-white drop-shadow-lg items-center sticky top-0 py-4">
+			<div className="flex items-center justify-between w-full md:w-auto">
+				<Icon/>
+				<h1 className="text-md md:text-xl">KSU Conference Planner</h1>
+				<span className="md:hidden md:justify-self-left"><Button onClick={()=>{setShow(!show)}} style={{ outline: "solid 1px"}}><MenuIcon/></Button></span>
+			</div>
+			<div style={{ maxHeight: show ? "256px" : "0" }} className="flex flex-col lg:hidden navlinks text-[#637381] text-lg grow my-2 overflow-hidden">
+				<a>Home</a>
+				<a>Sessions</a>
+				<a>About</a>
+				<a>FAQ</a>
+				<a>Your Schedule</a>
+				<a>Your Application</a>
+				<a>Application Review</a>
+			</div>
+			<div className="hidden md:flex flex-row navlinks text-[#637381] text-lg grow my-2">
+				<a>Home</a>
+				<a>Sessions</a>
+				<a>About</a>
+				<a>FAQ</a>
+				<a>Your Schedule</a>
+				<a>Your Application</a>
+				<a>Application Review</a>
+			</div>
+			<div className="auth flex align-items-middle justify-between shrink">
+				<Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button>&nbsp;
+				<Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button>&nbsp;
+				<Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Sign Out</Button>
+			</div>
+		</div>;
+
+    return newVersion;
 }
 
 export default Navbar;

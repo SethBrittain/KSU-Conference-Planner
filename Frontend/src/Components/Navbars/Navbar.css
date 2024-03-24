@@ -1,0 +1,16 @@
+#navbar > * {
+	padding: 0 0.5rem;
+}
+.navlinks > * {
+	padding: 0 0.4rem;
+}
+.navlinks {
+	overflow: hidden;
+	transition: max-height 0.25s ease-out;
+}
+#navbar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+}

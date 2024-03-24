@@ -57,13 +57,10 @@ const LandingPage = (): React.JSX.Element => {
 		</div>;
 
 	const newVersion : React.JSX.Element = 
-		<div className="h-full bg-white">
-			<Navbar NavbarType='Generic' CurrentPage='Landing'/>
-			<div className="grid grid-cols-1 gap-8 mx-4 md:grid-cols-3 p-4">
-				<PhotosAndInfo text='Photo info, the info about the photo, the info text' image = 'https://picsum.photos/900/300' spacing={1} size={2} side={true}/>
-				<PhotosAndInfo text='Photo info, the info about the photo, the info text' image = 'https://picsum.photos/1200/500' spacing={1} size={2} side={true}/>
-				<PhotosAndInfo text='Photo info, the info about the photo, the info text' image = 'https://picsum.photos/1000/650' spacing={1} size={2} side={true}/>
-			</div>
+		<div className="grid grid-cols-1 gap-8 mx-4 md:grid-cols-3 p-4">
+			<PhotosAndInfo text='Photo info, the info about the photo, the info text' image = 'https://picsum.photos/900/300' spacing={1} size={2} side={true}/>
+			<PhotosAndInfo text='Photo info, the info about the photo, the info text' image = 'https://picsum.photos/1200/500' spacing={1} size={2} side={true}/>
+			<PhotosAndInfo text='Photo info, the info about the photo, the info text' image = 'https://picsum.photos/1000/650' spacing={1} size={2} side={true}/>
 		</div>;
 
     return newVersion;

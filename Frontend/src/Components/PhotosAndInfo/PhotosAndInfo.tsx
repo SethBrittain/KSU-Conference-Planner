@@ -14,7 +14,7 @@ const PhotosAndInfo = ({ image, text, spacing, size, side }: PhotosAndInfoProps)
 	const isLoaded = () => setLoaded(true);
 
 	return (
-		<div className="border border-gray-400 min-h-full flex flex-col">
+		<div className="border border-gray-200 flex flex-col shadow-lg h-full">
 			<div className="flex align-center justify-center overflow-hidden grow">
 				<img style={{content: loaded ? "" : "url('"+placeholder+"')"}} src={image} onLoad={isLoaded} className="min-w-full min-h-full shrink-0"/>
 			</div>
