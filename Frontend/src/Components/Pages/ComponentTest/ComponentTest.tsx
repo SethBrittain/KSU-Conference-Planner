@@ -8,30 +8,10 @@ import React, { useLayoutEffect, useState } from 'react';
 import {Stack} from '@mui/material';
 import LandingPage from '../LandingPage/LandingPage';
 import SignUpPage1 from '../SignUpPage/SignUpPage1';
-
-function useWindowSize() {
-    const [size, setSize] = useState([0,0]);
-    useLayoutEffect(()=> { 
-        function updateSize()
-        {
-            setSize([window.innerWidth, window.innerHeight]);
-        }
-       window.addEventListener('resize', updateSize);
-       updateSize();
-       return() => window.removeEventListener('resize', updateSize);
-    }, []);
-    return size;
-}
-
+import PhotosAndInfo from '../../PhotosAndInfo/PhotosAndInfo';
 
 const ComponentTest = (): React.JSX.Element => { 
-    const size = useWindowSize();
-
-    return (
-       //<LandingPage></LandingPage>
-       //<SignUpPage2></SignUpPage2>
-       <SignUpPage1/>
-    ); 
+    return (<div></div>); 
 };
 
 export default ComponentTest;
