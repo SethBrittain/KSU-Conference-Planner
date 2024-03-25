@@ -2,6 +2,7 @@ import { RouteObject } from "react-router-dom";
 import LandingPage from "./Components/Pages/LandingPage/LandingPage";
 import SignUpPage2 from "./Components/Pages/SignUpPage2/SignUpPage2";
 import SignUpPage1 from "./Components/Pages/SignUpPage/SignUpPage1";
+import AboutPage from "./Components/Pages/AboutPage/AboutPage";
 import ComponentTest from "./Components/Pages/ComponentTest/ComponentTest";
 
 type CustomRouteObject = RouteObject & {
@@ -29,11 +30,11 @@ const RouteConfig: CustomRouteObject[] = [
 		name: 'component-test',
 		element: <ComponentTest/>
 	},
-	// {
-	// 	path: 'about',
-	// 	name: 'about',
-	// 	element: <AboutPage/>
-	// }
+	 {
+	 	path: 'about',
+	 	name: 'about',
+		element: <AboutPage/>
+	 }
 ]
 
 export default RouteConfig;

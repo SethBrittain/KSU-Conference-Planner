@@ -13,7 +13,6 @@ const AboutPage = (): React.JSX.Element => {
         overflowX: 'hidden', 
       }}
     >
-      <Navbar NavbarType='Generic' CurrentPage='Landing'/>
 
       <Stack direction='column' alignItems={'center'} sx={{ flexGrow: 1 }} style={{ rowGap: 50 }}>
         <Stack
@@ -70,7 +69,6 @@ const AboutPage = (): React.JSX.Element => {
         </div>
 
         <div style={{ display: 'flex', marginTop: 'auto' }}>
-          <GenericFooter />
         </div>
       </Stack>
     </div>
