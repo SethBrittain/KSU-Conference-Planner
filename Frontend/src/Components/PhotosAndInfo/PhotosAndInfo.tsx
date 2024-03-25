@@ -1,15 +1,6 @@
-import React from "react";
-//import PhotosAndInfo.css from ./PhotosAndInfo.css;
-import {Grid, 
-    Stack, 
-    Box,  
-    Card,
-    CardContent,
-    Typography,
-    CardActions,
-    Button,
-    CardMedia, Paper} from '@mui/material';
-import { wrap } from "module";
+import React, { useEffect, useState } from "react";
+import placeholder from "./31343C.svg";
+
 type PhotosAndInfoProps = {
     image: string;
     text: string;
@@ -17,49 +8,22 @@ type PhotosAndInfoProps = {
     size: number;
     side: boolean;
 }
-const css = `
-            image-fit:cover;
-        `
-
 
 const PhotosAndInfo = ({ image, text, spacing, size, side }: PhotosAndInfoProps) => {
-    
-    if(side){
-    return(
-        <Stack direction='row' margin={1} spacing={spacing} sx={{ flexGrow: 1, flex:1}}>
-            <Box>
-                <style>{css}</style>
-                <img
-                width={100 * size}
-                height={100 * size}
-                src={image}
-                alt='test'
-                />
-            </Box>
-            <Box width={150 * size}>
-                {text}
-            </Box>
-        </Stack>
-    )
-    }
-    else{
-        return(
-        <Stack direction='row' margin={1} spacing={spacing} sx={{ flexGrow: 1, flex:1}}>
-            <Box width={150 * size}>
-                {text}
-            </Box>
-            <Box>
-                <style>{css}</style>
-                <img
-                width={100 * size}
-                height={100 * size}
-                src= {image}
-                alt='test'
-                />
-            </Box>
-        </Stack>
-    )
-    }
+    const [loaded, setLoaded] = useState(false);
+
+	const isLoaded = () => setLoaded(true);
+
+	return (
+		<div className="border border-gray-200 flex flex-col shadow-lg h-full">
+			<div className="flex align-center justify-center overflow-hidden grow">
+				<img style={{content: loaded ? "" : "url('"+placeholder+"')"}} src={image} onLoad={isLoaded} className="min-w-full min-h-full shrink-0"/>
+			</div>
+			<p className="py-4 p-2 text-lg">
+				{text}
+			</p>
+		</div>
+	);
 };
 
 export default PhotosAndInfo;
