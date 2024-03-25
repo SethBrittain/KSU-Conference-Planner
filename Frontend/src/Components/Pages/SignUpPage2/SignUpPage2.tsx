@@ -1,4 +1,3 @@
-import Navbar from '../../Navbars/Navbar';
 import React from 'react';
 import { Button, createTheme, ThemeProvider } from '@mui/material';
 
@@ -17,7 +16,7 @@ const theme = createTheme({
 const SignUpPage2 = (): React.JSX.Element => {
     return ( 
         <ThemeProvider theme={theme}>
-            <Navbar NavbarType='SignUp' CurrentPage='SignUp'></Navbar>
+            {/* <Navbar NavbarType='SignUp' CurrentPage='SignUp'></Navbar> */}
             <div className="flex flex-col h-full">
                 <div id="content" className='grow grid grid-cols-1 md:grid-cols-2'>
                     <div className="h-full flex flex-col justify-center items-center bg-[#512888] text-white">

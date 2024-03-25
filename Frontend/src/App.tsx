@@ -23,18 +23,18 @@ import Navbar from './Components/Navbars/Navbar';
 const router = createBrowserRouter(RouteConfig);
 
 // Main App Component
-function App()  {
-  return (
-    <div id="App">
-		<div id="content" className="h-full bg-white flex flex-col">
-			<Navbar NavbarType='Generic' CurrentPage='Landing'/>
-			<div className='grow'>
-				<RouterProvider router={router}/>
+const App = () : React.JSX.Element => {
+	return (
+		<div id="App">
+			<div id="content" className="h-full bg-white flex flex-col">
+				<Navbar/>
+				<div className='grow'>
+					<RouterProvider router={router}/>
+				</div>
+				<GenericFooter/>
 			</div>
-			<GenericFooter/>
 		</div>
-    </div>
-  )
+	)
 }
 
 export default App;

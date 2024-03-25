@@ -1,4 +1,3 @@
-import Navbar from '../../Navbars/Navbar';
 import {Stack, Grid} from '@mui/material';
 import Box from '@mui/material/Box';
 import { MuiSignUpButton } from '../../Button/Button';
@@ -14,7 +13,6 @@ const SignUpPage1 = (): React.JSX.Element => {
         flexDirection="column"
         sx={{ bgcolor: '#FFFFFF' }}
         >
-            <Navbar NavbarType='SignUp' CurrentPage='SignUp'/>
             <Stack direction = 'row' sx={{ flexGrow: 1}}>
                 <Box 
                 height = '100%'
