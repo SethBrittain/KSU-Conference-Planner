@@ -10,16 +10,6 @@ import RouteConfig from './RouteConfig';
 import GenericFooter from './Components/GenericFooter/GenericFooter';
 import Navbar from './Components/Navbars/Navbar';
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//       <Route>
-//           <Route index element={<LandingPage/>}/>          
-//           <Route path='SignUp' element={<SignUpPage2/>}/>
-//           <Route path='SignUp1' element={<SignUpPage1/>}/>
-// 		  <Route path='ComponentTest' element={<ComponentTest/>}/>
-//       </Route>
-//   )
-// )
 const router = createBrowserRouter(RouteConfig);
 
 // Main App Component
