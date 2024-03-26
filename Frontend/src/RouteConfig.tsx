@@ -4,6 +4,8 @@ import SignUpPage2 from "./Components/Pages/SignUpPage2/SignUpPage2";
 import SignUpPage1 from "./Components/Pages/SignUpPage/SignUpPage1";
 import AboutPage from "./Components/Pages/AboutPage/AboutPage";
 import ComponentTest from "./Components/Pages/ComponentTest/ComponentTest";
+import { FAQ } from "./Components/Pages/FAQ/FAQ";
+import { NotFound } from "./Components/Pages/NotFound/NotFound";
 
 type CustomRouteObject = RouteObject & {
 	name: string;
@@ -12,6 +14,7 @@ type CustomRouteObject = RouteObject & {
 const RouteConfig: CustomRouteObject[] = [
 	{
 		path: '/',
+		errorElement:<NotFound/>,
 		name: 'home',
 		element: <LandingPage/>,
 	},
@@ -30,11 +33,18 @@ const RouteConfig: CustomRouteObject[] = [
 		name: 'component-test',
 		element: <ComponentTest/>
 	},
-	 {
+	{
 	 	path: 'about',
 	 	name: 'about',
 		element: <AboutPage/>
-	 }
+	},
+	{
+		path: 'faq',
+		name: 'faq',
+	    element: <FAQ/>
+	},
+	
+	 
 ]
 
 export default RouteConfig;
