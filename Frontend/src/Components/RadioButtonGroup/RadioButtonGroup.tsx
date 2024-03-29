@@ -6,6 +6,8 @@ type RadioButtonGroupProps = {
 	formValue: string;
 	values: string[];
 	labelPosition?: "left" | "top";
+	require: boolean;
+	labelid?: string;
 }
 
 const RadioButtonGroup = (props : RadioButtonGroupProps) : React.JSX.Element => {
@@ -15,8 +17,8 @@ const RadioButtonGroup = (props : RadioButtonGroupProps) : React.JSX.Element => 
 	return (
 		<div className={labelPosititioning}>
 			<div>
-				<label className="block text-gray-500 font-bold text-left mb-1 md:mb-0 pb-2" form="inline-full-name">
-				Attendee Type
+				<label className="block text-gray-500 font-bold text-left mb-1 md:mb-0 pb-2" form="inline-full-name" id={props.labelid}>
+				 {props.label}
 				</label>
 			</div>
 			<ul 
@@ -26,7 +28,7 @@ const RadioButtonGroup = (props : RadioButtonGroupProps) : React.JSX.Element => 
 					props.values.map((value, index) => {
 						return (
 							<li key={index} className="flex items-center p-2">
-								<input 
+								<input required = {props.require}
 									type="radio" 
 									id={value} name={props.label} value={value} className="m-2 form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" />
 								<label htmlFor={value} className="p-2">{value}</label>
