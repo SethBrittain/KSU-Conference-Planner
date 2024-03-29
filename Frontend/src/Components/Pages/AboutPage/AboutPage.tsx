@@ -1,26 +1,9 @@
-import Navbar from '../../Navbars/Navbar';
-import { Stack } from '@mui/material';
 import React from 'react';
-import GenericFooter from '../../GenericFooter/GenericFooter';
 
 const AboutPage = (): React.JSX.Element => {
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh', 
-        backgroundColor: 'white',
-        overflowX: 'hidden', 
-      }}
-    >
-
-      <Stack direction='column' alignItems={'center'} sx={{ flexGrow: 1 }} style={{ rowGap: 50 }}>
-        <Stack
-          direction='row' // for space between header and body
-          sx={{ flexGrow: 1, flexWrap: 'wrap', flex: 1, gap: '1vw'}} // for space between header and body
-        ></Stack> 
-
-        <div style={{  display: 'flex', marginTop: 'auto', textAlign: 'left', padding: '5%', fontSize: 'large'}}>
+    <div className='w-full h-full'>
+        <div className='flex-auto p-16 text-lg text-left' >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
           Quisque vitae blandit urna. Fusce cursus, odio sed dignissim varius,
           orci mauris pellentesque orci, at vestibulum ex nisi in purus.
@@ -68,9 +51,6 @@ const AboutPage = (): React.JSX.Element => {
           tellus elit. Cras id cursus odio.
         </div>
 
-        <div style={{ display: 'flex', marginTop: 'auto' }}>
-        </div>
-      </Stack>
     </div>
   );
 };
