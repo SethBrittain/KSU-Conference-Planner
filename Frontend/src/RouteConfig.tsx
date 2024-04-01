@@ -6,6 +6,7 @@ import AboutPage from "./Components/Pages/AboutPage/AboutPage";
 import ComponentTest from "./Components/Pages/ComponentTest/ComponentTest";
 import { FAQ } from "./Components/Pages/FAQ/FAQ";
 import { NotFound } from "./Components/Pages/NotFound/NotFound";
+import SignUpPage3 from "./Components/Pages/SignUpPage3/SignUpPage3";
 
 type CustomRouteObject = RouteObject & {
 	name: string;
@@ -27,6 +28,11 @@ const RouteConfig: CustomRouteObject[] = [
 		path: 'signup1',
 		name: 'signup1',
 		element: <SignUpPage1/>
+	},
+	{
+		path: 'signup3',
+		name: 'signup3',
+		element: <SignUpPage3/>
 	},
 	{
 		path: 'component-test',
