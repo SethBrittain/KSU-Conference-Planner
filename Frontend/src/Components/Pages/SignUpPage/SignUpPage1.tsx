@@ -1,64 +1,32 @@
-import {Stack, Grid} from '@mui/material';
+import {Stack, Grid, ThemeProvider, createTheme} from '@mui/material';
 import Box from '@mui/material/Box';
 import { MuiSignUpButton } from '../../Button/Button';
 import { Link } from 'react-router-dom';
 
+const theme = createTheme({
+    palette: {
+
+        primary:{
+            main : '#512888'
+        },
+        warning: {
+          main : '#C62828'
+        }
+    } 
+})
 
 const SignUpPage1 = (): React.JSX.Element => {
-
-    return ( 
-        <div       
-        style={{
-        width: '100vw',
-        height: '100vh', 
-        backgroundColor: 'white',
-        overflowX: 'hidden', 
-        }}>
-
-        <Box 
-        height={window.innerHeight}
-        width={window.innerWidth}
-        display="flex"
-        alignItems="start"
-        flexDirection="column"
-        sx={{ bgcolor: '#FFFFFF' }}
-        >
-            <Stack direction = 'row' sx={{ flexGrow: 1}}>
-                <Box 
-                height = '100%'
-                width={window.innerWidth/2}
-                display="flex"
-                alignItems="start"
-                gap={2}
-                p={8}
-                flexDirection="column"
-                sx={{ bgcolor: '#512888', justifyContent: 'center' }}
-                >
-                    <Box
-                    color='#FFFFFF'
-                    fontSize={40}
-                    textAlign='center'
-                    >
-                    Welcome!
-                    </Box>
-                    <Box
-                    color='#FFFFFF'
-                    fontSize={28}
-                    >
-                    Create an account for the K-State Computer Science Conference
-                    </Box>
-                </Box>
-                <Box 
-                height = '100%'
-                width={window.innerWidth/2}
-                display="flex"
-                alignItems="start"
-                gap={2}
-                p={8}
-                flexDirection="column"
-                sx={{ justifyContent: 'center' }}
-                >
-<Grid container spacing={2} alignItems="center" justifyContent="center">
+    return(
+    <ThemeProvider theme={theme}>
+            {/* <Navbar NavbarType='SignUp' CurrentPage='SignUp'></Navbar> */}
+            <div className="flex flex-col h-full">
+                <div id="content" className='grow grid grid-cols-1 md:grid-cols-2'>
+                    <div className="h-full flex flex-col justify-center items-center bg-[#512888] text-white">
+                        <h1 className="text-5xl p-5">Welcome!</h1>
+                        <p className="text-2xl w-6/12">Create an account for the K-State Computer Science</p>
+                    </div>
+                    <div className="h-full flex flex-col justify-center items-md-center bg-white text-black pr-12 pl-8">
+                    <Grid container spacing={2} alignItems="center" justifyContent="center">
                         <Grid item>
                             <div className="md:flex md:items-center mb-6">
                                 <div className="md:w-1/3">
@@ -76,14 +44,10 @@ const SignUpPage1 = (): React.JSX.Element => {
 
                         </Grid>
                     </Grid>
-
-                </Box>
-                
-            </Stack>
-        </Box>
-        </div>
-        
-
+                    </div>
+                </div>
+            </div>
+        </ThemeProvider>
     );
 };
 

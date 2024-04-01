@@ -9,6 +9,7 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, B
 import RouteConfig from './RouteConfig';
 import GenericFooter from './Components/GenericFooter/GenericFooter';
 import Navbar from './Components/Navbars/Navbar';
+import UserRole from './Utils/UserRole';
 
 const router = createBrowserRouter(RouteConfig);
 
@@ -17,7 +18,7 @@ const App = () : React.JSX.Element => {
 	return (
 		<div id="App">
 			<div id="content" className="h-full bg-white flex flex-col">
-				<Navbar/>
+				<Navbar userRole={UserRole.Admin}/> {/*TODO*/}
 				<div className='grow'>
 					<RouterProvider router={router}/>
 				</div>

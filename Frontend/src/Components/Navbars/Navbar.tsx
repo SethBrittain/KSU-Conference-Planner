@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import './Navbar.css';
 import RouteConfig from '../../RouteConfig';
+import UserRole from "../../Utils/UserRole";
 
 type NavbarItem = {
     name: string; 
@@ -12,21 +13,108 @@ type NavbarItem = {
 	path: string;
 };
 
-const Navbar = () =>
+type NavbarProps = {
+	userRole : UserRole
+}
+
+function MakeNavItems( user: UserRole ): NavbarItem[] {
+	var navItems:NavbarItem[] = [];
+	var home:NavbarItem = {name: "Home", shown: true, path: "/"};
+	var sessions:NavbarItem = {name: "Sessions", shown: true, path: "/sessions"};
+	var about:NavbarItem = {name: "About", shown: true, path: "/about"};
+	var faq:NavbarItem = {name: "FAQ", shown: true, path: "/faq"};
+	var yourSchedule:NavbarItem = {name: "Your Schedule", shown: true, path: "/schedule"};
+	var yourApplication:NavbarItem = {name: "Your Application", shown: true, path: "/apply"};
+	var applicationReview:NavbarItem = {name: "Application Review", shown: true, path: "/review"};
+	var scheduler:NavbarItem = {name: "Scheduler", shown: true, path: "/scheduler"};
+	
+	navItems.push( home );
+	navItems.push( sessions );
+	navItems.push( about );
+	navItems.push( faq );
+
+	switch (user){
+		case UserRole.Admin:
+			navItems.push( yourSchedule );
+			navItems.push( yourApplication );
+			navItems.push( applicationReview );
+			navItems.push( scheduler );
+			break;
+		case UserRole.Anonymous:
+			break;
+		case UserRole.General:
+			navItems.push( yourSchedule );
+			break;
+		case UserRole.Presenter:
+			navItems.push( yourApplication );
+			break;
+		case UserRole.Reviewer:
+			navItems.push( applicationReview );
+			break;
+		case UserRole.Scheduler:
+			navItems.push( scheduler );
+			break;
+	}
+
+	return navItems;
+}
+
+function SignItem( user: UserRole ): ReactElement | null {
+    if(user === UserRole.Anonymous){
+        return <Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button>;
+    }
+    return null;
+}
+
+function SignUpItem(user: UserRole): ReactElement | null {
+    if(user === UserRole.Anonymous){
+        return <Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button>;
+    }
+    return null;
+}
+
+function LogOutItem(user: UserRole): ReactElement | null {
+    if(user === UserRole.Anonymous){
+        return null;
+    }
+    return <Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Sign Out</Button>;
+}
+
+//function MakeButtons( user: UserRole ): Button[] {
+//	var buttons:Button[] = [];
+//	var signIn:Button = {style={{ color: '#000000', fontSize: '.8rem'}} Sign In</Button>&nbsp};
+//	switch (user){
+//		case UserRole.Admin:
+//			buttons.push( signIn );
+//			break;
+//		case UserRole.Anonymous:
+//			buttons.push( yourSchedule );
+//			buttons.push( yourSchedule );
+//			break;
+//		case UserRole.General:
+//			buttons.push( yourSchedule );
+//			break;
+//		case UserRole.Presenter:
+//			buttons.push( yourApplication );
+//			break;
+//		case UserRole.Reviewer:
+//			buttons.push( applicationReview );
+//			break;
+//		case UserRole.Scheduler:
+//			buttons.push( scheduler );
+//			break;
+//	}
+//
+//	return buttons;
+//}
+
+const Navbar = ( {userRole}: NavbarProps) =>
 {
 	const [show, setShow] = useState(false);
 
 	var NavBarItems : React.JSX.Element[] = [];
 
-	const navItems : NavbarItem[] = [
-		{name: "Home", shown: true, path: "/"},
-		{name: "Sessions", shown: true, path: "/sessions"},
-		{name: "About", shown: true, path: "/about"},
-		{name: "FAQ", shown: true, path: "/faq"},
-		{name: "Your Schedule", shown: true, path: "/schedule"},
-		{name: "Your Application", shown: true, path: "/apply"},
-		{name: "Application Review", shown: true, path: "/review"}
-	];
+	const navItems : NavbarItem[] = MakeNavItems(userRole);
 
 	navItems.forEach((item)=>{
 		NavBarItems.push(<a href={item.path} className={
@@ -36,7 +124,7 @@ const Navbar = () =>
 					: ""
 			) : "hidden"
 		}>{item.name}</a>)
-	});
+	}); 
 
 	const newVersion : React.JSX.Element =
 		<div id="navbar" className="flex flex-col md:flex-row bg-white drop-shadow-lg items-center sticky top-0 py-4">
@@ -52,9 +140,9 @@ const Navbar = () =>
 				{NavBarItems}
 			</div>
 			<div className="auth flex align-items-middle justify-between shrink">
-				<Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button>&nbsp;
-				<Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button>&nbsp;
-				<Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Sign Out</Button>
+				{SignItem(userRole)} &nbsp;
+				{SignUpItem(userRole)}&nbsp;
+				{LogOutItem(userRole)}
 			</div>
 		</div>;
 
