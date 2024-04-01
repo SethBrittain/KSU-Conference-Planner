@@ -36,7 +36,22 @@ export const MuiSignUpButton = () => {
     <ThemeProvider theme={theme}>
       <div>
       
-      <Button variant="contained" color="primary" endIcon={<OpenInNewIcon/>}>Log In</Button>
+      <Button variant="contained" color="primary" endIcon={<OpenInNewIcon/>}>Sign Up</Button>
+    
+    </div>
+    </ThemeProvider>
+  );
+
+  
+}
+
+export const MuiSignInButton = () => {
+  return (
+    
+    <ThemeProvider theme={theme}>
+      <div>
+      
+      <Button variant="contained" color="primary" endIcon={<OpenInNewIcon/>}>Sign In</Button>
     
     </div>
     </ThemeProvider>

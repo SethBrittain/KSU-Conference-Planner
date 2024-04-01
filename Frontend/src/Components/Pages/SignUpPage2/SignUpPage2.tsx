@@ -18,7 +18,7 @@ const theme = createTheme({
 })
 
 const SignUpPage2 = (): React.JSX.Element => {
-	const newVersion : React.JSX.Element = 
+	const SignUpQuestions : React.JSX.Element = 
 		<form className="w-full">
 			<TextInput label='First Name' formValue='firstName' labelPosition="top" placeholder='Jane' require = {true} labelid = 'required'/>
 			<TextInput label='Last Name' formValue='lastName' labelPosition="top" placeholder='Doe' require ={true} labelid = 'required'/>
@@ -44,7 +44,6 @@ const SignUpPage2 = (): React.JSX.Element => {
 
     return ( 
         <ThemeProvider theme={theme}>
-            {/* <Navbar NavbarType='SignUp' CurrentPage='SignUp'></Navbar> */}
             <div className="flex flex-col h-full">
                 <div id="content" className='grow grid grid-cols-1 md:grid-cols-2'>
                     <div className="h-full flex flex-col justify-center items-center bg-[#512888] text-white">
@@ -52,7 +51,7 @@ const SignUpPage2 = (): React.JSX.Element => {
                         <p className="text-2xl w-6/12">Create an account for the K-State Computer Science</p>
                     </div>
                     <div className="h-full flex flex-col justify-center items-md-center bg-white text-black pr-12 pl-8">
-                        {newVersion}
+                        {SignUpQuestions}
                     </div>
                 </div>
             </div>

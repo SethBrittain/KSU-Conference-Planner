@@ -18,7 +18,7 @@ const App = () : React.JSX.Element => {
 	return (
 		<div id="App">
 			<div id="content" className="h-full bg-white flex flex-col">
-				<Navbar userRole={UserRole.Admin}/> {/*TODO*/}
+				<Navbar userRole={UserRole.Anonymous}/> {/*TODO*/}
 				<div className='grow'>
 					<RouterProvider router={router}/>
 				</div>
