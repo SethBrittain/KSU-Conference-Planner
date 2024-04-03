@@ -60,14 +60,14 @@ function MakeNavItems( user: UserRole ): NavbarItem[] {
 }
 
 function SignItem( user: UserRole ): ReactElement | null {
-    if(user === UserRole.Anonymous){
+    if(user === UserRole.Anonymous && document.location.pathname !== "/signup"){ //TODO Page Address
         return <Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button>;
     }
     return null;
 }
 
 function SignUpItem(user: UserRole): ReactElement | null {
-    if(user === UserRole.Anonymous){
+    if(user === UserRole.Anonymous && document.location.pathname !== "/signup"){ //TODO Page Address
         return <Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button>;
     }
     return null;
@@ -79,34 +79,6 @@ function LogOutItem(user: UserRole): ReactElement | null {
     }
     return <Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Sign Out</Button>;
 }
-
-//function MakeButtons( user: UserRole ): Button[] {
-//	var buttons:Button[] = [];
-//	var signIn:Button = {style={{ color: '#000000', fontSize: '.8rem'}} Sign In</Button>&nbsp};
-//	switch (user){
-//		case UserRole.Admin:
-//			buttons.push( signIn );
-//			break;
-//		case UserRole.Anonymous:
-//			buttons.push( yourSchedule );
-//			buttons.push( yourSchedule );
-//			break;
-//		case UserRole.General:
-//			buttons.push( yourSchedule );
-//			break;
-//		case UserRole.Presenter:
-//			buttons.push( yourApplication );
-//			break;
-//		case UserRole.Reviewer:
-//			buttons.push( applicationReview );
-//			break;
-//		case UserRole.Scheduler:
-//			buttons.push( scheduler );
-//			break;
-//	}
-//
-//	return buttons;
-//}
 
 const Navbar = ( {userRole}: NavbarProps) =>
 {
