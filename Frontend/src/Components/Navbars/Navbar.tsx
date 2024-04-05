@@ -61,7 +61,7 @@ function MakeNavItems( user: UserRole ): NavbarItem[] {
 
 function SignItem( user: UserRole ): ReactElement | null {
     if(user === UserRole.Anonymous && document.location.pathname !== "/signup"){ //TODO Page Address
-        return <a href="/signup1"> <Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button></a>;
+        return <a href="/signIn"> <Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button></a>;
     }
     return null;
 }
