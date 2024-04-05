@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotosAndInfo from '../../PhotosAndInfo/PhotosAndInfo';
+import { MainInfo } from '../../MainInfo/MainInfo';
 
 const LandingPage = (): React.JSX.Element => { 
 	const content : React.JSX.Element = 

@@ -3,7 +3,7 @@ import SignInPage from "./SignInPage";
 import Navbar from "../../Navbars/Navbar";
 
 test('SignUpPage Navbar renders correctly', () => {
-    render(<SignInPage text='TODO'></SignInPage>)
+    render(<SignInPage></SignInPage>)
     //Navbar render test
     const navBar = screen.getByRole(Navbar) 
     expect(navBar).toBeInTheDocument()

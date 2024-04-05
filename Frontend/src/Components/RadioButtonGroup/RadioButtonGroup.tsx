@@ -11,7 +11,7 @@ type RadioButtonGroupProps = {
 }
 
 const RadioButtonGroup = (props : RadioButtonGroupProps) : React.JSX.Element => {
-	var labelPosititioning = props.labelPosition == "top" 
+	var labelPosititioning = props.labelPosition === "top" 
 		? "block md:flex-col md:items-center py-2"
 		: "block md:flex md:items-center py-2" 
 	return (
