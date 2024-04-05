@@ -6,7 +6,7 @@ import Navbar from "../../Navbars/Navbar";
 import SessionsPage from "../SessionsPage/SessionsPage"
 
 test('SessionsPage renders correctly', () => {
-    render(<SessionsPage text='TODO'></SessionsPage>)
+    render(<SessionsPage></SessionsPage>)
 
     const text = screen.getByText("Sessions")
 

@@ -7,6 +7,7 @@ import ComponentTest from "./Components/Pages/ComponentTest/ComponentTest";
 import { FAQ } from "./Components/Pages/FAQ/FAQ";
 import { NotFound } from "./Components/Pages/NotFound/NotFound";
 import SignUpPage3 from "./Components/Pages/SignUpPage3/SignUpPage3";
+import SessionsPage from "./Components/Pages/SessionsPage/SessionsPage";
 
 type CustomRouteObject = RouteObject & {
 	name: string;
@@ -38,6 +39,11 @@ const RouteConfig: CustomRouteObject[] = [
 		path: 'component-test',
 		name: 'component-test',
 		element: <ComponentTest/>
+	},
+	{
+		path: 'sessions',
+		name: 'sessions',
+	    element: <SessionsPage/>
 	},
 	{
 	 	path: 'about',
