@@ -19,7 +19,7 @@ const theme = createTheme({
 
 const SignUpPage2 = (): React.JSX.Element => {
 	const SignUpQuestions : React.JSX.Element = 
-		<form className="w-full">
+		<form className="w-full" action='signup3'>
 			<TextInput label='First Name' formValue='firstName' labelPosition="top" placeholder='Jane' require = {true} labelid = 'required'/>
 			<TextInput label='Last Name' formValue='lastName' labelPosition="top" placeholder='Doe' require ={true} labelid = 'required'/>
 			<RadioButtonGroup label="Attendee Type" formValue='attendeeType' labelPosition='top' columns={2} values={[
@@ -33,11 +33,11 @@ const SignUpPage2 = (): React.JSX.Element => {
 			<RadioButtonGroup label='Interest In Presenting' formValue='isPresenting' labelPosition='top' columns={2} values={[
 				"Interested",
 				"Not Interested"
-			]} require = {false} labelid = 'required'/>
+			]} require = {true} labelid = 'required'/>
 			<div className="block md:flex md:items-center mb-6 md:w-1/2 py-3">
-				<button className='bg-purple-700 text-white p-2 px-4 text-xl flex align-middle font-medium rounded'>
+				<button className='bg-purple-700 text-white p-2 px-4 text-xl flex align-middle font-medium rounded' >
 					<span className='mr-2'>Next</span>
-					<ArrowForwardIcon />
+					<ArrowForwardIcon/>
 				</button>
 			</div>
 		</form>;

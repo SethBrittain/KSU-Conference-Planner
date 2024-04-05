@@ -4,6 +4,7 @@ import { Button, createTheme, ThemeProvider } from '@mui/material';
 import TextInput from '../../InputComponents/TextInput';
 import CheckBoxGroup from '../../InputComponents/CheckBoxGroup';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LargeTextInput from '../../InputComponents/LargeTextInput';
 
 const theme = createTheme({
@@ -24,7 +25,11 @@ const SignUpPage3 = (): React.JSX.Element => {
 		<form className="w-full">
 			<LargeTextInput label='Do you have any dietary restrictions we need to know about?' formValue='diet' labelPosition="top" placeholder='Please list your dietary restrictions here' require = {false}/>
 			<LargeTextInput label='Do you need any accomodations to attend the event?' formValue='accomodations' labelPosition="top" placeholder='Please list your accomodations here' require ={false}/>
-			<div className="block md:flex md:items-center mb-6 md:w-1/2 py-3">
+			<div className="block md:flex md:items-center mb-6 md:w-1/2 space-x-4">
+				<a href='signup' className='bg-purple-700 text-white p-2 px-4 text-xl flex align-middle font-medium rounded'>
+					<ArrowBackIcon />
+					<span className='mr-2'>Back</span>
+				</a>
 				<button className='bg-purple-700 text-white p-2 px-4 text-xl flex align-middle font-medium rounded'>
 					<span className='mr-2'>Next</span>
 					<ArrowForwardIcon />

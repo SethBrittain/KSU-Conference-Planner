@@ -61,14 +61,14 @@ function MakeNavItems( user: UserRole ): NavbarItem[] {
 
 function SignItem( user: UserRole ): ReactElement | null {
     if(user === UserRole.Anonymous && document.location.pathname !== "/signup"){ //TODO Page Address
-        return <Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button>;
+        return <a href="/signup1"> <Button style={{ color: '#000000', fontSize: '.8rem'}} >Sign In</Button></a>;
     }
     return null;
 }
 
 function SignUpItem(user: UserRole): ReactElement | null {
     if(user === UserRole.Anonymous && document.location.pathname !== "/signup"){ //TODO Page Address
-        return <Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button>;
+        return <a href="/signup1"><Button style={{ color: '#FFFFFF', backgroundColor: '#512888', fontSize: '.8rem'}}>Sign Up</Button></a>;
     }
     return null;
 }

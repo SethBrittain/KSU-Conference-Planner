@@ -10,6 +10,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import SignUpPage1 from '../SignUpPage/SignUpPage1';
 import RadioButtonGroup from '../../RadioButtonGroup/RadioButtonGroup';
 import CheckBoxGroup from '../../InputComponents/CheckBoxGroup';
+import SessionsSideBar from '../../SessionsSideBar/SessionsSideBar';
 
 const ComponentTest = (): React.JSX.Element => {
     return (
@@ -19,6 +20,7 @@ const ComponentTest = (): React.JSX.Element => {
 			<RadioButtonGroup label="Attendee Type" formValue='attendeeType' columns={1} values={["Attendee", "Exhibitor", "Sponsor"]} require = {true} labelid='required'/>
 			<TextInput label="First Name" formValue="firstName" placeholder="First Name" require = {false}/>
 			<CheckBoxGroup mainLabel='Application Type' formValues={{"isReviewer":"Reviewer", "isScheduler":"Scheduler"}} columns={2}/>
+			<SessionsSideBar/>
 		</div>
        //<LandingPage></LandingPage>
        //<SignUpPage2></SignUpPage2>
