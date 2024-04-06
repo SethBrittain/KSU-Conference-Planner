@@ -6,6 +6,7 @@ type TextInputProps = {
 	formValue: string;
 	placeholder: string;
 	labelPosition?: "top" | "left";
+	inputAlignment?: "center" | "left";
 	require: boolean;
 	labelid?: string;
 }
@@ -25,7 +26,7 @@ const TextInput = (props: TextInputProps) : React.JSX.Element => {
 				{props.label}
 			</label>
 			<input required = {props.require}
-				className="ml-2 bg-white-200 appearance-none border-2 border-gray-200 rounded w-1/2 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+				className={"ml-2 bg-white-200 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 items-center"}
 				type="text"
 				placeholder={props.placeholder}
 				id={props.formValue}
