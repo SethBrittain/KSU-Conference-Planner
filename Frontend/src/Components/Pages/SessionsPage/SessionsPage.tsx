@@ -12,27 +12,30 @@ const SessionsPage = () =>
             <h1 style={{ 
                 paddingBottom:'10px',
                 textAlign:'left'}} id="Sessionsh1">Sessions</h1>
-            <Box display="flex" flexDirection="row" style={{width: '500vw'}}>
-                <div className="grid grid-cols-8 gap-0 sm:gap-1 place-items-center">
+            <Box className="h-full flex bg-[#512888]" flexDirection="row" id="SessionsBox1">
+                <div style={{margin:'10px'}} className=" grid grid-cols-8 gap-0 sm:gap-1 place-items-center">
                 {
                 days.map((day, idx) => {
                     return (
-                    <div id="Sessionstext" key={idx} className="font-semibold">
+                    <div id="Sessionstext1" key={idx} className="font-semibold">
                         {day}
                     </div>
                     );
                 })}
                 {
-                sessions.map((day, idx) => {
+                sessions.map((session, idx) => {
                     return (
-                    <div key={idx} className="font-semibold">
-                        {day}
+                    <div id="Sessionstext2" key={idx} className="font-semibold">
+                        {session}
                     </div>
                     );
                 })}
                 </div>
+                <Box className="h-full flex bg-[20c997]" flexDirection="row">
                 <div style={{ 
-                paddingBottom:'10px',}} id="Sessionsh2">Sessions Info</div>
+                paddingBottom:'10px',}} id="Sessionsh2">Session Info</div>
+                <div  ></div>
+                </Box>
             </Box>
         </>
     )
