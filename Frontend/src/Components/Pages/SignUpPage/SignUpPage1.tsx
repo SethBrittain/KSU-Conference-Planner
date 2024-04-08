@@ -12,7 +12,7 @@ const SignUpPage1 = (): React.JSX.Element => {
                 <p className="text-2xl w-6/12">Create an account for the K-State Computer Science</p>
             </div>
             <div className='flex w-full items-center justify-center flex-col'>
-                <TextInput label='Email' placeholder='yourname@gmail.com' formValue='loginEmail' require={true} labelPosition='top' inputAlignment='center'></TextInput>
+                <TextInput label='Email' placeholder='example@ksu.edu' formValue='loginEmail' require={true} labelPosition='top' inputAlignment='center'></TextInput>
                 <MuiSignUpButton/>
                 <div className='p-3'>
                     <i>Need Help&nbsp;</i><a className='underline' href="https://www.google.com">Contact Us!</a>
