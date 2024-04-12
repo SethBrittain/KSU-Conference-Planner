@@ -6,7 +6,7 @@ import { SessionInfo } from "../../SessionInfo/SessionInfo"
 import PersonalSchedulePage from "./PersonalSchedulePage"
 
 test('PersonalSchedulePage renders correctly', () => {
-    render(<PersonalSchedulePage text='TODO'></PersonalSchedulePage>)
+    render(<PersonalSchedulePage></PersonalSchedulePage>)
     //Navbar render test
     const navBar = screen.getByRole(Navbar) 
     expect(navBar).toBeInTheDocument()

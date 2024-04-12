@@ -10,8 +10,7 @@ type SessionSideBarProps = {
 
 const SessionsSideBar = (props: SessionSideBarProps) : React.JSX.Element => {
 	return (
-		
-		<div className='ml-2 bg-white-200 appearance-none border-2 border-gray-200 rounded w-7/12 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500'>
+		<div className='ml-2 bg-white-200 border-2 border-gray-200 rounded w-4/12 py-2 flex flex-col items-center px-4 text-gray-700'>
 			<Stack>
 			<label className="text-gray-500 text-center font-bold text-left py-2">
 				{props.SessionTitle}
@@ -20,7 +19,7 @@ const SessionsSideBar = (props: SessionSideBarProps) : React.JSX.Element => {
 				className="ml-2 bg-white-200 appearance-none py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
 				type="text"
 			>{props.Description}</text>
-			<button className='bg-purple-700 text-white p-2 px-4 text-xl flex align-middle font-medium rounded'>
+			<button className='bg-purple-700 text-white p-2 px-4 text-xl font-medium rounded'>
 					<span className='mr-2'>Join Talk</span>
 			</button>
 			</Stack>

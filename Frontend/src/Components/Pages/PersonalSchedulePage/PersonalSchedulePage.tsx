@@ -1,8 +1,16 @@
 import React from "react";
+import { AppBar, IconButton, Toolbar, Typography, Stack, Button, Box} from "@mui/material";
+import './PersonalSchedule.css';
 
-type PersonalSchedulePageProps = {
-    text: string;
+
+
+const PersonalSchedulePage = () =>
+{
+    return(
+    
+     <text>hi</text>
+    )
 }
-const PersonalSchedulePage = ({ text }: PersonalSchedulePageProps): React.JSX.Element => <button>{ text }</button>;
+
 
 export default PersonalSchedulePage;

@@ -9,6 +9,7 @@ import { NotFound } from "./Components/Pages/NotFound/NotFound";
 import SignUpPage3 from "./Components/Pages/SignUpPage3/SignUpPage3";
 import SessionsPage from "./Components/Pages/SessionsPage/SessionsPage";
 import SignInPage from "./Components/Pages/SignInPage/SignInPage";
+import PersonalSchedulePage from "./Components/Pages/PersonalSchedulePage/PersonalSchedulePage";
 
 type CustomRouteObject = RouteObject & {
 	name: string;
@@ -61,6 +62,11 @@ const RouteConfig: CustomRouteObject[] = [
 		name: "signIn",
 		element: <SignInPage/>
 	},
+	{
+		path: 'PersonalSchedule',
+		name: 'PersonalSchedule',
+		element: <PersonalSchedulePage/>
+	}
 	 
 ]
 

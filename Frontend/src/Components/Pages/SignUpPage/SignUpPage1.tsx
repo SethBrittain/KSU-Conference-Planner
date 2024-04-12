@@ -13,7 +13,7 @@ const SignUpPage1 = (): React.JSX.Element => {
             </div>
             <div className='flex w-full items-center justify-center flex-col'>
                 <TextInput label='Email' placeholder='example@ksu.edu' formValue='loginEmail' require={true} labelPosition='top' inputAlignment='center'></TextInput>
-                <MuiSignUpButton/>
+                <a href='signup'><MuiSignUpButton/></a>
                 <div className='p-3'>
                     <i>Need Help&nbsp;</i><a className='underline' href="https://www.google.com">Contact Us!</a>
                 </div>

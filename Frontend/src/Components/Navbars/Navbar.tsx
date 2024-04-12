@@ -80,6 +80,9 @@ function LogOutItem(user: UserRole): ReactElement | null {
     return <Button style={{ color: '#FFFFFF', backgroundColor: '#512888'}}>Sign Out</Button>;
 }
 
+
+
+
 const Navbar = ( {userRole}: NavbarProps) =>
 {
 	const [show, setShow] = useState(false);
