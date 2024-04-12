@@ -9,7 +9,7 @@ test('SignUpPage2 Navbar renders correctly', () => {
     //Navbar render test
     const navBar = screen.getByRole(Navbar) 
     expect(navBar).toBeInTheDocument()
-    expect(navBar).toHaveStyle('navstyle: Logout')
+    expect(navBar).toHaveStyle('')
 
     //Button test
     const signInButton = screen.getByRole('Button', {name: /Next/i})

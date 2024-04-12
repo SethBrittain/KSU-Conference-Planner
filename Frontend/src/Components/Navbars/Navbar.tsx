@@ -101,12 +101,16 @@ const Navbar = ( {userRole}: NavbarProps) =>
 		}>{item.name}</a>)
 	}); 
 
+	function changeShow() {
+		setShow(!show);
+	}
+
 	const newVersion : React.JSX.Element =
 		<div id="navbar" className="flex flex-col md:flex-row bg-white drop-shadow-lg items-center sticky top-0 py-4">
 			<div className="flex items-center justify-between w-full md:w-auto">
 				<Icon/>
 				<h1 className="text-md md:text-xl">KSU Conference Planner</h1>
-				<span className="md:hidden md:justify-self-left"><Button onClick={()=>{setShow(!show)}} style={{ outline: "solid 1px"}}><MenuIcon/></Button></span>
+				<span className="md:hidden md:justify-self-left"><Button onClick={changeShow} style={{ outline: "solid 1px"}}><MenuIcon/></Button></span>
 			</div>
 			<div style={{ maxHeight: show ? "256px" : "0" }} className="flex flex-col lg:hidden navlinks text-[#637381] text-lg grow my-2 overflow-hidden">
 				{NavBarItems}
