@@ -4,7 +4,9 @@ import { MuiButton } from "../../Button/Button"
 import Schedule from "../../Schedule/Schedule"
 import { SessionInfo } from "../../SessionInfo/SessionInfo"
 import PersonalSchedulePage from "./PersonalSchedulePage"
-
+/**
+ * Test for the personal schedule page
+ */
 test('PersonalSchedulePage renders correctly', () => {
     render(<PersonalSchedulePage></PersonalSchedulePage>)
     //Navbar render test
