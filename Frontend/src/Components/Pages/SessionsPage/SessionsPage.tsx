@@ -3,7 +3,7 @@ import { AppBar, IconButton, Toolbar, Typography, Stack, Button, Box} from "@mui
 import './Sessions.css';
 
 const days = ["8 am", "9 am", "10 am", "11 am", "12 am", "1 pm", "2 pm", "3 pm"];
-const sessions = ["Session 1", "Session 2", "Session 3", "Session 4", "Session 5", "Session 6", "Session 7"];
+const sessions = ["Session 1", "Session 2", "Session 3", "Session 4", "Session 5", "Session 6", "Session 7", "Session 8"];
 
 const SessionsPage = () =>
 {
@@ -31,11 +31,15 @@ const SessionsPage = () =>
                     );
                 })}
                 </div>
-                <Box className="h-full flex bg-[20c997]" flexDirection="row">
-                <div style={{ 
-                paddingBottom:'10px',}} id="Sessionsh2">Session Info</div>
-                <div  ></div>
+                <Box id="SessionsBox" className="flex" flexDirection="row">
+                <div id="Sessionsh2">Session Info</div>
+                <div id="Sessionsh3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                 </Box>
+                
             </Box>
         </>
     )

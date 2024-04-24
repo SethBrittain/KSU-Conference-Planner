@@ -7,8 +7,30 @@
 
 #Sessionsh2{
     text-align: center;
+    margin: auto;
     font-size: 40px;
-    margin: 5px;
+    padding: 5px;
+    background-color: #ABBAEA;
+}
+
+#Sessionsh3{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px;
+    background-color: #ABBAEA;
+}
+
+#SessionsBox{
+    margin: 10px;
+    margin-top: 20px;
+    align-items: center;
+    display: inline;
+    flex: auto;
+    /*background-color: aqua;*/
+    background-color: black;
+    border: 2px solid rgb(136, 1, 113);
+    max-width: 40vw;
 }
 
 #Sessionstext1{
@@ -17,6 +39,10 @@
     height: 40px;
     width: 100px;
     margin: 2px;
+    border: 2px solid rgb(136, 1, 113);
+    borderBottomLeftRadius: 30px;
+    borderBottomRightRadius: 30px;
+      
 }
 
 #Sessionstext2{
