@@ -11,11 +11,9 @@ import {Menu} from '@headlessui/react';
 import { isSameDay } from "date-fns";
 import { parseISO } from "date-fns";
 
-function classNames(...classes:any)
-{
-    return classes.filter(Boolean).join(' ')
-}
-
+/**
+ * A list of sample meetings
+ */
 const meetings = [
     {
         id: 1,
@@ -27,123 +25,90 @@ const meetings = [
     {
         id: 2,
         name: 'CIS Conference Talk',
-        startDatetime: '2024-04-17T10:00',
-        endDatetime: '2024-04-17T12:00',
+        startDatetime: '2024-04-19T10:00',
+        endDatetime: '2024-04-19T12:00',
+        roomNumber: '1037'
+    },
+    {
+        id: 3,
+        name: 'CIS Conference Talk',
+        startDatetime: '2024-04-19T12:00',
+        endDatetime: '2024-04-19T14:00',
         roomNumber: '1037'
     },
 ]
 
-
+/**
+ * Creates the page for the personal schedule
+ * @returns The component for the personal schedule page
+ */
 const PersonalSchedulePage = () =>
 {
+    //The current day
     let today = startOfToday();
-    let [selectedDay, setSelectedDay] = useState(today);
-    let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
-    let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
-    let days = eachDayOfInterval({start: firstDayCurrentMonth, end: endOfMonth(firstDayCurrentMonth)})
-    let selectedDayMeetings = meetings.filter(meetings => isSameDay(parseISO(meetings.startDatetime), selectedDay))
-   
-
-    function nextMonth()
+    //Sets the current day
+    let [currentDay, setCurrentDay] = useState(format(today, 'MMM dd yyyy'))
+    // Selects the meetings of the currentDay
+    let selectedDayMeetings = meetings.filter(meetings => isSameDay(parseISO(meetings.startDatetime), currentDay))
+    /**
+     * Gets the next day using the current day
+     */
+    function nextDay()
     {
-        let firstDayNextMonth = add(firstDayCurrentMonth, {months: 1})
-        setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
+        let nextDay = add(currentDay, {days: 1})
+        setCurrentDay(format(nextDay, 'MMM dd yyyy'))
+    }
+    /**
+     * Gets the previous day 
+     */
+    function previousDay()
+    {
+        let previousDay = add(currentDay, {days: -1})
+        setCurrentDay(format(previousDay, 'MMM dd yyyy'))
     }
 
-    function previousMonth()
-    {
-        let firstDayNextMonth = add(firstDayCurrentMonth, {months: -1})
-        setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
-    }
-    
-    
-    
     return(
         <div className="pt-16">
-            <div className="max-w-md px4 mx-auto sn:px-7 md:max-w-4xl md:px-6">
+            <p className="text-6xl text-center">Your Schedule</p>
                 <div className="md:grid md:grid-cols-2 md:divid-x md:divid-gray-200">
-                    <div className="md:pr-14">
+                    <section className='mt-12 md:mt-0 md:pl-14'>
                         <div className="flex items-center">
-                            <h2 className="flex-auto font-semibold text-gray-900">
-                                {format(firstDayCurrentMonth, 'MMMM yyyy')}
-                            </h2>
-                            <button  type='button' onClick={previousMonth} className='-ny-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500'>
+                            <button  type='button' onClick={previousDay} className='-ny-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500'>
                                 <span className='sr-only'>Previous month</span>
                                 <ArrowBackIcon></ArrowBackIcon>
                             </button>
-                            <button onClick={nextMonth} type='button' className='-ny-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500'>
+                            <h2 className='font-semibold text-gray-900'>
+                                Schedule for {' '}<time dateTime={format(currentDay, 'yyyy-MM-dd')}>{format(currentDay, 'MMM dd, yyyy')}</time>
+                            </h2>
+                            <button onClick={nextDay} type='button' className='-ny-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500'>
                                 <span className='sr-only'>Next Month</span>
                                 <ArrowForwardIcon></ArrowForwardIcon>
                             </button>
                         </div>
-                        <div className='grid grid-cols-7 nt-10 text-xs leading-6 text-center text-gray-500'>
-                            <div>S</div>
-                            <div>M</div>
-                            <div>T</div>
-                            <div>W</div>
-                            <div>Th</div>
-                            <div>F</div>
-                            <div>S</div>
-                        </div>
-                        <div className='grid grid-cols-7 nt-2 text-sm'>
-                            {days.map((day, dayIdx) => (
-                            <div 
-                                key={day.toString()}
-                                className={classNames( 
-                                    dayIdx === 0 && colStartClasses[getDay(day)], 'py-2'
-                                )}
-                            >
-                            <button type='button'
-                            onClick={() => setSelectedDay(day)}
-                            className={classNames(
-                                isEqual(day, selectedDay) && 'text-white',
-                                !isEqual(day, selectedDay) && isToday(day) && 'text-red-500',
-                                !isEqual(day, selectedDay) && 
-                                !isToday(day) && 
-                                isSameMonth(day, firstDayCurrentMonth) && 
-                                'text-gray-900',
-                                !isEqual(day, selectedDay) &&
-                                !isToday(day) &&
-                                !isSameMonth(day, firstDayCurrentMonth) &&
-                                'text-gray-400',
-                                isEqual(day, selectedDay) && isToday(day) && 'bg-red-600',
-                                isEqual(day, selectedDay)&& !isToday(day) && 'bg-gray-900',
-                                !isEqual(day, selectedDay) && 'hover:bg-gray-200',
-                                (isEqual(day, selectedDay) || isToday(day)) && 'font-semibold',                             
-                                'mx-auto flex h-8 w-8 items-center justify-center rounded-full')}>
-                                <time dateTime={format(day, 'yyyy-MM-dd')}>
-                                    {format(day, 'd')}
-                                </time>
-                            </button>
-                            </div>
-                            ))}
-                        </div>
-                    </div>
-                    <section className='mt-12 md:mt-0 md:pl-14'>
-                        <h2 className='font-semibold text-gray-900'>
-                            Schedule for {' '}<time dateTime={format(selectedDay, 'yyyy-MM-dd')}>{format(selectedDay, 'MMM dd, yyyy')}</time>
-                        </h2>
                         <ol className='mt-4 space-y-1 text-sn leading-6 text-gray-500'>
                             {selectedDayMeetings.length > 0 ? (
                             selectedDayMeetings.map((meetings) => (
                                 <Meeting meeting={meetings} key={meetings.id}/>
                             ))
-                            ) : ( <p>You have not signed up for any events</p>)
+                            ) : ( <p>You have not signed up for any presentations</p>)
                             }
                         </ol>
                     </section>
                 </div>
-            </div>
         </div>
     )
 }
 
-
+/**
+ * Creates the subcomponent used for the personal schedule page
+ * @param param0 The meeting that is going to be used to populate the component
+ * @returns The component used to show personal schedule
+ */
 function Meeting({meeting}: {meeting:any}){
     let startDateTime = parseISO(meeting.startDatetime)
     let endDateTime = parseISO(meeting.endDatetime)
 
-    return (<li className="flex items-center px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100">
+    return (<li className="flex items-start px-4 py-2 space-x-4 group rounded-xl focus-within:bg-gray-100 hover:bg-gray-100">
     <div className='flex-auto'>
         <p className='text-gray-900'>{meeting.name}</p>
         <p>Room: {meeting.roomNumber}</p> 
@@ -157,6 +122,7 @@ function Meeting({meeting}: {meeting:any}){
             </time>
         </p>
     </div>
+    
     <Menu as = 'div' className='relative opacity-0 focus-within:opacity-100 group-hover:opacity-100'>
         <div>
             <Menu.Button className='-m-2 flex items-center rounded-full p-1.5 text-gray hover:text-gray-600'>
@@ -167,16 +133,5 @@ function Meeting({meeting}: {meeting:any}){
     </li>
     )
 }
-
-
-let colStartClasses = [
-    '',
-    'col-start-2',
-    'col-start-3',
-    'col-start-4',
-    'col-start-5',
-    'col-start-6',
-    'col-start-7'
-]
 
 export default PersonalSchedulePage;

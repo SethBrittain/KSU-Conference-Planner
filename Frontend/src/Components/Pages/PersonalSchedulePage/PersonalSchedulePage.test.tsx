@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react"
 import PersonalSchedulePage from "./PersonalSchedulePage"
-
+/**
+ * Test for the personal schedule page
+ */
 test('PersonalSchedulePage renders correctly', () => {
     render(<PersonalSchedulePage></PersonalSchedulePage>)
     //Navbar render test
