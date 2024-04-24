@@ -6,12 +6,12 @@ import { MuiButton } from "../../Button/Button";
 test('SignUpPage Navbar renders correctly', () => {
     render(<SignUpPage3></SignUpPage3>)
     //Navbar render test
-    const navBar = screen.getByRole(Navbar) 
+    const navBar = screen.getByRole("Navbar") 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('navstyle: Logout')
 
     //Button test
-    const signInButton = screen.getByRole(MuiButton, {name: /Finish Sign Up/i})
+    const signInButton = screen.getByRole("MuiButton", {name: /Finish Sign Up/i})
     expect(signInButton).toBeInTheDocument()
 
     //Text test

@@ -2,12 +2,11 @@ import { render, screen } from "@testing-library/react"
 import SignUpPage2 from "./SignUpPage2"
 import Navbar from "../../Navbars/Navbar"
 import { MuiButton } from "../../Button/Button"
-import { Checkbox } from "../../CheckBox/Checkbox"
 
 test('SignUpPage2 Navbar renders correctly', () => {
     render(<SignUpPage2></SignUpPage2>)
     //Navbar render test
-    const navBar = screen.getByRole(Navbar) 
+    const navBar = screen.getByRole("Navbar") 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('')
 
@@ -32,27 +31,27 @@ test('SignUpPage2 Navbar renders correctly', () => {
     const interestInPresenting = screen.getByText("Interest In Presenting")
     expect(interestInPresenting).toBeInTheDocument()
     //Buttons Test
-    const underGrad = screen.getByRole(MuiButton, {name: /K-State Undergrad Student/i})
-    const grad = screen.getByRole(MuiButton, {name: /K-State Graduate Student/i})
-    const alumni = screen.getByRole(MuiButton, {name: /K-State Alumni/i})
-    const faculty = screen.getByRole(MuiButton, {name: /K-State Faculty/i})
-    const hsTeacher = screen.getByRole(MuiButton, {name: /High School Teacher/i})
+    const underGrad = screen.getByRole("MuiButton", {name: /K-State Undergrad Student/i})
+    const grad = screen.getByRole("MuiButton", {name: /K-State Graduate Student/i})
+    const alumni = screen.getByRole("MuiButton", {name: /K-State Alumni/i})
+    const faculty = screen.getByRole("MuiButton", {name: /K-State Faculty/i})
+    const hsTeacher = screen.getByRole("MuiButton", {name: /High School Teacher/i})
     expect(underGrad).toBeInTheDocument()
     expect(grad).toBeInTheDocument()
     expect(alumni).toBeInTheDocument()
     expect(faculty).toBeInTheDocument()
     expect(hsTeacher).toBeInTheDocument()
 
-    const presenting = screen.getByRole(MuiButton, {name: /Interested/i})
-    const notPresenting = screen.getByRole(MuiButton, {name: /Not Interested/i})
+    const presenting = screen.getByRole("MuiButton", {name: /Interested/i})
+    const notPresenting = screen.getByRole("MuiButton", {name: /Not Interested/i})
     expect(presenting).toBeInTheDocument()
     expect(notPresenting).toBeInTheDocument()
 
-    const next = screen.getByRole(MuiButton, {name: /Next/i})
+    const next = screen.getByRole("MuiButton", {name: /Next/i})
     expect(next).toBeInTheDocument()
     //Checkbox
-    const reviewer = screen.getByRole(Checkbox, {name: /Reviewer/i})
-    const scheduler = screen.getByRole(Checkbox, {name: /scheduler/i})
+    const reviewer = screen.getByRole("Checkbox", {name: /Reviewer/i})
+    const scheduler = screen.getByRole("Checkbox", {name: /scheduler/i})
     expect(reviewer).toBeInTheDocument()
     expect(scheduler).toBeInTheDocument()
 

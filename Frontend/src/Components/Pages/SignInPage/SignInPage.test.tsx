@@ -5,7 +5,7 @@ import Navbar from "../../Navbars/Navbar";
 test('SignUpPage Navbar renders correctly', () => {
     render(<SignInPage></SignInPage>)
     //Navbar render test
-    const navBar = screen.getByRole(Navbar) 
+    const navBar = screen.getByRole("Navbar") 
     expect(navBar).toBeInTheDocument()
     expect(navBar).toHaveStyle('')
 

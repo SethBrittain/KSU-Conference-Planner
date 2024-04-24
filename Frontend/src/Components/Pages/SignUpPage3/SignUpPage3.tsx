@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioButtonGroup from '../../RadioButtonGroup/RadioButtonGroup';
+import RadioButtonGroup from '../../InputComponents/RadioButtonGroup/RadioButtonGroup';
 import { Button, createTheme, ThemeProvider } from '@mui/material';
 import TextInput from '../../InputComponents/TextInput';
 import CheckBoxGroup from '../../InputComponents/CheckBoxGroup';

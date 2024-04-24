@@ -1,14 +1,7 @@
 //import React from 'react'
-import { MuiButton } from '../../Button/Button';
-import { MainInfo } from '../../MainInfo/MainInfo';
-import { PhotoCarousel } from '../../PhotoCarousel/PhotoCarousel';
-import SignUpPage2 from '../SignUpPage2/SignUpPage2';
 import TextInput from '../../InputComponents/TextInput';
-import React, { useLayoutEffect, useState } from 'react';
-import {Radio, Stack} from '@mui/material';
-import LandingPage from '../LandingPage/LandingPage';
-import SignUpPage1 from '../SignUpPage/SignUpPage1';
-import RadioButtonGroup from '../../RadioButtonGroup/RadioButtonGroup';
+import React from 'react';
+import RadioButtonGroup from '../../InputComponents/RadioButtonGroup/RadioButtonGroup';
 import CheckBoxGroup from '../../InputComponents/CheckBoxGroup';
 import SessionsSideBar from '../../SessionsSideBar/SessionsSideBar';
 
