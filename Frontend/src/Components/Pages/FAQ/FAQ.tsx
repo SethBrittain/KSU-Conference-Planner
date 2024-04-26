@@ -1,9 +1,10 @@
-
 import React from "react";
-import Navbar from "../../Navbars/Navbar";
-import GenericFooter from "../../GenericFooter/GenericFooter";
 import './FAQ.css';
 
+/**
+ * A page meant to act as a FAQ for the conference. This mostly contains of text tags and will need to be changed  
+ * as the conference determines what questions need to be answered
+ */
 export const FAQ = (): React.JSX.Element => { 
     return (
         <div style={{
