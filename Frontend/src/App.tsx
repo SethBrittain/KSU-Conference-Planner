@@ -7,7 +7,7 @@ THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 import './App.css'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, BrowserRouter} from "react-router-dom";
 import RouteConfig from './RouteConfig';
-import GenericFooter from './Components/GenericFooter/GenericFooter';
+import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbars/Navbar';
 import UserRole from './Utils/UserRole';
 
@@ -22,7 +22,7 @@ const App = () : React.JSX.Element => {
 				<div className='grow'>
 					<RouterProvider router={router}/>
 				</div>
-				<GenericFooter/>
+				<Footer/>
 			</div>
 		</div>
 	)
