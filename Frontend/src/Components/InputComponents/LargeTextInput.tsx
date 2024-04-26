@@ -1,6 +1,10 @@
 import React from 'react';
 import './InputComponents.css';
 
+/**
+ * The information that is needed to create the LargeTextInput component
+ * If there is a question mark by an item, that means it is nullable
+ */
 type LargeTextInputProps = {
 	label: string;
 	formValue: string;
@@ -9,7 +13,12 @@ type LargeTextInputProps = {
 	require: boolean;
 	labelid?: string;
 }
-
+/**
+ * A component that acts as space for text input by the user. To be used when the user may need to 
+ * input a large amount of text
+ * @param props The items needed to create the component
+ * @returns A textinput box for the web app
+ */
 const LargeTextInput = (props: LargeTextInputProps) : React.JSX.Element => {
 	console.log(props.labelPosition);
 	const position : string = props.labelPosition == "top" 

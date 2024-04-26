@@ -1,3 +1,6 @@
+/*The css for the InputComponents*/
+
+/*The css for a requried input field*/
 #required::after {
     content: "* required";
     color: red;

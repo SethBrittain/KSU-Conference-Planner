@@ -1,6 +1,10 @@
 import React from 'react';
 import './InputComponents.css';
 
+/**
+ * The information that is needed to create the TextInput component
+ * If there is a question mark by an item, that means it is nullable
+ */
 type TextInputProps = {
 	label: string;
 	formValue: string;
@@ -11,12 +15,19 @@ type TextInputProps = {
 	labelid?: string;
 }
 
+/**
+ * A component that acts as space for text input by the user. To be used when the 
+ * user only needs to input a small amount of text
+ * @param props The items needed to create the component
+ * @returns A textinput box for the web app
+ */
 const TextInput = (props: TextInputProps) : React.JSX.Element => {
+	// Logs the position of the label
 	console.log(props.labelPosition);
+	/** The position of the label for the textinput */
 	const position : string = props.labelPosition == "top" 
 		? "flex flex-col py-2"
 		: "flex flex-row align-start py-2";
-
 	return (
 		
 		<div className={position}>
