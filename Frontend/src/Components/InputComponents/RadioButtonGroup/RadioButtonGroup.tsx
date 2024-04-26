@@ -1,5 +1,8 @@
 import './RadioButtonGroup.css';
 
+/**
+ * The items needed to create the RadioButtonGroup Component
+ */
 type RadioButtonGroupProps = {
 	label: string;
 	columns: number;
@@ -10,7 +13,13 @@ type RadioButtonGroupProps = {
 	labelid?: string;
 }
 
+/**
+ * Creates the component for the RadioButtonGroup
+ * @param props The information needed to create the component
+ * @returns The component for the RadioButtonGroup
+ */
 const RadioButtonGroup = (props : RadioButtonGroupProps) : React.JSX.Element => {
+	//The position of the label in the RadioButtonGroup
 	var labelPosititioning = props.labelPosition === "top" 
 		? "block md:flex-col md:items-center py-2"
 		: "block md:flex md:items-center py-2" 

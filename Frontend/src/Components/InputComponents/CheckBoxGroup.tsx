@@ -1,14 +1,23 @@
 import React from 'react';
 
+/**
+ * The information needed to create a checkboxgroup
+ */
 type CheckBoxGroupProps ={
 	mainLabel : string;
 	columns : number;
 	formValues : {[index:string] : string};
 }
 
+/**
+ * The creation of the CheckBoxGroup component
+ * @param props The items needed to build the checkbox group
+ * @returns The checkboxgroup component
+ */
 const CheckBoxGroup = (props: CheckBoxGroupProps) : React.JSX.Element => {
+	//Holds the Checkbox Options
 	const boxes : React.JSX.Element[] = [];
-
+	//Creates the list of items in boxes
 	Object.keys(props.formValues).forEach((key)=>{
 		boxes.push(
 			<li className="flex items-center p-2">

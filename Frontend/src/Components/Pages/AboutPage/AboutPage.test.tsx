@@ -1,5 +1,3 @@
-import Navbar from '../../Navbars/Navbar';
-import GenericFooter from '../../Footer/Footer';
 import AboutPage from './AboutPage';
 import { render, screen } from "@testing-library/react"
 
