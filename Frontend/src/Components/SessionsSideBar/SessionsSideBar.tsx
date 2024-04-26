@@ -3,11 +3,17 @@ import Box from '@mui/material/Box';
 import { Button } from 'react-native';
 import { Link } from 'react-router-dom';
 
+/**
+ * The information needed to create the componenet
+ */
 type SessionSideBarProps = {
 	SessionTitle: string;
 	Description: string;
 }
 
+/**
+ * The component meant to act as a side bar to the sessions page
+ */
 const SessionsSideBar = (props: SessionSideBarProps) : React.JSX.Element => {
 	return (
 		<div className='ml-2 bg-white-200 border-2 border-gray-200 rounded w-4/12 py-2 flex flex-col items-center px-4 text-gray-700'>
