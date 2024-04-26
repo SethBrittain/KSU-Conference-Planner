@@ -1,10 +1,13 @@
-//import React from 'react'
 import TextInput from '../../InputComponents/TextInput';
 import React from 'react';
 import RadioButtonGroup from '../../InputComponents/RadioButtonGroup/RadioButtonGroup';
 import CheckBoxGroup from '../../InputComponents/CheckBoxGroup';
 import SessionsSideBar from '../../SessionsSideBar/SessionsSideBar';
 
+/**
+ * A page meant to display what a component will look like when the web app is running. Will need to be removed eventually.
+ * @returns A test page meant to display all of the components used in the web app
+ */
 const ComponentTest = (): React.JSX.Element => {
     return (
 		<div>
@@ -21,9 +24,6 @@ const ComponentTest = (): React.JSX.Element => {
                 occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
                 anim id est laborum.'/>
 		</div>
-       //<LandingPage></LandingPage>
-       //<SignUpPage2></SignUpPage2>
-    //    <SignUpPage1/>
     ); 
 };
 

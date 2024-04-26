@@ -1,5 +1,9 @@
 import React from 'react';
-
+/**
+ * An about page meant to give information about what the conference is. Will need to be changed so that 
+ * it is not Lorem ipsum
+ * @returns The component page for the AboutPage
+ */
 const AboutPage = (): React.JSX.Element => {
   return (
     <div className='w-full h-full'>
