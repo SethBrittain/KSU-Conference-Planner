@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import Navbar from "../../Navbars/Navbar";
 import SessionsPage from "../SessionsPage/SessionsPage"
-
+//Sessions page tests
 test('SessionsPage renders correctly', () => {
     render(<SessionsPage></SessionsPage>)
 
