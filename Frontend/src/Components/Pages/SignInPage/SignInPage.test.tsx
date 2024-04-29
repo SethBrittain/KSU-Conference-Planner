@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import SignInPage from "./SignInPage";
 import Navbar from "../../Navbars/Navbar";
-
+//Sign-in page tests
 test('SignUpPage Navbar renders correctly', () => {
     render(<SignInPage></SignInPage>)
     //Navbar render test
