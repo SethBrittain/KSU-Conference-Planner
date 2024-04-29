@@ -15,6 +15,9 @@ type CustomRouteObject = RouteObject & {
 	name: string;
 }
 
+/**
+ * The page routes of the web app
+ */
 const RouteConfig: CustomRouteObject[] = [
 	{
 		path: '/',
