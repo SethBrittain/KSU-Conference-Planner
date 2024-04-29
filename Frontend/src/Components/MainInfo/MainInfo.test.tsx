@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react"
 import { MainInfo } from "./MainInfo"
-
+/**
+ * Test for the MainInfo component
+ */
 test('MainInfo renders correctly', () => {
     render(<MainInfo 
         image='https://source.unsplash.com/random'

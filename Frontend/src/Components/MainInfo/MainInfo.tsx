@@ -6,12 +6,17 @@ import { Box,
         Button,
         CardMedia } from "@mui/material"
 
+/** The information needed to create the component */
 type MainInfoProps = {
     image: string;
     title: string;
     description: string;
 }
-
+/**
+ * Creates the MainInfo component
+ * @param MainInfoProps The information needed to create the component
+ * @returns The MainInfo component
+ */
 export const MainInfo = ({ image, title, description }: MainInfoProps) => {
     return ( 
     <Box width='20vw' height='30vh' columnGap={10}>
