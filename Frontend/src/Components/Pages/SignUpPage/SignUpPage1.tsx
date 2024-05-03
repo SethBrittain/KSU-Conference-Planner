@@ -3,7 +3,10 @@ import { MuiSignUpButton } from '../../Button/Button';
 import { Link } from 'react-router-dom';
 import TextInput from '../../InputComponents/TextInput';
 
-
+/**
+ * The first page of the signup process
+ * @returns The first page of the signup process
+ */
 const SignUpPage1 = (): React.JSX.Element => {
     return(
         <div className='h-full flex flex-col md:flex-row'>

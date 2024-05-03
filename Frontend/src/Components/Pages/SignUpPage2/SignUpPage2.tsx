@@ -5,6 +5,9 @@ import TextInput from '../../InputComponents/TextInput';
 import CheckBoxGroup from '../../InputComponents/CheckBoxGroup';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
+/**
+ * The color palette of the page
+ */
 const theme = createTheme({
     palette: {
 
@@ -17,8 +20,15 @@ const theme = createTheme({
     } 
 })
 
+/**
+ * The second page of the signup process
+ * @returns The second page of the signup process
+ */
 const SignUpPage2 = (): React.JSX.Element => {
-	const SignUpQuestions : React.JSX.Element = 
+	/**
+     * The component meant to be used to gather user data such as name, status, role request, and if interested in presenting
+     */
+    const SignUpQuestions : React.JSX.Element = 
 		<form className="w-full" action='signup3'>
 			<TextInput label='First Name' formValue='firstName' labelPosition="top" placeholder='Jane' require = {true} labelid = 'required'/>
 			<TextInput label='Last Name' formValue='lastName' labelPosition="top" placeholder='Doe' require ={true} labelid = 'required'/>
@@ -41,7 +51,10 @@ const SignUpPage2 = (): React.JSX.Element => {
 				</button>
 			</div>
 		</form>;
-
+    
+    /**
+     * The second signup page
+     */
     return ( 
         <ThemeProvider theme={theme}>
             <div className="flex flex-col h-full">

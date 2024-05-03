@@ -6,7 +6,7 @@ import CheckBoxGroup from '../../InputComponents/CheckBoxGroup';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LargeTextInput from '../../InputComponents/LargeTextInput';
-
+//The color palette of the page
 const theme = createTheme({
     palette: {
 
@@ -18,9 +18,14 @@ const theme = createTheme({
         }
     } 
 })
-
+/**
+ * The third and final signup page of the signup process
+ * @returns The third signup page
+ */
 const SignUpPage3 = (): React.JSX.Element => {
-
+    /**
+     * The component to be used to collect data on dietary restrictions and to request if any accomodations need to be made.
+     */
 	const newVersion : React.JSX.Element = 
 		<form className="w-full">
 			<LargeTextInput label='Do you have any dietary restrictions we need to know about?' formValue='diet' labelPosition="top" placeholder='Please list your dietary restrictions here' require = {false}/>
@@ -36,7 +41,9 @@ const SignUpPage3 = (): React.JSX.Element => {
 				</button>
 			</div>
 		</form>;
-
+    /**
+     * The 3rd signup page
+     */
     return ( 
         <ThemeProvider theme={theme}>
             {/* <Navbar NavbarType='SignUp' CurrentPage='SignUp'></Navbar> */}

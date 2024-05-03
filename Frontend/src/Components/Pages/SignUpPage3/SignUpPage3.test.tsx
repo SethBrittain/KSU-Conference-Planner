@@ -1,8 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import SignUpPage3 from "./SignUpPage3";
-import Navbar from "../../Navbars/Navbar";
-import { MuiButton } from "../../Button/Button";
-
+//The test for the signuppage3
 test('SignUpPage Navbar renders correctly', () => {
     render(<SignUpPage3></SignUpPage3>)
     //Navbar render test

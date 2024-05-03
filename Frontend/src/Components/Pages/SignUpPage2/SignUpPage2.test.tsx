@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import SignUpPage2 from "./SignUpPage2"
 import Navbar from "../../Navbars/Navbar"
 import { MuiButton } from "../../Button/Button"
-
+//Test for the signup page 2
 test('SignUpPage2 Navbar renders correctly', () => {
     render(<SignUpPage2></SignUpPage2>)
     //Navbar render test
