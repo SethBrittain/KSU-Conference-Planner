@@ -4,7 +4,7 @@ FROM node:18 as build-stage1
 WORKDIR /client
 
 COPY Frontend/ ./
-
+COPY .env ./
 RUN npm install
 
 RUN npm run build
@@ -14,7 +14,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 as build-stage-2
 
 WORKDIR /server
 
-COPY Backend/ ./
+COPY Backend/src ./
 
 RUN dotnet restore
 
@@ -33,4 +33,4 @@ ENV ASPNETCORE_URLS="http://+:5000"
 EXPOSE 5000
 
 # Run ASP.NET app
-ENTRYPOINT ["dotnet", "conference-planner.dll"]
+ENTRYPOINT ["dotnet", "ConferencePlanner.dll"]

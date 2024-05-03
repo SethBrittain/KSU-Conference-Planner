@@ -1,5 +1,8 @@
 import ApiDataOutput from "./ApiDataOutput";
-
+/**
+ * A component meant to test if the API is working. Can be deleted eventaully
+ * @returns A component meant to test if the API is working
+ */
 const ApiTest = (): React.JSX.Element => {
     return (
         <div>

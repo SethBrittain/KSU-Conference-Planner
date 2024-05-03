@@ -4,25 +4,28 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
 THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
-import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ComponentTest from './Components/Pages/ComponentTest/ComponentTest';
-import HelloWorld from './Components/Pages/HelloWorld/HelloWorld';
-import ApiTest from './Components/Pages/ApiTest/ApiTest';
+import './App.css'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, BrowserRouter} from "react-router-dom";
+import RouteConfig from './RouteConfig';
+import Footer from './Components/Footer/Footer';
+import Navbar from './Components/Navbars/Navbar';
+import UserRole from './Utils/UserRole';
+
+const router = createBrowserRouter(RouteConfig);
 
 // Main App Component
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" index element={<HelloWorld />} />
-          <Route path="/component-test" element={<ComponentTest />} />
-          <Route path="/rest-test" element={<ApiTest />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+const App = () : React.JSX.Element => {
+	return (
+		<div id="App">
+			<div id="content" className="h-full bg-white flex flex-col">
+				<Navbar userRole={UserRole.Anonymous}/> {/*TODO*/}
+				<div className='grow'>
+					<RouterProvider router={router}/>
+				</div>
+				<Footer/>
+			</div>
+		</div>
+	)
 }
 
 export default App;

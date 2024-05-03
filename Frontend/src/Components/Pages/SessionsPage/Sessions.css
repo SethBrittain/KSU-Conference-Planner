@@ -1,0 +1,68 @@
+/*Header text, large and spaced out for main title*/
+#Sessionsh1{
+    text-align: center;
+    font-size: 58px;
+    margin: 5px;
+    margin-left: 10px;
+}
+
+/*Header text for right side, large, centered, and given a nice background*/
+#Sessionsh2{
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    padding: 5px;
+    background-color: #ABBAEA;
+}
+
+/*Not really a header, similar to h2 but smaller*/
+#Sessionsh3{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px;
+    background-color: #ABBAEA;
+}
+
+/*Carefully fine-tuned to pad and arrange thing in a way that will keep them in rows, keep a reasonable size,
+not freak out and place half the contents off the page, not squish the left side, and have a black background to
+account for things that don't fill it out completely. Has a darker-purple border to look a bit neater.*/
+#SessionsBox{
+    margin: 10px;
+    margin-top: 20px;
+    align-items: center;
+    display: inline;
+    flex: auto;
+    /*background-color: aqua;*/
+    background-color: black;
+    border: 2px solid rgb(136, 1, 113);
+    max-width: 40vw;
+}
+
+/*Left-side column text formatting, with background and margins/sizing to space correctly and look nice, plus
+darker-purple neatening border*/
+#Sessionstext1{
+    font-size: 16px;
+    background-color: #ABBAEA;
+    height: 40px;
+    width: 100px;
+    margin: 2px;
+    border: 2px solid rgb(136, 1, 113);
+    borderBottomLeftRadius: 30px;
+    borderBottomRightRadius: 30px;
+      
+}
+
+/*Left-side list text formatting, with margins/sizing to space correctly*/
+#Sessionstext2{
+    font-size: 16px;
+    height: 40px;
+    width: 100px;
+    margin: 2px;
+}
+
+/*Formatting for main container box, to arrange sides correctly*/
+#SessionsBox1{
+    margin:'10px';
+    align-items: baseline;   
+}
