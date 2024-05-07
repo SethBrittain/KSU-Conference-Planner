@@ -6,3 +6,10 @@ Further documentation can be found on the wiki page of this repository or by cli
 
 ## Developing in Codespaces
 The repository has the required tools for running and making changes to the project. The configuration for the codespaces can be found in the .devcontainer directory. Creating a new codespace can be done by simply clicking the "<> code" button and clicking the plus beside the list of codespaces.
+
+## Group A Was:
+Emma Beatty
+Sam McQuality
+Jasper Nisly
+Seth Brittain
+Ebraheem Mustafa
